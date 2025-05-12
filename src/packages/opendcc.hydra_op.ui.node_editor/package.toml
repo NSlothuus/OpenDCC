@@ -1,0 +1,17 @@
+[base]
+name = 'opendcc.hydra_op.ui.node_editor'
+
+[dependencies]
+'opendcc.hydra_op' = {}
+'opendcc.hydra_op.schema' = {}
+'opendcc.usd_editor.usd_node_editor' = {}
+'opendcc.usd_editor.material_editor' = {}
+
+[[environment.PYTHONPATH]]
+value = 'python'
+
+[[python.entry_point]]
+module = 'opendcc.hydra_op.ui.node_editor'
+
+[[native.load]]
+path='lib/${LIB_PREFIX}opendcc.hydra_op.ui.node_editor${LIB_EXT}'

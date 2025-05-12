@@ -1,0 +1,22 @@
+repos:
+  - repo: https://github.com/cheshirekow/cmake-format-precommit
+    rev: v0.6.13
+    hooks:
+      - id: cmake-format
+
+  - repo: https://github.com/psf/black
+    rev: 22.12.0
+    hooks:
+      - id: black
+        language_version: python3.9
+  
+  - repo: https://github.com/pre-commit/mirrors-clang-format
+    rev: v18.1.6
+    hooks:
+      - id: clang-format
+        types_or: [c++, c]
+        exclude: |
+              (?x)^(
+                src/lib/opendcc/base/vendor |
+                src/bin/render_view/thirdparty
+                )

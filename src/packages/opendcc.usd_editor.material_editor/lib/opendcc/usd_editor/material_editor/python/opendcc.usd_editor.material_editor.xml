@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<typesystem package="opendcc.usd_editor.material_editor._material_editor">
+
+    <load-typesystem name="typesystem_core.xml" generate="no"/>
+    <load-typesystem name="typesystem_gui.xml" generate="no"/>
+    <load-typesystem name="typesystem_widgets.xml" generate="no"/>
+	<load-typesystem name="opendcc.ui.node_editor.xml" generate="no"/>
+	<load-typesystem name="opendcc.usd_editor.usd_node_editor.xml" generate="no"/>
+
+    <!-- Manually call namespaced function due to PySide 5.12.6 bugs on Linux  -->
+	<function signature="try_connect(OpenDCC::GraphModel*, OpenDCC::NodeEditorScene*, OpenDCC::NodeEditorView*, QGraphicsSceneMouseEvent*)"/>
+	<function signature="change_preview_shader(OpenDCC::GraphModel*, OpenDCC::NodeEditorScene*, const OpenDCC::NodeId&amp;, const pxr::SdfPath&amp;)"/>
+
+	<namespace-type name="OpenDCC" generate="no">
+
+        <object-type name="MaterialEditorItemRegistry"/>
+		<object-type name="MaterialOutputItem"/>
+        <object-type name="MaterialGraphModel"/>
+        <object-type name="TextureLayoutItem"/>
+        <object-type name="LiveShaderNodeItem"/>
+        <object-type name="ShaderNodeItem"/>
+		<object-type name="NodeGraphItem"/>
+		<object-type name="NodeGraphOutputItem"/>
+    </namespace-type>
+
+</typesystem>

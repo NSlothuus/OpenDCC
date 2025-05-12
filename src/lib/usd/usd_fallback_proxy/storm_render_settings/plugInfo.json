@@ -1,0 +1,17 @@
+{
+    "Plugins": [
+      {
+        "Info": {
+          "Types": {
+            "StormRenderSettings": {
+              "bases": [
+                "OpenDCC::RenderSettingsRegistry"
+              ]
+            }
+          }
+        },
+        "Name": "Storm",
+        "Type": "resource"
+      }
+    ]
+}

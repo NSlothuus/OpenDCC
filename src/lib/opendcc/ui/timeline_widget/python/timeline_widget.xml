@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<typesystem package="opendcc.timeline_widget">
+
+  <load-typesystem name="typesystem_core.xml" generate="no"/>
+  <load-typesystem name="typesystem_gui.xml" generate="no"/>
+  <load-typesystem name="typesystem_widgets.xml" generate="no"/>
+  <primitive-type name="uint32_t"/>
+  <primitive-type name="size_t"/>
+
+  <namespace-type name="OpenDCC" generate="no">
+    <enum-type name="TimelineLayout">
+      <include file-name="timeline_widget.h" location="global"/>
+    </enum-type>
+
+    <enum-type name="CurrentTimeIndicator">
+      <include file-name="timeline_widget.h" location="global"/>
+    </enum-type>
+
+    <enum-type name="TimeDisplay">
+      <include file-name="timeline_widget.h" location="global"/>
+    </enum-type>
+
+    <object-type name="TimelineWidget"/>
+    <object-type name="TimeBarWidget"/>
+  </namespace-type>
+</typesystem>

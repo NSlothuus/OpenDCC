@@ -1,0 +1,5 @@
+[base]
+name = 'opendcc.usd_editor.scene_indices'
+
+[[native.load]]
+path='${APP_LIB_DIR}/${LIB_PREFIX}opendcc.usd_editor.scene_indices${LIB_EXT}'

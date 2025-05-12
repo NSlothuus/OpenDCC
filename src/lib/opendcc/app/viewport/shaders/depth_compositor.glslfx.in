@@ -1,0 +1,52 @@
+-- glslfx version 0.1
+-- configuration
+{
+    "techniques": {
+        "default": {
+            "OpenGL": {
+                "source": [ "DepthCompositor.Common", "DepthCompositor.OpenGL" ]
+            },
+            "Linear": {
+                "source": [ "DepthCompositor.Common", "DepthCompositor.Linear" ]
+            },
+            "NDC": {
+                "source": [ "DepthCompositor.Common", "DepthCompositor.NDC" ]
+            }
+        }
+    }
+}
+
+-- glsl DepthCompositor.Common
+#define PXR_VERSION @USD_PXR_VERSION@
+
+#if PXR_VERSION < 2205
+#define HgiGet_depthIn HdGet_depthIn
+#endif
+
+-- glsl DepthCompositor.OpenGL
+
+void main(void)
+{
+    float depth = HgiGet_depthIn(uvOut).x;
+    depthOut = depth;
+}
+
+-- glsl DepthCompositor.Linear
+
+void main(void)
+{
+    float depth = HgiGet_depthIn(uvOut).x / stage_meters_per_unit;
+    if (depth == 0.0) // special case for Karma, where 0.0 depth is uninitialized
+        depth = near_far[1];
+
+    vec4 wpos = proj_mat * vec4(0, 0, -depth, 1);
+    depthOut = 0.5 * clamp(wpos.z / wpos.w, -1, 1) + 0.5;
+}
+
+-- glsl DepthCompositor.NDC
+
+void main(void)
+{
+    float depth = HgiGet_depthIn(uvOut).x;
+    depthOut = (depth * 0.5 + 0.5) * gl_DepthRange.diff + gl_DepthRange.near;
+}

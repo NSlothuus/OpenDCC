@@ -1,0 +1,28 @@
+#usda 1.0
+(
+    """ schemata for HydraRenderSessionAPI
+    """
+    subLayers = [
+        @usd/schema.usda@,
+    ]
+) 
+
+over "GLOBAL" (
+    customData = {
+        string libraryName       = "usdHydraExt"
+        string libraryPath       = "."
+        string libraryPrefix     = "UsdHydraExt"
+    }
+) {
+}
+
+class "HydraRenderSessionAPI" (
+	doc = """ Hydra render settings API """
+    inherits = </APISchemaBase>
+    customData = {
+        string className = "RenderSessionAPI"
+    }
+)
+{
+    token render_delegate
+}

@@ -1,0 +1,21 @@
+{
+    "Plugins": [
+      {
+        "Info": {
+          "Types": {
+            "OpenDCC::KarmaPropertyFactory": {
+              "bases": [
+                "OpenDCC::PropertyFactory"
+              ],
+              "displayName": "Class which creates new Karma property proxies."
+            }
+          }
+        },
+        "LibraryPath": "@LIBRARY_LOCATION@/@CMAKE_SHARED_LIBRARY_PREFIX@karma_property_proxy@CMAKE_SHARED_LIBRARY_SUFFIX@",
+        "Name": "karma_property_proxy",
+        "ResourcePath": "resources",
+        "Root": "..",
+        "Type": "library"
+      }
+    ]
+}

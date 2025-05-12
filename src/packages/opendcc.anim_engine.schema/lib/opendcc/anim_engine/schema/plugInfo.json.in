@@ -1,0 +1,19 @@
+{
+    "Plugins": [
+        {
+            "Info": {
+              "SdfMetadata": {       
+                "anim": {
+                  "appliesTo": [ "attributes" ],
+                  "type": "dictionary"
+                }
+              }
+             },
+            "Name": "usdAnimEngine", 
+            "Root": "@PLUG_INFO_ROOT@", 
+            "ResourcePath": "@PLUG_INFO_RESOURCE_PATH@", 
+            "Type": "library", 
+            "LibraryPath": "@PLUG_INFO_LIBRARY_PATH@"
+        }
+    ]
+}

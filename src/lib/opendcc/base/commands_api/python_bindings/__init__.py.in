@@ -1,0 +1,31 @@
+from . import _@PYMODULE_NAME@
+
+def __to_str(*args, **kwargs):
+    if (any(type(arg).__repr__ == object.__repr__ for arg in args) or 
+        any(type(kwarg).__repr__ == object.__repr__ for _, kwarg in kwargs.items())):
+       return ''
+    
+    str_wrap = lambda s: '{}'.format(repr(s)) if isinstance(s,str) else repr(s)
+    args_str = ','.join(map(str_wrap,args))
+    kwargs_str = ','.join('{}={}'.format(k,str_wrap(v)) for k,v in kwargs.items())
+    return '({})'.format(','.join(filter(None,[args_str, kwargs_str])))
+
+def prepare_module():
+    ignore = frozenset(['__name__', '__builtins__', '__doc__', '__file__', '__path__'])
+    for k, v in _@PYMODULE_NAME@.__dict__.items():
+        if not k in ignore:
+            globals()[k] = v
+
+            if hasattr(v, '__module__'):
+                try:
+                    setattr(v, '__module__', globals().get('__name__'))
+                except AttributeError as e:
+                    # The __module__ attribute of Boost.Python.function
+                    # objects is not writable, so we get this exception
+                    # a lot.  Just ignore it.  We're really only concerned
+                    # about the data objects like enum values and such.
+                    pass
+
+
+prepare_module()
+del prepare_module, _@PYMODULE_NAME@

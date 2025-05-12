@@ -1,0 +1,107 @@
+ads--CDockContainerWidget
+{
+    background: rgb(42, 42, 42);
+}
+
+ads--CDockContainerWidget QSplitter::handle
+{
+    background: rgb(42, 42, 42);
+    width: 3px;
+}
+
+ads--CDockAreaWidget
+{
+    background: palette(window);
+    border: 1px solid rgb(42, 42, 42);
+}
+
+ads--CDockAreaWidget #tabsMenuButton::menu-indicator
+{
+    image: none;
+}
+
+ads--CDockWidgetTab
+{
+    /*background: palette(base);*/
+    background: rgb(55, 55, 55);
+    border-color: palette(light);
+    border-style: solid;
+    border-width: 0 1px 0 0;
+    padding: 0 0px;
+}
+
+ads--CDockWidgetTab[activeTab="true"]
+{
+    background: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:0.5, stop:0 palette(window), stop:1 palette(window));
+    /*background: palette(highlight);*/
+}
+
+ads--CDockWidgetTab QLabel
+{
+    color: palette(dark);
+}
+
+ads--CDockWidgetTab[activeTab="true"] QLabel
+{
+    color: palette(foreground);
+}
+
+ads--CDockWidget
+{
+    background: palette(light);
+    border-color: palette(light);
+    border-style: solid;
+    border-width: 1px 0 0 0;
+}
+
+#tabsMenuButton,
+#dockAreaCloseButton,
+#detachGroupButton
+{
+    padding: 0px 0px;
+}
+
+#dockAreaCloseButton
+{
+    qproperty-icon: url(":icons/close_dock") off, url(":icons/close_dock") on ;
+    qproperty-iconSize: 16px;
+}
+
+#detachGroupButton
+{
+    qproperty-icon: url(":icons/undock") off, url(":icons/undock") on ;
+    qproperty-iconSize: 16px;
+}
+
+#tabsMenuButton
+{
+    qproperty-icon: url(":icons/tabsMenu") off, url(":icons/tabsMenu") on ;
+    qproperty-iconSize: 16px;
+}
+
+QScrollArea#dockWidgetScrollArea
+{
+    padding: 0px;
+    border: none;
+}
+
+#tabCloseButton
+{
+    qproperty-icon: url(":icons/close_dock") off, url(":icons/close_dock") on ;
+    qproperty-iconSize: 16px;
+    margin-top: 2px;
+    background: none;
+    border: none;
+    padding: 0px -2px;
+}
+
+#tabCloseButton:hover
+{
+    border: 1px solid rgba(0, 0, 0, 32);
+    background: rgba(0, 0, 0, 16);
+}
+
+#tabCloseButton:pressed
+{
+    background: rgba(0, 0, 0, 32);
+}

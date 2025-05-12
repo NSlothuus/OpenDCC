@@ -1,0 +1,27 @@
+opendcc_make_library(
+    logger_panel
+    QT_AUTOMOC
+    TYPE
+    SHARED
+    PRIVATE_HEADERS
+    logger_message_list_widget.h
+    logger_output_widget.h
+    message_table_proxy.h
+    PUBLIC_HEADERS
+    api.h
+    logger_view.h
+    logger_widget.h
+    CPPFILES
+    logger_message_list_widget.cpp
+    logger_output_widget.cpp
+    logger_view.cpp
+    logger_widget.cpp
+    message_table_proxy.cpp
+    PRIVATE_DEFINITIONS
+    OPENDCC_LOGGER_PANEL_EXPORT
+    LIBRARY_DEPENDENCIES
+    logging
+    color_theme
+    common_widgets
+    VS_FOLDER
+    widgets)

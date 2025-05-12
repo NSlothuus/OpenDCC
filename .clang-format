@@ -1,0 +1,26 @@
+---
+BasedOnStyle: Microsoft
+AccessModifierOffset: -4
+AlignEscapedNewlines: Left
+AlignTrailingComments: false
+AllowAllParametersOfDeclarationOnNextLine: false
+AllowShortBlocksOnASingleLine: Empty
+AllowShortFunctionsOnASingleLine: Inline
+AllowShortLambdasOnASingleLine: Inline
+AlwaysBreakTemplateDeclarations: Yes
+BraceWrapping:
+  AfterCaseLabel: true
+  AfterUnion: true
+BreakConstructorInitializers: BeforeComma
+BreakInheritanceList: BeforeComma
+BreakStringLiterals: false
+ColumnLimit: 150
+Cpp11BracedListStyle: false
+DerivePointerAlignment: true
+FixNamespaceComments: false
+NamespaceIndentation: All
+PointerAlignment: Left
+SortIncludes: false
+SortUsingDeclarations: false
+SpaceBeforeCpp11BracedList: true
+Standard: c++17

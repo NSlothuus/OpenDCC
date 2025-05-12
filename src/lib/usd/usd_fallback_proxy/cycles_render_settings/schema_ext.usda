@@ -1,0 +1,90 @@
+#usda 1.0
+
+def RenderSettings "RenderSettings"
+{	
+    bool cycles:background = 1 (displayGroup = "Session")
+    bool cycles:experimental = 0 (displayGroup = "Session")
+    int cycles:samples = 1024 (displayGroup = "Session")
+    int cycles:pixel_size = 1 (displayGroup = "Session")
+    int cycles:threads = 0 (displayGroup = "Session")
+    bool cycles:use_profiling = 0 (displayGroup = "Session")
+    token cycles:shading_system = "SVM" (
+        allowedTokens = ["SVM", "OSL"]
+        displayGroup = "Session"
+    )
+
+    bool cycles:use_auto_tile = 1 (displayGroup = "Session")
+    int cycles:tile_size = 2048 (displayGroup = "Session")
+    int cycles:min_bounce = 0 (displayGroup = "Integrator")
+    int cycles:max_bounce = 7 (displayGroup = "Integrator")
+    int cycles:max_diffuse_bounce = 7 (displayGroup = "Integrator")
+    int cycles:max_glossy_bounce = 7 (displayGroup = "Integrator")
+    int cycles:max_transmission_bounce = 7 (displayGroup = "Integrator")
+    int cycles:max_volume_bounce = 7 (displayGroup = "Integrator")
+    int cycles:transparent_min_bounce = 0 (displayGroup = "Integrator")
+    int cycles:transparent_max_bounce = 7 (displayGroup = "Integrator")
+    int cycles:ao_bounces = 0 (displayGroup = "Integrator")
+    float cycles:ao_factor = 0.0 (displayGroup = "Integrator")
+    float cycles:ao_distance = 340282346638528859811704183484516925440.0 (displayGroup = "Integrator")
+    float cycles:ao_additive_factor = 0.0 (displayGroup = "Integrator")
+    float cycles:volume_max_steps = 1024 (displayGroup = "Integrator")
+    float cycles:volume_step_rate = 1.0 (displayGroup = "Integrator")
+    bool cycles:caustics_reflective = 1 (displayGroup = "Integrator")
+    bool cycles:caustics_refractive = 1 (displayGroup = "Integrator")
+    float cycles:filter_glossy = 0.0 (displayGroup = "Integrator")
+    bool cycles:use_direct_light = 1 (displayGroup = "Integrator")
+    bool cycles:use_indirect_light = 1 (displayGroup = "Integrator")
+    bool cycles:use_diffuse = 1 (displayGroup = "Integrator")
+    bool cycles:use_glossy = 1 (displayGroup = "Integrator")
+    bool cycles:use_transmission = 1 (displayGroup = "Integrator")
+    bool cycles:use_emission = 1 (displayGroup = "Integrator")
+    int cycles:seed = 0 (displayGroup = "Integrator")
+    float cycles:sample_clamp_direct = 0.0 (displayGroup = "Integrator")
+    float cycles:sample_clamp_indirect = 10.0 (displayGroup = "Integrator")
+    bool cycles:motion_blur = 0 (displayGroup = "Integrator")
+    int cycles:aa_samples = 0 (displayGroup = "Integrator")
+    int cycles:start_sample = 0 (displayGroup = "Integrator")
+    bool cycles:use_adaptive_sampling = 1 (displayGroup = "Integrator")
+    float cycles:adaptive_threshold = 0.01 (displayGroup = "Integrator")
+    int cycles:adaptive_min_samples = 0 (displayGroup = "Integrator")
+    float cycles:light_sampling_threshold = 0.01 (displayGroup = "Integrator")
+    token cycles:sampling_pattern = "pmj" (
+        allowedTokens = ["sobol_burley", "pmj"]
+        displayGroup = "Integrator"
+    )
+    float cycles:scrambling_distance = 1.0 (displayGroup = "Integrator")
+    bool cycles:use_denoise = 0 (displayGroup = "Integrator")
+    token cycles:denoiser_type = "openimagedenoise" (
+        allowedTokens = ["optix", "openimagedenoise"]
+        displayGroup = "Integrator"
+    )
+    int cycles:denoise_start_sample = 0 (displayGroup = "Integrator")
+    bool cycles:use_denoise_pass_albedo = 1 (displayGroup = "Integrator")
+    bool cycles:use_denoise_pass_normal = 1 (displayGroup = "Integrator")
+    token cycles:denoiser_prefilter = "accurate" (
+        allowedTokens = ["none", "fast", "accurate"]
+        displayGroup = "Integrator"
+    )
+
+    float cycles:exposure = 0.8 (displayGroup = "Film")
+    float cycles:pass_alpha_threshold = 0.0 (displayGroup = "Film")
+    token cycles:filter_type = "box" (
+        allowedTokens = ["box", "gaussian", "blackman_harris"]
+        displayGroup = "Film"
+    )
+    float cycles:filter_width = 1.0 (displayGroup = "Film")
+    float cycles:mist_start = 0.0 (displayGroup = "Film")
+    float cycles:mist_depth = 100.0 (displayGroup = "Film")
+    float cycles:mist_falloff = 1.0 (displayGroup = "Film")
+    token cycles:display_pass = "combined" (
+        allowedTokens = ["combined", "emission", "background", "ao", "shadow", "diffuse", "diffuse_direct", "diffuse_indirect", "glossy", "glossy_direct", "glossy_indirect", "transmission", "transmission_direct", "transmission_indirect", "volume", "volume_direct", "volume_indirect", "depth", "position", "normal", "roughness", "uv", "object_id", "material_id", "motion", "motion_weight", "cryptomatte", "aov_color", "aov_value", "adaptive_aux_buffer", "sample_count", "diffuse_color", "glossy_color", "transmission_color", "mist", "denoising_normal", "denoising_albedo", "denoising_depth", "denoising_previous", "shadow_catcher", "shadow_catcher_sample_count", "shadow_catcher_matte", "bake_primitive", "bake_differential" ]
+        displayGroup = "Film"
+    )
+    bool cycles:show_active_pixels = 0 (displayGroup = "Film")
+    token cycles:cryptomatte_passes = "none" (
+        allowedTokens = ["none", "object", "material", "asset", "accurate"]
+        displayGroup = "Film"
+    )
+    int cycles:cryptomatte_depth = 0 (displayGroup = "Film")
+    bool cycles:use_approximate_shadow_catcher = 0 (displayGroup = "Film")
+}

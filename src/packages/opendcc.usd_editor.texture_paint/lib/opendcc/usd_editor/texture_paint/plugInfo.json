@@ -1,0 +1,24 @@
+{
+    "Plugins": [
+      {
+        "Info": {
+          "Types": {
+            "OpenDCC::TextureResolver": {
+              "bases": [
+                "ArDefaultResolver"
+              ],
+              "uriSchemes": [
+                "texblock"
+              ],
+              "displayName": "In memory texture buffer resolver plugin."
+            }
+          }
+        },
+        "LibraryPath": "@LIBRARY_LOCATION@/@CMAKE_SHARED_LIBRARY_PREFIX@@TARGET_NAME@@CMAKE_SHARED_LIBRARY_SUFFIX@",
+        "Name": "@TARGET_NAME@",
+        "ResourcePath": "resources",
+        "Root": "..",
+        "Type": "library"
+      }
+    ]
+}

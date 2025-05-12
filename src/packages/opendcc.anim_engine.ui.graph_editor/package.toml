@@ -1,0 +1,17 @@
+[base]
+name = 'opendcc.anim_engine.ui.graph_editor'
+
+[dependencies]
+'opendcc.anim_engine.core' = {}
+'opendcc.anim_engine.curve' = {}
+'opendcc.anim_engine.schema' = {}
+'opendcc.vendor.animx' = {}
+
+[[environment.PYTHONPATH]]
+value = 'python'
+
+[[python.entry_point]]
+module = 'opendcc.anim_engine.ui.graph_editor'
+
+[[native.load]]
+path='lib/${LIB_PREFIX}opendcc.anim_engine.ui.graph_editor${LIB_EXT}'

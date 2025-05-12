@@ -1,0 +1,44 @@
+QTabBar::close-button {
+	image: url(:/icons/close_dock);
+	subcontrol-position: right;
+	height: 16px;
+	width: 16px;
+}
+
+/*
+QTabBar::close-button:hover {
+	image: url(:/icons/close_dock_hover);
+}
+*/
+
+QTabBar::tab {
+	color: palette(dark);
+	background: palette(window);
+
+	padding-left: 12px;
+	padding-right: 12px;
+	height: 23px;
+	border-radius: 0px;
+	border-left: 0px;
+
+	border: 1px solid;
+	border-width: 0px 1px 0px 0px;
+	border-color: palette(base) palette(light) palette(light) palette(base);
+}
+
+QTabBar::tab:selected {	
+	color: palette(foreground);
+	background: palette(light);
+	border: 1px solid;
+	border-width: 0px 1px 0px 0px;
+	border-color: rgb(68, 68, 68) palette(light) palette(light) rgb(68, 68, 68);
+}
+
+QTabBar::tab:hover {	
+	color: palette(foreground);
+}
+
+QTabBar QToolButton {
+	background-color: rgb(68, 68, 68);
+	border: 1px solid rgb(20, 30, 50); 
+}

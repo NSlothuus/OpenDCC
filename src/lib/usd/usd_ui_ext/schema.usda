@@ -1,0 +1,49 @@
+#usda 1.0
+(
+    "This file describes the USD Shader schemata for code generation."
+    subLayers = [
+        @usd/schema.usda@
+    ]
+)
+
+over "GLOBAL" (
+    customData = {
+        string libraryName      = "usdUIExt"
+        string libraryPath      = "."
+        string libraryPrefix     = "UsdUIExt"
+        dictionary libraryTokens = {
+            dictionary displayWidget = {
+                string doc = "widget type hint for ui generation"
+            }
+            dictionary displayWidgetHints = {
+                string doc = "widget specific options for ui generation"
+            }
+        }
+    }
+)
+{
+}
+
+class "BackdropUIAPI" (
+    doc = """ API for Backdrop ui """
+    inherits = </APISchemaBase>
+    customData = {
+        string className = "BackdropUIAPI"
+    }
+) 
+{
+    bool ui:backdrop:node:showTitle = true
+    bool ui:backdrop:node:showDescription = true
+    float ui:description:fontScale = 1.0
+}
+
+class "NodeDisplayGroupUIAPI" (
+    doc = """ API for extending displayGroup property """
+    inherits = </APISchemaBase>
+    customData = {
+        string className = "NodeDisplayGroupUIAPI"
+    }
+)
+{
+    token[] ui:displayGroup:node:collapsed = []
+}

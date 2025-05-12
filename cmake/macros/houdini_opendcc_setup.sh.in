@@ -1,0 +1,19 @@
+if [[ -z "${HOUDINI_ROOT}" ]]; then
+    echo "HOUDINI_ROOT env variable is not set."
+else
+    #assume script is sourced and located in installation root
+    export OPENDCC_ROOT=`realpath $(/bin/dirname "$_")`
+    if [[ ! -d "${OPENDCC_ROOT}/plugin" || \
+            ! -d "${OPENDCC_ROOT}/bin" ||
+            ! -d "${OPENDCC_ROOT}/qt-plugins"  ]]; then
+        echo "ERROR: current directory is not a OpenDCC installation. Cannot continue."
+    else
+        export LD_LIBRARY_PATH=$OPENDCC_ROOT/lib:$HOUDINI_ROOT/dsolib:$HOUDINI_ROOT/python/lib:$OPENDCC_ROOT/plugin/opendcc:$OPENDCC_ROOT/plugin/usd:$LD_LIBRARY_PATH
+        export PATH=$OPENDCC_ROOT/bin:$PATH
+        export PYTHONPATH=${OPENDCC_ROOT}/lib/python@PYTHON_MAJOR_MINOR@/site-packages:$HOUDINI_ROOT/python/lib/python@PYTHON_MAJOR_MINOR@/site-packages:$HOUDINI_ROOT/houdini/python@PYTHON_MAJOR_MINOR@libs
+        export PYTHONHOME=$HOUDINI_ROOT/python
+        export PXR_PLUGINPATH_NAME=$HOUDINI_ROOT/houdini/dso/usd_plugins
+        #used to fix OCIO parsing bug on non english-locales
+        export LC_NUMERIC=C
+    fi
+fi

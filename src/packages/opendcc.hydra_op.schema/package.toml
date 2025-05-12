@@ -1,0 +1,11 @@
+[base]
+name = 'opendcc.hydra_op.schema'
+
+[[environment.PYTHONPATH]]
+value = 'python'
+
+[[python.entry_point]]
+module = 'opendcc.hydra_op.schema'
+
+[[native.load]]
+path = 'lib/${LIB_PREFIX}opendcc.hydra_op.schema${LIB_EXT}'

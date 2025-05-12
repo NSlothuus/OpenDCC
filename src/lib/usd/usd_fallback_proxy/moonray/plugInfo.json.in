@@ -1,0 +1,21 @@
+{
+    "Plugins": [
+      {
+        "Info": {
+          "Types": {
+            "OpenDCC::MoonrayPropertyFactory": {
+              "bases": [
+                "OpenDCC::PropertyFactory"
+              ],
+              "displayName": "Class which creates new Moonray property proxies."
+            }
+          }
+        },
+        "LibraryPath": "@LIBRARY_LOCATION@/@CMAKE_SHARED_LIBRARY_PREFIX@moonray_property_proxy@CMAKE_SHARED_LIBRARY_SUFFIX@",
+        "Name": "moonray_property_proxy",
+        "ResourcePath": "resources",
+        "Root": "..",
+        "Type": "library"
+      }
+    ]
+}

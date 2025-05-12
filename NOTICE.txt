@@ -1,0 +1,18 @@
+This project includes modified portions of software originally developed under the Apache License, Version 2.0:
+
+================================================================================
+OpenUSD
+https://github.com/PixarAnimationStudios/OpenUSD
+================================================================================
+This product includes software developed at Pixar Animation Studios
+(https://www.pixar.com) as part of the Universal Scene Description (USD) project.
+Modifications have been made by the OpenDCC project.
+Original source: https://github.com/PixarAnimationStudios/OpenUSD
+
+================================================================================
+animx
+https://github.com/Autodesk/animx
+================================================================================
+This product includes software developed by Autodesk, Inc. as part of the animx project.
+Modifications have been made by the OpenDCC project.
+Original source: https://github.com/Autodesk/animx

@@ -1,0 +1,11 @@
+[base]
+name = 'opendcc.ui.node_editor'
+
+[dependencies]
+'opendcc.external.graphviz' = {}
+
+[[environment.PYTHONPATH]]
+value = 'python'
+
+[[native.load]]
+path='lib/${LIB_PREFIX}opendcc.ui.node_editor${LIB_EXT}'

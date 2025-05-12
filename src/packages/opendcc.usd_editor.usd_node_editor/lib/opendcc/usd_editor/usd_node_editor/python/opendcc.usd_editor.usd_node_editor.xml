@@ -1,0 +1,82 @@
+<?xml version="1.0"?>
+<typesystem package="opendcc.usd_editor.usd_node_editor._usd_node_editor">
+
+    <load-typesystem name="typesystem_core.xml" generate="no"/>
+    <load-typesystem name="typesystem_gui.xml" generate="no"/>
+    <load-typesystem name="typesystem_widgets.xml" generate="no"/>
+    <load-typesystem name="typesystem_widgets.xml" generate="no"/>
+	<load-typesystem name="opendcc.ui.node_editor.xml" generate="no"/>
+
+	<primitive-type name="pxr::UsdPrim" target-name="UsdPrim">
+		<conversion-rule>
+			<native-to-target>
+				auto obj = boost::python::object(%in);
+				Py_IncRef(obj.ptr());
+				return obj.ptr();
+			</native-to-target>
+			<target-to-native>
+				<add-conversion type="pxr::UsdPrim" check="boost::python::extract&lt;pxr::UsdPrim&gt;(%in).check()">
+					boost::python::extract&lt;pxr::UsdPrim&gt; ex(%in);
+					if (ex.check())
+					    %out=ex();
+					else
+					    %out=pxr::UsdPrim();
+				</add-conversion>
+			</target-to-native>
+		</conversion-rule>
+	</primitive-type>
+	<primitive-type name="pxr::TfToken" target-name="TfToken">
+		<conversion-rule>
+			<native-to-target>
+				auto obj = boost::python::object(%in);
+				Py_IncRef(obj.ptr());
+				return obj.ptr();
+			</native-to-target>
+			<target-to-native>
+				<add-conversion type="pxr::TfToken" check="boost::python::extract&lt;pxr::TfToken&gt;(%in).check()">
+					boost::python::extract&lt;pxr::TfToken&gt; ex(%in);
+					if (ex.check())
+						%out=ex();
+					else
+						%out=pxr::TfToken();
+				</add-conversion>
+			</target-to-native>
+		</conversion-rule>
+	</primitive-type>
+	
+	<primitive-type name="pxr::SdfPath" target-name="SdfPath">
+		<conversion-rule>
+			<native-to-target>
+				auto obj = boost::python::object(%in);
+				Py_IncRef(obj.ptr());
+				return obj.ptr();
+			</native-to-target>
+			<target-to-native>
+				<add-conversion type="pxr::UsdPrim" check="boost::python::extract&lt;pxr::SdfPath&gt;(%in).check()">
+					boost::python::extract&lt;pxr::SdfPath&gt; ex(%in);
+					if (ex.check())
+					%out=ex();
+					else
+					%out=pxr::SdfPath();
+				</add-conversion>
+			</target-to-native>
+		</conversion-rule>
+	</primitive-type>
+    <namespace-type name="OpenDCC" generate="no">
+        <object-type name="OIIOThumbnailCache"/>
+        <object-type name="UsdLiveNodeItem"/>
+        <object-type name="PropertyLayoutItem"/>
+        <object-type name="PropertyWithPortsLayoutItem"/>
+        <object-type name="NamedPropertyLayoutItem"/>
+        <object-type name="MorePortLayoutItem"/>
+        <object-type name="UsdPrimNodeItemBase"/>
+        <object-type name="UsdPrimNodeItem"/>
+        <object-type name="UsdConnectionSnapper"/>
+        <object-type name="BackdropLiveNodeItem"/>
+        <object-type name="BackdropNodeItem"/>
+        <object-type name="NavigationBar"/>
+        <object-type name="UsdItemRegistry"/>
+        <object-type name="UsdGraphModel"/>
+        <object-type name="UsdEditorGraphModel"/>
+    </namespace-type>
+</typesystem>

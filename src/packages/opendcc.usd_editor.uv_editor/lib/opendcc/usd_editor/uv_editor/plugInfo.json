@@ -1,0 +1,21 @@
+{
+    "Plugins": [
+      {
+        "Info": {
+          "Types": {
+            "OpenDCC::UVSceneDelegate": {
+              "bases": [
+                "OpenDCC::ViewportSceneDelegate"
+              ],
+              "displayName": "USD UV Scene Delegate"
+            }
+          }
+        },
+        "LibraryPath": "@LIBRARY_LOCATION@/@CMAKE_SHARED_LIBRARY_PREFIX@@TARGET_NAME@@CMAKE_SHARED_LIBRARY_SUFFIX@",
+        "Name": "@TARGET_NAME@",
+        "ResourcePath": "resources",
+        "Root": "..",
+        "Type": "library"
+      }
+    ]
+}

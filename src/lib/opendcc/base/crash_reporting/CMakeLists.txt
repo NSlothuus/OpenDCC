@@ -1,0 +1,18 @@
+opendcc_make_library(
+    crash_reporting
+    TYPE
+    SHARED
+    PUBLIC_HEADERS
+    api.h
+    sentry_crash_handler.h
+    CPPFILES
+    sentry_crash_handler.cpp
+    PRIVATE_DEFINITIONS
+    OPENDCC_CRASH_REPORTING_EXPORT
+    LIBRARY_DEPENDENCIES
+    sentry::sentry
+    logging
+    app_config
+    utils
+    VS_FOLDER
+    base)

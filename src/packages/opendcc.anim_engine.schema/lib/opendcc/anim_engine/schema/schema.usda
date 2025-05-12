@@ -1,0 +1,51 @@
+#usda 1.0
+(
+    """ schema for AnimEngine
+    """
+) 
+
+over "GLOBAL" (
+    customData = {
+        string libraryName       = "usdAnimEngine"
+        string libraryPath       = "."
+        string libraryPrefix     = "UsdAnimEngine"
+        dictionary libraryTokens = {
+            dictionary time = { }
+            dictionary inTangentType = { }
+            dictionary outTangentType = { }
+            dictionary inTangentX = { }
+            dictionary inTangentY = { }
+            dictionary outTangentX = { }
+            dictionary outTangentY = { }
+            dictionary value = { }
+            dictionary anim = { }
+
+            dictionary preInfinityType = {}
+            dictionary postInfinityType = {}
+            
+            dictionary constant = { }
+            dictionary linear = { }
+            dictionary cycle = { }
+            dictionary cycleRelative = { }
+            dictionary oscillate = { }
+
+            dictionary global = { }
+            dictionary fixed = { }
+            dictionary linear = { }
+            dictionary flat = { }
+            dictionary step = { }
+            dictionary slow = { }
+            dictionary fast = { }
+            dictionary smooth = { }
+            dictionary clamped = { }
+            dictionary auto = { }
+            dictionary sine = { }
+            dictionary parabolic = { }
+            dictionary log = { }
+            dictionary plateau = { }
+            dictionary stepNext = { }
+        }
+    }
+)
+{
+}

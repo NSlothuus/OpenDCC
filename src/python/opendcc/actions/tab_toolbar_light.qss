@@ -1,0 +1,56 @@
+QTabWidget::pane {
+  background: palette(light);
+  border-top-color: palette(light);
+}
+
+QTabBar::tab:selected, QTabBar::tab:hover {
+  background: palette(light);
+  color: palette(foreground);
+}
+
+QTabBar::tab:!selected {
+  background: #d6d6d6;
+  color: #3b3b3b;
+}
+
+QTabBar::tab:!selected:hover {
+  background: #d6d6d6;
+  color: palette(foreground);
+}
+
+QToolBar {
+  background: palette(light);
+  margin-top: 1px;
+  margin-bottom: 1px;
+}
+
+QTabBar::tab {
+  color: palette(dark);
+  background: rgb(55, 55, 55);
+
+  padding-left: 12px;
+  padding-right: 12px;
+  /*height: 18px;*/
+  padding-top: 1px;
+  padding-bottom: 2px;
+
+  border-radius: 0px;
+  border-left: 0px;
+
+  border: 1px solid;
+  border-width: 0px 1px 0px 0px;
+  border-color: palette(base) palette(light) palette(light) palette(dark);
+}
+
+QTabBar::tab:left {
+  padding-left: 1px;
+  padding-right: 2px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  border-width: 0px 0px 1px 0px;
+  border-color: palette(light) palette(dark) palette(light) palette(light);
+}
+
+QTabBar::tab:last {
+  border: 0px;
+}

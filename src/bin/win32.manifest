@@ -1,0 +1,8 @@
+<assembly xmlns="urn:schemas-microsoft-com:asm.v1" manifestVersion="1.0">
+  <ms_asmv1:application xmlns:ms_asmv1="urn:schemas-microsoft-com:asm.v1">
+    <ms_asmv1:windowsSettings xmlns:ms_asmv1="urn:schemas-microsoft-com:asm.v1">
+      <longPathAware xmlns="http://schemas.microsoft.com/SMI/2016/WindowsSettings">true</longPathAware>
+      <activeCodePage xmlns="http://schemas.microsoft.com/SMI/2019/WindowsSettings">UTF-8</activeCodePage>
+    </ms_asmv1:windowsSettings>
+  </ms_asmv1:application>
+</assembly>

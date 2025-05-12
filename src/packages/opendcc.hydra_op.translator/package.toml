@@ -1,0 +1,8 @@
+[base]
+name = 'opendcc.hydra_op.translator'
+
+[dependencies]
+'opendcc.hydra_op.schema' = {}
+
+[[native.entry_point]]
+path = 'lib/${LIB_PREFIX}opendcc.hydra_op.translator${LIB_EXT}'

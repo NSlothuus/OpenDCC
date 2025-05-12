@@ -1,0 +1,24 @@
+{
+    "Plugins": [
+      {
+        "Info": {
+          "Types": {
+            "OpenDCC::ArnoldUsdPropertyFactory": {
+              "bases": [
+                "OpenDCC::PropertyFactory"
+              ],
+              "displayName": "Class which creates new Arnold property proxies."
+            }
+          },
+          "PluginDependencies": {
+            "NdrParserPlugin": ["NdrArnoldParserPlugin"]
+          }
+        },
+        "LibraryPath": "@LIBRARY_LOCATION@/@CMAKE_SHARED_LIBRARY_PREFIX@arnold_usd_property_proxy@CMAKE_SHARED_LIBRARY_SUFFIX@",
+        "Name": "arnold_usd_property_proxy",
+        "ResourcePath": "resources",
+        "Root": "..",
+        "Type": "library"
+      }
+    ]
+}

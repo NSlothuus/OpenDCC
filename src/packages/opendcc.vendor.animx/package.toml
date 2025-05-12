@@ -1,0 +1,5 @@
+[base]
+name = 'opendcc.vendor.animx'
+
+[[native.load]]
+path = 'lib/${LIB_PREFIX}opendcc.vendor.animx${LIB_EXT}'

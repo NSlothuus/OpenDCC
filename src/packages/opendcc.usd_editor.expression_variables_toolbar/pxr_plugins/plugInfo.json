@@ -1,0 +1,19 @@
+{
+    "Plugins": [
+      {
+        "Info": {
+          "SdfMetadata": {
+            "expressionVariablesMetadata": {
+                "appliesTo": [
+                    "layers"
+                ],
+                "documentation": "metadata for expressionVariables string values",
+                "type": "dictionary"
+            }
+          }
+        },
+        "Name": "expression_variables_metadata",
+        "Type": "resource"
+      }
+    ]
+}

@@ -1,0 +1,136 @@
+#usda 1.0
+
+def RenderSettings "RenderSettings"
+{	
+	token		  arnold:global:AA_adaptive_criterion             = "perceptual" (
+        displayGroup = "Anti-aliasing Settings"
+        allowedTokens = ["object", "stddev", "relative_stddev",
+         "variance", "relative_variance", "mitchell_contrast",
+         "entropy", "perceptual", "none"]
+    );
+	token		  arnold:global:fis_filter                        = "none" (
+        displayGroup = "Anti-aliasing Settings"
+        allowedTokens = ["none", "triangle", "blackman_harris", "gaussian"]
+    );
+
+	int           arnold:global:AA_samples                        = 1 (displayGroup = "Anti-aliasing Settings");
+	int           arnold:global:AA_seed                           = 1 (displayGroup = "Anti-aliasing Settings");
+	float         arnold:global:AA_sample_clamp                   = 1e+30 (displayGroup = "Anti-aliasing Settings");
+	bool          arnold:global:AA_sample_clamp_affects_aovs      = false (displayGroup = "Anti-aliasing Settings");
+	int           arnold:global:AA_samples_max                    = 0 (displayGroup = "Anti-aliasing Settings");
+	float         arnold:global:AA_adaptive_threshold             = 0.05 (displayGroup = "Anti-aliasing Settings");
+	bool          arnold:global:enable_adaptive_sampling          = false (displayGroup = "Anti-aliasing Settings");
+	bool          arnold:global:enable_progressive_render         = false (displayGroup = "Anti-aliasing Settings");
+	bool          arnold:global:enable_progressive_pattern        = false (displayGroup = "Anti-aliasing Settings");
+	float         arnold:global:fis_filter_width                  = 3(displayGroup = "Anti-aliasing Settings");
+	int           arnold:global:GI_diffuse_samples                = 2 (displayGroup = "Lighting");
+	int           arnold:global:GI_specular_samples               = 2 (displayGroup = "Lighting");
+	int           arnold:global:GI_transmission_samples           = 2 (displayGroup = "Lighting");
+	int           arnold:global:GI_sss_samples                    = 2 (displayGroup = "Lighting");
+	int           arnold:global:GI_volume_samples                 = 2 (displayGroup = "Lighting");
+	int           arnold:global:auto_transparency_depth           = 10 (displayGroup = "Lighting");
+	float         arnold:global:indirect_specular_blur			  = 1 (displayGroup = "Lighting");
+	bool          arnold:global:sss_use_autobump				  = false (displayGroup = "Lighting");
+	float         arnold:global:luminaire_bias					  = 1e-06 (displayGroup = "Lighting");
+	float         arnold:global:indirect_sample_clamp             = 10 (displayGroup = "Lighting");
+	string[]	  arnold:global:light_path_expressions	          (displayGroup = "Lighting");
+	int           arnold:global:GI_total_depth                    = 10 (displayGroup = "Lighting:Ray depth");
+    int           arnold:global:GI_diffuse_depth                  = 0 (displayGroup = "Lighting:Ray depth");
+	int           arnold:global:GI_specular_depth                 = 0 (displayGroup = "Lighting:Ray depth");
+	int           arnold:global:GI_transmission_depth             = 2 (displayGroup = "Lighting:Ray depth");
+	int           arnold:global:GI_volume_depth                   = 0 (displayGroup = "Lighting:Ray depth");
+    string		  arnold:global:background 				          = ""(displayGroup = "Lighting:Environment");
+	string		  arnold:global:atmosphere 				          = ""(displayGroup = "Lighting:Environment");
+	float         arnold:global:low_light_threshold				  = 0.001(displayGroup = "Lighting:Environment");
+    bool          arnold:global:skip_background_atmosphere		  = false (displayGroup = "Lighting:Environment");
+	int           arnold:global:background_visibility             = 255 (displayGroup = "Lighting:Environment");
+	color3f		  arnold:global:error_color_bad_texture           = (1, 0, 0) (displayGroup = "Error Settings");
+	color3f		  arnold:global:error_color_bad_pixel             = (0, 0, 1) (displayGroup = "Error Settings");
+	color3f		  arnold:global:error_color_bad_shader            = (1, 0, 1) (displayGroup = "Error Settings");
+	bool          arnold:global:abort_on_error                    = true (displayGroup = "Error Settings");
+	bool          arnold:global:abort_on_license_fail             = false (displayGroup = "Error Settings");
+	bool          arnold:global:skip_license_check                = false (displayGroup = "Error Settings");
+	bool          arnold:global:ignore_textures                   = false (displayGroup = "Debug Settings");
+	bool          arnold:global:ignore_shaders                    = false (displayGroup = "Debug Settings");
+	bool          arnold:global:ignore_atmosphere                 = false (displayGroup = "Debug Settings");
+	bool          arnold:global:ignore_lights                     = false (displayGroup = "Debug Settings");
+	bool          arnold:global:ignore_shadows                    = false (displayGroup = "Debug Settings");
+	bool          arnold:global:ignore_subdivision                = false (displayGroup = "Debug Settings");
+	bool          arnold:global:ignore_displacement               = false (displayGroup = "Debug Settings");
+	bool          arnold:global:ignore_bump                       = false (displayGroup = "Debug Settings");
+	bool          arnold:global:ignore_motion_blur                = false (displayGroup = "Debug Settings");
+	bool          arnold:global:ignore_dof                        = false (displayGroup = "Debug Settings");
+	bool          arnold:global:ignore_smoothing                  = false (displayGroup = "Debug Settings");
+	bool          arnold:global:ignore_sss                        = false (displayGroup = "Debug Settings");
+	bool          arnold:global:ignore_operators                  = false (displayGroup = "Debug Settings");
+	token		  arnold:global:thread_priority                   = "normal"(
+        displayGroup = "Misc Settings:Multi thread"
+        allowedTokens = ["lowest", "low", "normal", "high"]
+    );
+	token		  arnold:global:pin_threads                       = "_auto"(
+        displayGroup = "Misc Settings:Multi thread"
+        allowedTokens = ["off", "on", "_auto"]
+    );
+	int           arnold:global:threads                           = 0 (displayGroup = "Misc Settings:Multi thread");
+	bool          arnold:global:parallel_node_init                = true (displayGroup = "Misc Settings:Multi thread");
+	bool          arnold:global:enable_procedural_cache           = true (displayGroup = "Misc Settings:Multi thread");
+	float         arnold:global:reference_time					  = 0 (displayGroup = "Misc Settings:Time");
+	token		  arnold:global:bucket_scanning                   = "spiral" (
+        displayGroup = "Misc Settings:Screen"
+        allowedTokens = ["top", "left", "random", "spiral", "hilbert", "list"]
+    );
+	
+	token		  arnold:global:render_device                     = "CPU" (
+        displayGroup = "Device"
+        allowedTokens = ["CPU", "GPU"]
+    );
+	token		  arnold:global:render_device_fallback            = "error" (
+        displayGroup = "Device"
+        allowedTokens = ["CPU", "error"]
+    );
+	string        arnold:global:gpu_default_names                 = "*" (displayGroup = "Device");
+	int           arnold:global:gpu_max_texture_resolution        = 0 (displayGroup = "Device");
+	int           arnold:global:min_optix_denoiser_sample         = 0 (displayGroup = "Device");
+	bool          arnold:global:enable_microfacet_multiscatter    = true (displayGroup = "Misc Settings:New feature");
+	bool          arnold:global:curves_rr_aggressive			  = true (displayGroup = "Misc Settings:New feature");
+	int           arnold:global:curves_rr_start_depth			  = 0 (displayGroup = "Misc Settings:New feature");
+
+	int           arnold:global:bucket_size                       = 64 (displayGroup = "Misc Settings:Screen");
+    float         arnold:global:pixel_aspect_ratio                = 1 (displayGroup = "Misc Settings:Screen");
+	float2[]	  arnold:global:buckets                           (displayGroup = "Misc Settings:Screen");                                             
+	int           arnold:global:region_min_x 					  = -2147483648 (displayGroup = "Misc Settings:Screen");
+	int           arnold:global:region_min_y 					  = -2147483648 (displayGroup = "Misc Settings:Screen");
+	int           arnold:global:region_max_x 					  = -2147483648 (displayGroup = "Misc Settings:Screen");
+	int           arnold:global:region_max_y 					  = -2147483648 (displayGroup = "Misc Settings:Screen");
+	string		  arnold:global:gpu_default_names		          (displayGroup = "Misc Settings:GPU");
+	int           arnold:global:gpu_default_min_memory_MB         = 512(displayGroup = "Misc Settings:GPU");
+    string		  arnold:global:scene_units_name		          (displayGroup = "Misc Settings:Units");
+	float         arnold:global:scene_units_in_meters             = 1(displayGroup = "Misc Settings:Units");
+    bool          arnold:global:enable_new_quad_light_sampler     = true (displayGroup = "Misc Settings:New feature");
+	bool          arnold:global:enable_new_point_light_sampler    = true (displayGroup = "Misc Settings:New feature");
+	bool          arnold:global:enable_dithered_sampling          = true (displayGroup = "Misc Settings:New feature");
+	bool          arnold:global:enable_dependency_graph           = false (displayGroup = "Misc Settings:New feature");
+	string		  arnold:global:_operator                         (displayGroup = "Misc Settings");
+    string		  arnold:global:color_manager 			          (displayGroup = "Misc Settings");
+    string[]	  arnold:global:outputs					          (displayGroup = "Misc Settings");
+	string[]      arnold:global:ignore_list				          (displayGroup = "Misc Settings");
+	string		  arnold:global:shader_override 		          (displayGroup = "Misc Settings");
+	string[]	  arnold:global:aov_shaders				          (displayGroup = "Misc Settings");
+    int           arnold:global:texture_max_open_files            = 0 (displayGroup = "Texture System");
+	float         arnold:global:texture_max_memory_MB             = 2048 (displayGroup = "Texture System");
+	bool          arnold:global:texture_per_file_stats            = false (displayGroup = "Texture System");
+	bool          arnold:global:texture_automip                   = true (displayGroup = "Texture System");
+	int           arnold:global:texture_autotile                  = 0 (displayGroup = "Texture System");
+	bool          arnold:global:texture_accept_untiled            = true (displayGroup = "Texture System");
+	bool          arnold:global:texture_accept_unmipped           = true (displayGroup = "Texture System");
+	int           arnold:global:texture_failure_retries           = 0 (displayGroup = "Texture System");
+	bool          arnold:global:texture_conservative_lookups      = true (displayGroup = "Texture System");
+	float         arnold:global:texture_max_sharpen               = 1.5 (displayGroup = "Texture System");
+    string		  arnold:global:procedural_searchpath	          (displayGroup = "Search Paths");
+	string		  arnold:global:plugin_searchpath		          (displayGroup = "Search Paths");
+	string		  arnold:global:texture_searchpath		          (displayGroup = "Search Paths");      
+    int           arnold:global:max_subdivisions				  = 255 (displayGroup = "Subdivision");
+    bool          arnold:global:subdiv_frustum_culling            = false (displayGroup = "Subdivision");
+	float         arnold:global:subdiv_frustum_padding            = 0 (displayGroup = "Subdivision");
+	string		  arnold:global:subdiv_dicing_camera 	          (displayGroup = "Subdivision");
+}

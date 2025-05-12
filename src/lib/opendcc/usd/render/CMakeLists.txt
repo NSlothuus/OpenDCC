@@ -1,0 +1,20 @@
+opendcc_make_library(
+    usd_render_app
+    TYPE
+    SHARED
+    PUBLIC_HEADERS
+    api.h
+    ipc_render.h
+    render_app.h
+    render_app_controller.h
+    CPPFILES
+    ipc_render.cpp
+    render_app.cpp
+    render_app_controller.cpp
+    VS_FOLDER
+    usd/dcc
+    PRIVATE_DEFINITIONS
+    OPENDCC_USD_RENDER_EXPORT
+    LIBRARY_DEPENDENCIES
+    opendcc_lib
+    render_view_display_driver_api)

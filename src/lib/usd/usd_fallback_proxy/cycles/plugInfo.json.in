@@ -1,0 +1,24 @@
+{
+    "Plugins": [
+      {
+        "Info": {
+          "Types": {
+            "OpenDCC::CyclesPropertyFactory": {
+              "bases": [
+                "OpenDCC::PropertyFactory"
+              ],
+              "displayName": "Class which creates new Cycles property proxies."
+            }
+          },
+          "PluginDependencies": {
+            "NdrDiscoveryPlugin": ["OpenDCC::NdrCyclesDiscoveryPlugin"]
+          }
+        },
+        "LibraryPath": "@LIBRARY_LOCATION@/@CMAKE_SHARED_LIBRARY_PREFIX@cycles_property_proxy@CMAKE_SHARED_LIBRARY_SUFFIX@",
+        "Name": "cycles_property_proxy",
+        "ResourcePath": "resources",
+        "Root": "..",
+        "Type": "library"
+      }
+    ]
+}

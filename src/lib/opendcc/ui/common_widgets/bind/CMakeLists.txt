@@ -1,0 +1,11 @@
+opendcc_make_shiboken_bindings(
+    common_widgets_shiboken
+    ${_verbose_shiboken_output}
+    TARGET
+    common_widgets
+    SOURCE_DIR
+    .
+    VS_FOLDER
+    widgets
+    PRIVATE_DEFINITIONS
+    QT_NOT_GEN)

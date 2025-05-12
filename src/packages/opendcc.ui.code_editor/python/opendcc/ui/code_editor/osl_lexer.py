@@ -1,0 +1,97 @@
+# Copyright Contributors to the OpenDCC project
+# SPDX-License-Identifier: Apache-2.0
+
+from pygments.lexer import (
+    RegexLexer,
+    include,
+    bygroups,
+    using,
+    this,
+    inherit,
+    default,
+    words,
+)
+
+from pygments.lexers.c_cpp import CFamilyLexer
+from pygments.token import Name, Keyword
+
+
+class OslLexer(CFamilyLexer):
+    tokens = {
+        "statements": [
+            (
+                words(
+                    (
+                        "shader",
+                        "and",
+                        "break",
+                        "closure",
+                        "color",
+                        "continue",
+                        "do",
+                        "else",
+                        "emit",
+                        "float",
+                        "for",
+                        "if",
+                        "illuminance",
+                        "illuminate",
+                        "int",
+                        "matrix",
+                        "normal",
+                        "not",
+                        "or",
+                        "output",
+                        "point",
+                        "public",
+                        "return",
+                        "string",
+                        "struct",
+                        "vector",
+                        "void",
+                        "while",
+                        "bool",
+                        "case",
+                        "catch",
+                        "char",
+                        "class",
+                        "const",
+                        "delete",
+                        "default",
+                        "double",
+                        "enum",
+                        "extern",
+                        "false",
+                        "friend",
+                        "goto",
+                        "inline",
+                        "long",
+                        "new",
+                        "operator",
+                        "private",
+                        "protected",
+                        "short",
+                        "signed",
+                        "sizeof",
+                        "static",
+                        "switch",
+                        "template",
+                        "this",
+                        "throw",
+                        "true",
+                        "try",
+                        "typedef",
+                        "uniform",
+                        "union",
+                        "unsigned",
+                        "varying",
+                        "virtual",
+                        "volatile",
+                    ),
+                    suffix=r"\b",
+                ),
+                Keyword,
+            ),
+            inherit,
+        ]
+    }

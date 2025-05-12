@@ -1,0 +1,8 @@
+<RCC>
+  <qresource prefix="icons">
+    <file alias="run">icons/run.png</file>
+    <file alias="clean">icons/clean.png</file>
+    <file alias="plus">icons/plus.png</file>
+    <file alias="close_tab">icons/close_tab.png</file>
+  </qresource>
+</RCC>

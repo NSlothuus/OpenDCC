@@ -1,0 +1,16 @@
+[base]
+name = 'opendcc.anim_engine.core'
+
+[dependencies]
+'opendcc.vendor.animx' = {}
+'opendcc.anim_engine.schema' = {}
+'opendcc.anim_engine.curve' = {}
+
+[[environment.PYTHONPATH]]
+value = 'python'
+
+[[python.entry_point]]
+module = 'opendcc.anim_engine.core'
+
+[[native.load]]
+path='lib/${LIB_PREFIX}opendcc.anim_engine.core${LIB_EXT}'

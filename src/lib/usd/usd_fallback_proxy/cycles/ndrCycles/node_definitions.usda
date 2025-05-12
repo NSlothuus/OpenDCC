@@ -1,0 +1,1282 @@
+#usda 1.0
+(
+    doc = """Generated from Composed Stage of root layer 
+"""
+)
+
+def Shader "point_density_texture"
+{
+    uniform token info:id = "cycles:point_density_texture"
+    string inputs:filename = ""
+    token inputs:interpolation = "linear" (
+        allowedTokens = ["closest", "linear", "cubic", "smart"]
+    )
+    token inputs:space = "object" (
+        allowedTokens = ["object", "world"]
+    )
+    matrix4d inputs:tfm = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (0, 0, 0, 1) )
+    point3f inputs:vector = (0, 0, 0)
+    color3f outputs:color
+    float outputs:density
+}
+
+def Shader "shader"
+{
+    uniform token info:id = "cycles:shader"
+    token inputs:displacement_method = "bump" (
+        allowedTokens = ["bump", "both", "true"]
+    )
+    bool inputs:heterogeneous_volume = 1
+    bool inputs:use_mis = 1
+    bool inputs:use_transparent_shadow = 1
+    token inputs:volume_interpolation_method = "linear" (
+        allowedTokens = ["linear", "cubic"]
+    )
+    token inputs:volume_sampling_method = "multiple_importance" (
+        allowedTokens = ["equiangular", "distance", "multiple_importance"]
+    )
+    float inputs:volume_step_rate = 1
+}
+
+def Shader "object_info"
+{
+    uniform token info:id = "cycles:object_info"
+    color3f outputs:color
+    vector3f outputs:location
+    float outputs:material_index
+    float outputs:object_index
+    float outputs:random
+}
+
+def Shader "combine_rgb"
+{
+    uniform token info:id = "cycles:combine_rgb"
+    float inputs:b = 0
+    float inputs:g = 0
+    float inputs:r = 0
+    color3f outputs:image
+}
+
+def Shader "image_texture"
+{
+    uniform token info:id = "cycles:image_texture"
+    token inputs:alpha_type = "auto" (
+        allowedTokens = ["unassociated", "auto", "associated", "ignore", "channel_packed"]
+    )
+    string inputs:colorspace = ""
+    token inputs:extension = "periodic" (
+        allowedTokens = ["black", "periodic", "clamp"]
+    )
+    asset inputs:filename = ""
+    token inputs:interpolation = "linear" (
+        allowedTokens = ["closest", "linear", "cubic", "smart"]
+    )
+    token inputs:projection = "flat" (
+        allowedTokens = ["box", "flat", "tube", "sphere"]
+    )
+    #float inputs:projection_blend = 0
+    #vector3f inputs:tex_mapping_max = (3.4028235e38, 3.4028235e38, 3.4028235e38)
+    #vector3f inputs:tex_mapping_min = (-3.4028235e38, -3.4028235e38, -3.4028235e38)
+    #token inputs:tex_mapping_projection = "flat" (
+    #    allowedTokens = ["flat", "sphere", "tube", "cube"]
+    #)
+    #vector3f inputs:tex_mapping_rotation = (0, 0, 0)
+    #vector3f inputs:tex_mapping_scale = (1, 1, 1)
+    #point3f inputs:tex_mapping_translation = (0, 0, 0)
+    #token inputs:tex_mapping_type = "texture" (
+    #    allowedTokens = ["point", "texture", "vector", "normal"]
+    #)
+    #bool inputs:tex_mapping_use_minmax = 0
+    #token inputs:tex_mapping_x_mapping = "x" (
+    #    allowedTokens = ["x", "none", "z", "y"]
+    #)
+    #token inputs:tex_mapping_y_mapping = "y" (
+    #    allowedTokens = ["x", "none", "z", "y"]
+    #)
+    #token inputs:tex_mapping_z_mapping = "z" (
+    #    allowedTokens = ["x", "none", "z", "y"]
+    #)
+    #point3f inputs:vector = (0, 0, 0)
+    float outputs:alpha
+    color3f outputs:color
+}
+
+def Shader "wavelength"
+{
+    uniform token info:id = "cycles:wavelength"
+    float inputs:wavelength = 500
+    color3f outputs:color
+}
+
+def Shader "environment_texture"
+{
+    uniform token info:id = "cycles:environment_texture"
+    token inputs:alpha_type = "auto" (
+        allowedTokens = ["unassociated", "auto", "associated", "ignore", "channel_packed"]
+    )
+    string inputs:colorspace = ""
+    string inputs:filename = ""
+    token inputs:interpolation = "linear" (
+        allowedTokens = ["closest", "linear", "cubic", "smart"]
+    )
+    token inputs:projection = "equirectangular" (
+        allowedTokens = ["equirectangular", "mirror_ball"]
+    )
+    vector3f inputs:tex_mapping_max = (3.4028235e38, 3.4028235e38, 3.4028235e38)
+    vector3f inputs:tex_mapping_min = (-3.4028235e38, -3.4028235e38, -3.4028235e38)
+    token inputs:tex_mapping_projection = "flat" (
+        allowedTokens = ["flat", "sphere", "tube", "cube"]
+    )
+    vector3f inputs:tex_mapping_rotation = (0, 0, 0)
+    vector3f inputs:tex_mapping_scale = (1, 1, 1)
+    point3f inputs:tex_mapping_translation = (0, 0, 0)
+    token inputs:tex_mapping_type = "texture" (
+        allowedTokens = ["point", "texture", "vector", "normal"]
+    )
+    bool inputs:tex_mapping_use_minmax = 0
+    token inputs:tex_mapping_x_mapping = "x" (
+        allowedTokens = ["x", "none", "z", "y"]
+    )
+    token inputs:tex_mapping_y_mapping = "y" (
+        allowedTokens = ["x", "none", "z", "y"]
+    )
+    token inputs:tex_mapping_z_mapping = "z" (
+        allowedTokens = ["x", "none", "z", "y"]
+    )
+    point3f inputs:vector = (0, 0, 0)
+    float outputs:alpha
+    color3f outputs:color
+}
+
+def Shader "vector_curves"
+{
+    uniform token info:id = "cycles:vector_curves"
+    vector3f[] inputs:curves = []
+    float inputs:fac = 0
+    float inputs:max_x = 1
+    float inputs:min_x = 0
+    vector3f inputs:value = (0, 0, 0)
+    vector3f outputs:value
+}
+
+def Shader "sky_texture"
+{
+    uniform token info:id = "cycles:sky_texture"
+    float inputs:air_density = 1
+    float inputs:altitude = 1
+    float inputs:dust_density = 1
+    float inputs:ground_albedo = 0.3
+    float inputs:ozone_density = 1
+    vector3f inputs:sun_direction = (0, 0, 1)
+    bool inputs:sun_disc = 1
+    float inputs:sun_elevation = 0.2617994
+    float inputs:sun_intensity = 1
+    float inputs:sun_rotation = 0
+    float inputs:sun_size = 0.009512
+    vector3f inputs:tex_mapping_max = (3.4028235e38, 3.4028235e38, 3.4028235e38)
+    vector3f inputs:tex_mapping_min = (-3.4028235e38, -3.4028235e38, -3.4028235e38)
+    token inputs:tex_mapping_projection = "flat" (
+        allowedTokens = ["flat", "sphere", "tube", "cube"]
+    )
+    vector3f inputs:tex_mapping_rotation = (0, 0, 0)
+    vector3f inputs:tex_mapping_scale = (1, 1, 1)
+    point3f inputs:tex_mapping_translation = (0, 0, 0)
+    token inputs:tex_mapping_type = "texture" (
+        allowedTokens = ["point", "texture", "vector", "normal"]
+    )
+    bool inputs:tex_mapping_use_minmax = 0
+    token inputs:tex_mapping_x_mapping = "x" (
+        allowedTokens = ["x", "none", "z", "y"]
+    )
+    token inputs:tex_mapping_y_mapping = "y" (
+        allowedTokens = ["x", "none", "z", "y"]
+    )
+    token inputs:tex_mapping_z_mapping = "z" (
+        allowedTokens = ["x", "none", "z", "y"]
+    )
+    float inputs:turbidity = 2.2
+    token inputs:type = "nishita_improved" (
+        allowedTokens = ["preetham", "hosek_wilkie", "nishita_improved"]
+    )
+    point3f inputs:vector = (0, 0, 0)
+    color3f outputs:color
+}
+
+def Shader "mapping"
+{
+    uniform token info:id = "cycles:mapping"
+    point3f inputs:location = (0, 0, 0)
+    point3f inputs:rotation = (0, 0, 0)
+    point3f inputs:scale = (1, 1, 1)
+    token inputs:type = "point" (
+        allowedTokens = ["point", "texture", "vector", "normal"]
+    )
+    point3f inputs:vector = (0, 0, 0)
+    point3f outputs:vector
+}
+
+def Shader "output"
+{
+    uniform token info:id = "cycles:output"
+    vector3f inputs:displacement = (0, 0, 0)
+    normal3f inputs:normal = (0, 0, 0)
+}
+
+def Shader "noise_texture"
+{
+    uniform token info:id = "cycles:noise_texture"
+    float inputs:detail = 2
+    token inputs:dimensions = "3D" (
+        allowedTokens = ["1D", "3D", "2D", "4D"]
+    )
+    float inputs:distortion = 0
+    float inputs:roughness = 0.5
+    float inputs:scale = 1
+    vector3f inputs:tex_mapping_max = (3.4028235e38, 3.4028235e38, 3.4028235e38)
+    vector3f inputs:tex_mapping_min = (-3.4028235e38, -3.4028235e38, -3.4028235e38)
+    token inputs:tex_mapping_projection = "flat" (
+        allowedTokens = ["flat", "sphere", "tube", "cube"]
+    )
+    vector3f inputs:tex_mapping_rotation = (0, 0, 0)
+    vector3f inputs:tex_mapping_scale = (1, 1, 1)
+    point3f inputs:tex_mapping_translation = (0, 0, 0)
+    token inputs:tex_mapping_type = "texture" (
+        allowedTokens = ["point", "texture", "vector", "normal"]
+    )
+    bool inputs:tex_mapping_use_minmax = 0
+    token inputs:tex_mapping_x_mapping = "x" (
+        allowedTokens = ["x", "none", "z", "y"]
+    )
+    token inputs:tex_mapping_y_mapping = "y" (
+        allowedTokens = ["x", "none", "z", "y"]
+    )
+    token inputs:tex_mapping_z_mapping = "z" (
+        allowedTokens = ["x", "none", "z", "y"]
+    )
+    point3f inputs:vector = (0, 0, 0)
+    float inputs:w = 0
+    color3f outputs:color
+    float outputs:fac
+}
+
+def Shader "gradient_texture"
+{
+    uniform token info:id = "cycles:gradient_texture"
+    vector3f inputs:tex_mapping_max = (3.4028235e38, 3.4028235e38, 3.4028235e38)
+    vector3f inputs:tex_mapping_min = (-3.4028235e38, -3.4028235e38, -3.4028235e38)
+    token inputs:tex_mapping_projection = "flat" (
+        allowedTokens = ["flat", "sphere", "tube", "cube"]
+    )
+    vector3f inputs:tex_mapping_rotation = (0, 0, 0)
+    vector3f inputs:tex_mapping_scale = (1, 1, 1)
+    point3f inputs:tex_mapping_translation = (0, 0, 0)
+    token inputs:tex_mapping_type = "texture" (
+        allowedTokens = ["point", "texture", "vector", "normal"]
+    )
+    bool inputs:tex_mapping_use_minmax = 0
+    token inputs:tex_mapping_x_mapping = "x" (
+        allowedTokens = ["x", "none", "z", "y"]
+    )
+    token inputs:tex_mapping_y_mapping = "y" (
+        allowedTokens = ["x", "none", "z", "y"]
+    )
+    token inputs:tex_mapping_z_mapping = "z" (
+        allowedTokens = ["x", "none", "z", "y"]
+    )
+    token inputs:type = "linear" (
+        allowedTokens = ["easing", "linear", "quadratic", "spherical", "diagonal", "radial", "quadratic_sphere"]
+    )
+    point3f inputs:vector = (0, 0, 0)
+    color3f outputs:color
+    float outputs:fac
+}
+
+def Shader "voronoi_texture"
+{
+    uniform token info:id = "cycles:voronoi_texture"
+    token inputs:dimensions = "3D" (
+        allowedTokens = ["1D", "3D", "2D", "4D"]
+    )
+    float inputs:exponent = 0.5
+    token inputs:feature = "f1" (
+        allowedTokens = ["distance_to_edge", "smooth_f1", "f1", "n_sphere_radius", "f2"]
+    )
+    token inputs:metric = "euclidean" (
+        allowedTokens = ["euclidean", "chebychev", "manhattan", "minkowski"]
+    )
+    float inputs:randomness = 1
+    float inputs:scale = 5
+    float inputs:smoothness = 5
+    vector3f inputs:tex_mapping_max = (3.4028235e38, 3.4028235e38, 3.4028235e38)
+    vector3f inputs:tex_mapping_min = (-3.4028235e38, -3.4028235e38, -3.4028235e38)
+    token inputs:tex_mapping_projection = "flat" (
+        allowedTokens = ["flat", "sphere", "tube", "cube"]
+    )
+    vector3f inputs:tex_mapping_rotation = (0, 0, 0)
+    vector3f inputs:tex_mapping_scale = (1, 1, 1)
+    point3f inputs:tex_mapping_translation = (0, 0, 0)
+    token inputs:tex_mapping_type = "texture" (
+        allowedTokens = ["point", "texture", "vector", "normal"]
+    )
+    bool inputs:tex_mapping_use_minmax = 0
+    token inputs:tex_mapping_x_mapping = "x" (
+        allowedTokens = ["x", "none", "z", "y"]
+    )
+    token inputs:tex_mapping_y_mapping = "y" (
+        allowedTokens = ["x", "none", "z", "y"]
+    )
+    token inputs:tex_mapping_z_mapping = "z" (
+        allowedTokens = ["x", "none", "z", "y"]
+    )
+    point3f inputs:vector = (0, 0, 0)
+    float inputs:w = 0
+    color3f outputs:color
+    float outputs:distance
+    point3f outputs:position
+    float outputs:radius
+    float outputs:w
+}
+
+def Shader "checker_texture"
+{
+    uniform token info:id = "cycles:checker_texture"
+    color3f inputs:color1 = (0, 0, 0)
+    color3f inputs:color2 = (0, 0, 0)
+    float inputs:scale = 1
+    vector3f inputs:tex_mapping_max = (3.4028235e38, 3.4028235e38, 3.4028235e38)
+    vector3f inputs:tex_mapping_min = (-3.4028235e38, -3.4028235e38, -3.4028235e38)
+    token inputs:tex_mapping_projection = "flat" (
+        allowedTokens = ["flat", "sphere", "tube", "cube"]
+    )
+    vector3f inputs:tex_mapping_rotation = (0, 0, 0)
+    vector3f inputs:tex_mapping_scale = (1, 1, 1)
+    point3f inputs:tex_mapping_translation = (0, 0, 0)
+    token inputs:tex_mapping_type = "texture" (
+        allowedTokens = ["point", "texture", "vector", "normal"]
+    )
+    bool inputs:tex_mapping_use_minmax = 0
+    token inputs:tex_mapping_x_mapping = "x" (
+        allowedTokens = ["x", "none", "z", "y"]
+    )
+    token inputs:tex_mapping_y_mapping = "y" (
+        allowedTokens = ["x", "none", "z", "y"]
+    )
+    token inputs:tex_mapping_z_mapping = "z" (
+        allowedTokens = ["x", "none", "z", "y"]
+    )
+    point3f inputs:vector = (0, 0, 0)
+    color3f outputs:color
+    float outputs:fac
+}
+
+def Shader "ies_light"
+{
+    uniform token info:id = "cycles:ies_light"
+    string inputs:filename = ""
+    string inputs:ies = ""
+    float inputs:strength = 1
+    vector3f inputs:tex_mapping_max = (3.4028235e38, 3.4028235e38, 3.4028235e38)
+    vector3f inputs:tex_mapping_min = (-3.4028235e38, -3.4028235e38, -3.4028235e38)
+    token inputs:tex_mapping_projection = "flat" (
+        allowedTokens = ["flat", "sphere", "tube", "cube"]
+    )
+    vector3f inputs:tex_mapping_rotation = (0, 0, 0)
+    vector3f inputs:tex_mapping_scale = (1, 1, 1)
+    point3f inputs:tex_mapping_translation = (0, 0, 0)
+    token inputs:tex_mapping_type = "texture" (
+        allowedTokens = ["point", "texture", "vector", "normal"]
+    )
+    bool inputs:tex_mapping_use_minmax = 0
+    token inputs:tex_mapping_x_mapping = "x" (
+        allowedTokens = ["x", "none", "z", "y"]
+    )
+    token inputs:tex_mapping_y_mapping = "y" (
+        allowedTokens = ["x", "none", "z", "y"]
+    )
+    token inputs:tex_mapping_z_mapping = "z" (
+        allowedTokens = ["x", "none", "z", "y"]
+    )
+    point3f inputs:vector = (0, 0, 0)
+    float outputs:fac
+}
+
+def Shader "white_noise_texture"
+{
+    uniform token info:id = "cycles:white_noise_texture"
+    token inputs:dimensions = "3D" (
+        allowedTokens = ["1D", "3D", "2D", "4D"]
+    )
+    point3f inputs:vector = (0, 0, 0)
+    float inputs:w = 0
+    color3f outputs:color
+    float outputs:value
+}
+
+def Shader "bevel"
+{
+    uniform token info:id = "cycles:bevel"
+    normal3f inputs:normal = (0, 0, 0)
+    float inputs:radius = 0.05
+    int inputs:samples = 4
+    normal3f outputs:bevel
+}
+
+def Shader "musgrave_texture"
+{
+    uniform token info:id = "cycles:musgrave_texture"
+    float inputs:detail = 2
+    float inputs:dimension = 2
+    token inputs:dimensions = "3D" (
+        allowedTokens = ["1D", "3D", "2D", "4D"]
+    )
+    float inputs:gain = 1
+    float inputs:lacunarity = 2
+    float inputs:offset = 0
+    float inputs:scale = 1
+    vector3f inputs:tex_mapping_max = (3.4028235e38, 3.4028235e38, 3.4028235e38)
+    vector3f inputs:tex_mapping_min = (-3.4028235e38, -3.4028235e38, -3.4028235e38)
+    token inputs:tex_mapping_projection = "flat" (
+        allowedTokens = ["flat", "sphere", "tube", "cube"]
+    )
+    vector3f inputs:tex_mapping_rotation = (0, 0, 0)
+    vector3f inputs:tex_mapping_scale = (1, 1, 1)
+    point3f inputs:tex_mapping_translation = (0, 0, 0)
+    token inputs:tex_mapping_type = "texture" (
+        allowedTokens = ["point", "texture", "vector", "normal"]
+    )
+    bool inputs:tex_mapping_use_minmax = 0
+    token inputs:tex_mapping_x_mapping = "x" (
+        allowedTokens = ["x", "none", "z", "y"]
+    )
+    token inputs:tex_mapping_y_mapping = "y" (
+        allowedTokens = ["x", "none", "z", "y"]
+    )
+    token inputs:tex_mapping_z_mapping = "z" (
+        allowedTokens = ["x", "none", "z", "y"]
+    )
+    token inputs:type = "fBM" (
+        allowedTokens = ["multifractal", "fBM", "hybrid_multifractal", "hetero_terrain", "ridged_multifractal"]
+    )
+    point3f inputs:vector = (0, 0, 0)
+    float inputs:w = 0
+    float outputs:fac
+}
+
+def Shader "wave_texture"
+{
+    uniform token info:id = "cycles:wave_texture"
+    token inputs:bands_direction = "x" (
+        allowedTokens = ["x", "z", "y", "diagonal"]
+    )
+    float inputs:detail = 2
+    float inputs:detail_roughness = 0.5
+    float inputs:detail_scale = 0
+    float inputs:distortion = 0
+    float inputs:phase = 0
+    token inputs:profile = "sine" (
+        allowedTokens = ["tri", "sine", "saw"]
+    )
+    token inputs:rings_direction = "x" (
+        allowedTokens = ["x", "z", "y", "spherical"]
+    )
+    float inputs:scale = 1
+    vector3f inputs:tex_mapping_max = (3.4028235e38, 3.4028235e38, 3.4028235e38)
+    vector3f inputs:tex_mapping_min = (-3.4028235e38, -3.4028235e38, -3.4028235e38)
+    token inputs:tex_mapping_projection = "flat" (
+        allowedTokens = ["flat", "sphere", "tube", "cube"]
+    )
+    vector3f inputs:tex_mapping_rotation = (0, 0, 0)
+    vector3f inputs:tex_mapping_scale = (1, 1, 1)
+    point3f inputs:tex_mapping_translation = (0, 0, 0)
+    token inputs:tex_mapping_type = "texture" (
+        allowedTokens = ["point", "texture", "vector", "normal"]
+    )
+    bool inputs:tex_mapping_use_minmax = 0
+    token inputs:tex_mapping_x_mapping = "x" (
+        allowedTokens = ["x", "none", "z", "y"]
+    )
+    token inputs:tex_mapping_y_mapping = "y" (
+        allowedTokens = ["x", "none", "z", "y"]
+    )
+    token inputs:tex_mapping_z_mapping = "z" (
+        allowedTokens = ["x", "none", "z", "y"]
+    )
+    token inputs:type = "bands" (
+        allowedTokens = ["bands", "rings"]
+    )
+    point3f inputs:vector = (0, 0, 0)
+    color3f outputs:color
+    float outputs:fac
+}
+
+def Shader "magic_texture"
+{
+    uniform token info:id = "cycles:magic_texture"
+    int inputs:depth = 2
+    float inputs:distortion = 1
+    float inputs:scale = 5
+    vector3f inputs:tex_mapping_max = (3.4028235e38, 3.4028235e38, 3.4028235e38)
+    vector3f inputs:tex_mapping_min = (-3.4028235e38, -3.4028235e38, -3.4028235e38)
+    token inputs:tex_mapping_projection = "flat" (
+        allowedTokens = ["flat", "sphere", "tube", "cube"]
+    )
+    vector3f inputs:tex_mapping_rotation = (0, 0, 0)
+    vector3f inputs:tex_mapping_scale = (1, 1, 1)
+    point3f inputs:tex_mapping_translation = (0, 0, 0)
+    token inputs:tex_mapping_type = "texture" (
+        allowedTokens = ["point", "texture", "vector", "normal"]
+    )
+    bool inputs:tex_mapping_use_minmax = 0
+    token inputs:tex_mapping_x_mapping = "x" (
+        allowedTokens = ["x", "none", "z", "y"]
+    )
+    token inputs:tex_mapping_y_mapping = "y" (
+        allowedTokens = ["x", "none", "z", "y"]
+    )
+    token inputs:tex_mapping_z_mapping = "z" (
+        allowedTokens = ["x", "none", "z", "y"]
+    )
+    point3f inputs:vector = (0, 0, 0)
+    color3f outputs:color
+    float outputs:fac
+}
+
+def Shader "brick_texture"
+{
+    uniform token info:id = "cycles:brick_texture"
+    float inputs:bias = 0
+    float inputs:brick_width = 0.5
+    color3f inputs:color1 = (0, 0, 0)
+    color3f inputs:color2 = (0, 0, 0)
+    color3f inputs:mortar = (0, 0, 0)
+    float inputs:mortar_size = 0.02
+    float inputs:mortar_smooth = 0
+    float inputs:offset = 0.5
+    int inputs:offset_frequency = 2
+    float inputs:row_height = 0.25
+    float inputs:scale = 5
+    float inputs:squash = 1
+    int inputs:squash_frequency = 2
+    #vector3f inputs:tex_mapping_max = (3.4028235e38, 3.4028235e38, 3.4028235e38)
+    #vector3f inputs:tex_mapping_min = (-3.4028235e38, -3.4028235e38, -3.4028235e38)
+    #token inputs:tex_mapping_projection = "flat" (
+    #    allowedTokens = ["flat", "sphere", "tube", "cube"]
+    #)
+    #vector3f inputs:tex_mapping_rotation = (0, 0, 0)
+    #vector3f inputs:tex_mapping_scale = (1, 1, 1)
+    #point3f inputs:tex_mapping_translation = (0, 0, 0)
+    #token inputs:tex_mapping_type = "texture" (
+    #    allowedTokens = ["point", "texture", "vector", "normal"]
+    #)
+    #bool inputs:tex_mapping_use_minmax = 0
+    #token inputs:tex_mapping_x_mapping = "x" (
+    #    allowedTokens = ["x", "none", "z", "y"]
+    #)
+    #token inputs:tex_mapping_y_mapping = "y" (
+    #    allowedTokens = ["x", "none", "z", "y"]
+    #)
+    #token inputs:tex_mapping_z_mapping = "z" (
+    #    allowedTokens = ["x", "none", "z", "y"]
+    #)
+    point3f inputs:vector = (0, 0, 0)
+    color3f outputs:color
+    float outputs:fac
+}
+
+def Shader "normal"
+{
+    uniform token info:id = "cycles:normal"
+    vector3f inputs:direction = (0, 0, 0)
+    normal3f inputs:normal = (0, 0, 0)
+    float outputs:dot
+    normal3f outputs:normal
+}
+
+def Shader "rgb_to_bw"
+{
+    uniform token info:id = "cycles:rgb_to_bw"
+    color3f inputs:color = (0, 0, 0)
+    float outputs:val
+}
+
+def Shader "glass_bsdf"
+{
+    uniform token info:id = "cycles:glass_bsdf"
+    color3f inputs:color = (0.8, 0.8, 0.8)
+    token inputs:distribution = "GGX" (
+        allowedTokens = ["Multiscatter GGX", "sharp", "beckmann", "GGX"]
+    )
+    float inputs:IOR = 0.3
+    normal3f inputs:normal = (0, 0, 0)
+    float inputs:roughness = 0
+    float inputs:surface_mix_weight = 0
+}
+
+def Shader "texture_coordinate"
+{
+    uniform token info:id = "cycles:texture_coordinate"
+    bool inputs:from_dupli = 0
+    normal3f inputs:normal_osl = (0, 0, 0)
+    matrix4d inputs:ob_tfm = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (0, 0, 0, 1) )
+    bool inputs:use_transform = 0
+    point3f outputs:camera
+    point3f outputs:generated
+    normal3f outputs:normal
+    point3f outputs:object
+    normal3f outputs:reflection
+    point3f outputs:UV
+    point3f outputs:window
+}
+
+def Shader "vector_displacement"
+{
+    uniform token info:id = "cycles:vector_displacement"
+    string inputs:attribute = ""
+    float inputs:midlevel = 0
+    float inputs:scale = 1
+    token inputs:space = "tangent" (
+        allowedTokens = ["tangent", "object", "world"]
+    )
+    color3f inputs:vector = (0, 0, 0)
+    vector3f outputs:displacement
+}
+
+def Shader "mix_closure"
+{
+    uniform token info:id = "cycles:mix_closure"
+    color3f inputs:closure1 = (0, 0, 0)
+    color3f inputs:closure2 = (0, 0, 0)
+    float inputs:fac = 0.5
+    token inputs:type = "mix" (
+        allowedTokens = ["mix", "screen", "multiply", "add", "darken", "overlay", "difference", "subtract", "divide", "lighten", "dodge", "burn", "hue", "saturation", "value", "color", "soft_light", "linear_light"]
+    )
+    bool inputs:use_clamp = 0
+    color3f outputs:color
+}
+
+def Shader "hair_bsdf"
+{
+    uniform token info:id = "cycles:hair_bsdf"
+    color3f inputs:color = (0.8, 0.8, 0.8)
+    token inputs:component = "reflection" (
+        allowedTokens = ["transmission", "reflection"]
+    )
+    normal3f inputs:normal = (0, 0, 0)
+    float inputs:offset = 0
+    float inputs:roughness_u = 0.2
+    float inputs:roughness_v = 0.2
+    float inputs:surface_mix_weight = 0
+    vector3f inputs:tangent = (0, 0, 0)
+}
+
+def Shader "toon_bsdf"
+{
+    uniform token info:id = "cycles:toon_bsdf"
+    color3f inputs:color = (0.8, 0.8, 0.8)
+    token inputs:component = "diffuse" (
+        allowedTokens = ["diffuse", "glossy"]
+    )
+    normal3f inputs:normal = (0, 0, 0)
+    float inputs:size = 0.5
+    float inputs:smooth = 0
+    float inputs:surface_mix_weight = 0
+}
+
+def Shader "invert"
+{
+    uniform token info:id = "cycles:invert"
+    color3f inputs:color = (0, 0, 0)
+    float inputs:fac = 1
+    color3f outputs:color
+}
+
+def Shader "anisotropic_bsdf"
+{
+    uniform token info:id = "cycles:anisotropic_bsdf"
+    float inputs:anisotropy = 0.5
+    color3f inputs:color = (0.8, 0.8, 0.8)
+    token inputs:distribution = "GGX" (
+        allowedTokens = ["beckmann", "GGX", "Multiscatter GGX", "ashikhmin_shirley"]
+    )
+    normal3f inputs:normal = (0, 0, 0)
+    float inputs:rotation = 0
+    float inputs:roughness = 0.5
+    float inputs:surface_mix_weight = 0
+    vector3f inputs:tangent = (0, 0, 0)
+}
+
+def Shader "glossy_bsdf"
+{
+    uniform token info:id = "cycles:glossy_bsdf"
+    color3f inputs:color = (0.8, 0.8, 0.8)
+    token inputs:distribution = "GGX" (
+        allowedTokens = ["Multiscatter GGX", "sharp", "beckmann", "GGX", "ashikhmin_shirley"]
+    )
+    normal3f inputs:normal = (0, 0, 0)
+    float inputs:roughness = 0.5
+    float inputs:surface_mix_weight = 0
+}
+
+def Shader "refraction_bsdf"
+{
+    uniform token info:id = "cycles:refraction_bsdf"
+    color3f inputs:color = (0.8, 0.8, 0.8)
+    token inputs:distribution = "GGX" (
+        allowedTokens = ["sharp", "beckmann", "GGX"]
+    )
+    float inputs:IOR = 0.3
+    normal3f inputs:normal = (0, 0, 0)
+    float inputs:roughness = 0
+    float inputs:surface_mix_weight = 0
+}
+
+def Shader "velvet_bsdf"
+{
+    uniform token info:id = "cycles:velvet_bsdf"
+    color3f inputs:color = (0.8, 0.8, 0.8)
+    normal3f inputs:normal = (0, 0, 0)
+    float inputs:sigma = 1
+    float inputs:surface_mix_weight = 0
+}
+
+def Shader "diffuse_bsdf"
+{
+    uniform token info:id = "cycles:diffuse_bsdf"
+    color3f inputs:color = (0.8, 0.8, 0.8)
+    normal3f inputs:normal = (0, 0, 0)
+    float inputs:roughness = 0
+    float inputs:surface_mix_weight = 0
+}
+
+def Shader "principled_bsdf"
+{
+    uniform token info:id = "cycles:principled_bsdf"
+    float inputs:alpha = 1
+    float inputs:anisotropic = 0
+    float inputs:anisotropic_rotation = 0
+    color3f inputs:base_color = (0.8, 0.8, 0.8)
+    float inputs:clearcoat = 0
+    normal3f inputs:clearcoat_normal = (0, 0, 0)
+    float inputs:clearcoat_roughness = 0.03
+    token inputs:distribution = "Multiscatter GGX" (
+        allowedTokens = ["GGX", "Multiscatter GGX"]
+    )
+    color3f inputs:emission = (0, 0, 0)
+    float inputs:ior = 0
+    float inputs:metallic = 0
+    normal3f inputs:normal = (0, 0, 0)
+    float inputs:roughness = 0.5
+    float inputs:sheen = 0
+    float inputs:sheen_tint = 0
+    float inputs:specular = 0
+    float inputs:specular_tint = 0
+    float inputs:subsurface = 0
+    color3f inputs:subsurface_color = (0.8, 0.8, 0.8)
+    token inputs:subsurface_method = "burley" (
+        allowedTokens = ["burley", "random_walk"]
+    )
+    vector3f inputs:subsurface_radius = (0.1, 0.1, 0.1)
+    float inputs:surface_mix_weight = 0
+    normal3f inputs:tangent = (0, 0, 0)
+    float inputs:transmission = 0
+    float inputs:transmission_roughness = 0
+}
+
+def Shader "translucent_bsdf"
+{
+    uniform token info:id = "cycles:translucent_bsdf"
+    color3f inputs:color = (0.8, 0.8, 0.8)
+    normal3f inputs:normal = (0, 0, 0)
+    float inputs:surface_mix_weight = 0
+}
+
+def Shader "transparent_bsdf"
+{
+    uniform token info:id = "cycles:transparent_bsdf"
+    color3f inputs:color = (1, 1, 1)
+    float inputs:surface_mix_weight = 0
+}
+
+def Shader "subsurface_scattering"
+{
+    uniform token info:id = "cycles:subsurface_scattering"
+    color3f inputs:color = (0.8, 0.8, 0.8)
+    token inputs:falloff = "burley" (
+        allowedTokens = ["cubic", "gaussian", "burley", "random_walk"]
+    )
+    normal3f inputs:normal = (0, 0, 0)
+    vector3f inputs:radius = (0.1, 0.1, 0.1)
+    float inputs:scale = 0.01
+    float inputs:sharpness = 0
+    float inputs:surface_mix_weight = 0
+    float inputs:texture_blur = 1
+}
+
+def Shader "emission"
+{
+    uniform token info:id = "cycles:emission"
+    color3f inputs:color = (0.8, 0.8, 0.8)
+    float inputs:strength = 10
+    float inputs:surface_mix_weight = 0
+}
+
+def Shader "holdout"
+{
+    uniform token info:id = "cycles:holdout"
+    float inputs:surface_mix_weight = 0
+    float inputs:volume_mix_weight = 0
+}
+
+def Shader "ambient_occlusion"
+{
+    uniform token info:id = "cycles:ambient_occlusion"
+    color3f inputs:color = (1, 1, 1)
+    float inputs:distance = 1
+    bool inputs:inside = 0
+    normal3f inputs:normal = (0, 0, 0)
+    bool inputs:only_local = 0
+    int inputs:samples = 16
+    float outputs:ao
+    color3f outputs:color
+}
+
+def Shader "scatter_volume"
+{
+    uniform token info:id = "cycles:scatter_volume"
+    float inputs:anisotropy = 0
+    color3f inputs:color = (0.8, 0.8, 0.8)
+    float inputs:density = 1
+    float inputs:volume_mix_weight = 0
+}
+
+def Shader "vector_math"
+{
+    uniform token info:id = "cycles:vector_math"
+    float inputs:scale = 1
+    token inputs:type = "add" (
+        allowedTokens = ["multiply", "fraction", "add", "reflect", "subtract", "cosine", "divide", "dot_product", "distance", "project", "cross_product", "length", "scale", "normalize", "snap", "floor", "ceil", "modulo", "wrap", "absolute", "minimum", "maximum", "sine", "tangent"]
+    )
+    vector3f inputs:vector1 = (0, 0, 0)
+    vector3f inputs:vector2 = (0, 0, 0)
+    vector3f inputs:vector3 = (0, 0, 0)
+    float outputs:value
+    vector3f outputs:vector
+}
+
+def Shader "principled_volume"
+{
+    uniform token info:id = "cycles:principled_volume"
+    color3f inputs:absorption_color = (0, 0, 0)
+    float inputs:anisotropy = 0
+    float inputs:blackbody_intensity = 0
+    color3f inputs:blackbody_tint = (1, 1, 1)
+    color3f inputs:color = (0.5, 0.5, 0.5)
+    string inputs:color_attribute = ""
+    float inputs:density = 1
+    string inputs:density_attribute = ""
+    color3f inputs:emission_color = (1, 1, 1)
+    float inputs:emission_strength = 0
+    float inputs:temperature = 1000
+    string inputs:temperature_attribute = ""
+    float inputs:volume_mix_weight = 0
+}
+
+def Shader "principled_hair_bsdf"
+{
+    uniform token info:id = "cycles:principled_hair_bsdf"
+    vector3f inputs:absorption_coefficient = (0.245531, 0.52, 1.365)
+    float inputs:coat = 0
+    color3f inputs:color = (0.017513, 0.005763, 0.002059)
+    float inputs:ior = 1.55
+    float inputs:melanin = 0.8
+    float inputs:melanin_redness = 1
+    normal3f inputs:normal = (0, 0, 0)
+    float inputs:offset = 0.034906585
+    token inputs:parametrization = "Direct coloring" (
+        allowedTokens = ["Melanin concentration", "Direct coloring", "Absorption coefficient"]
+    )
+    float inputs:radial_roughness = 0.3
+    float inputs:random = 0
+    float inputs:random_color = 0
+    float inputs:random_roughness = 0
+    float inputs:roughness = 0.3
+    float inputs:surface_mix_weight = 0
+    color3f inputs:tint = (1, 1, 1)
+}
+
+def Shader "geometry"
+{
+    uniform token info:id = "cycles:geometry"
+    normal3f inputs:normal_osl = (0, 0, 0)
+    float outputs:backfacing
+    vector3f outputs:incoming
+    normal3f outputs:normal
+    point3f outputs:parametric
+    float outputs:pointiness
+    point3f outputs:position
+    float outputs:random_per_island
+    normal3f outputs:tangent
+    normal3f outputs:true_normal
+}
+
+def Shader "uvmap"
+{
+    uniform token info:id = "cycles:uvmap"
+    string inputs:attribute = ""
+    bool inputs:from_dupli = 0
+    point3f outputs:UV
+}
+
+def Shader "light_path"
+{
+    uniform token info:id = "cycles:light_path"
+    float outputs:diffuse_depth
+    float outputs:glossy_depth
+    float outputs:is_camera_ray
+    float outputs:is_diffuse_ray
+    float outputs:is_glossy_ray
+    float outputs:is_reflection_ray
+    float outputs:is_shadow_ray
+    float outputs:is_singular_ray
+    float outputs:is_transmission_ray
+    float outputs:is_volume_scatter_ray
+    float outputs:ray_depth
+    float outputs:ray_length
+    float outputs:transmission_depth
+    float outputs:transparent_depth
+}
+
+def Shader "light_falloff"
+{
+    uniform token info:id = "cycles:light_falloff"
+    float inputs:smooth = 0
+    float inputs:strength = 100
+    float outputs:constant
+    float outputs:linear
+    float outputs:quadratic
+}
+
+def Shader "particle_info"
+{
+    uniform token info:id = "cycles:particle_info"
+    float outputs:age
+    vector3f outputs:angular_velocity
+    float outputs:index
+    float outputs:lifetime
+    point3f outputs:location
+    float outputs:random
+    float outputs:size
+    vector3f outputs:velocity
+}
+
+def Shader "hair_info"
+{
+    uniform token info:id = "cycles:hair_info"
+    float outputs:index
+    float outputs:intercept
+    float outputs:is_strand
+    normal3f outputs:tangent_normal
+    float outputs:thickness
+}
+
+def Shader "volume_info"
+{
+    uniform token info:id = "cycles:volume_info"
+    color3f outputs:color
+    float outputs:density
+    float outputs:flame
+    float outputs:temperature
+}
+
+def Shader "vertex_color"
+{
+    uniform token info:id = "cycles:vertex_color"
+    string inputs:layer_name = ""
+    float outputs:alpha
+    color3f outputs:color
+}
+
+def Shader "value"
+{
+    uniform token info:id = "cycles:value"
+    float inputs:value = 0
+    float outputs:value
+}
+
+def Shader "combine_xyz"
+{
+    uniform token info:id = "cycles:combine_xyz"
+    float inputs:x = 0
+    float inputs:y = 0
+    float inputs:z = 0
+    vector3f outputs:vector
+}
+
+def Shader "combine_hsv"
+{
+    uniform token info:id = "cycles:combine_hsv"
+    float inputs:h = 0
+    float inputs:s = 0
+    float inputs:v = 0
+    color3f outputs:color
+}
+
+def Shader "gamma"
+{
+    uniform token info:id = "cycles:gamma"
+    color3f inputs:color = (0, 0, 0)
+    float inputs:gamma = 1
+    color3f outputs:color
+}
+
+def Shader "brightness_contrast"
+{
+    uniform token info:id = "cycles:brightness_contrast"
+    float inputs:bright = 0 
+    color3f inputs:color = (0, 0, 0)
+    float inputs:contrast = 0
+    color3f outputs:color
+}
+
+def Shader "separate_rgb"
+{
+    uniform token info:id = "cycles:separate_rgb"
+    color3f inputs:color = (0, 0, 0)
+    float outputs:b
+    float outputs:g
+    float outputs:r
+}
+
+def Shader "separate_xyz"
+{
+    uniform token info:id = "cycles:separate_xyz"
+    color3f inputs:vector = (0, 0, 0)
+    float outputs:x
+    float outputs:y
+    float outputs:z
+}
+
+def Shader "separate_hsv"
+{
+    uniform token info:id = "cycles:separate_hsv"
+    color3f inputs:color = (0, 0, 0)
+    float outputs:h
+    float outputs:s
+    float outputs:v
+}
+
+def Shader "hsv"
+{
+    uniform token info:id = "cycles:hsv"
+    color3f inputs:color = (0, 0, 0)
+    float inputs:fac = 1
+    float inputs:hue = 0.5
+    float inputs:saturation = 1
+    float inputs:value = 1
+    color3f outputs:color
+}
+
+def Shader "attribute"
+{
+    uniform token info:id = "cycles:attribute"
+    string inputs:attribute = ""
+    color3f outputs:color
+    float outputs:fac
+    vector3f outputs:vector
+}
+
+def Shader "camera_info"
+{
+    uniform token info:id = "cycles:camera_info"
+    float outputs:view_distance
+    vector3f outputs:view_vector
+    float outputs:view_z_depth
+}
+
+def Shader "fresnel"
+{
+    uniform token info:id = "cycles:fresnel"
+    float inputs:IOR = 1.45
+    normal3f inputs:normal = (0, 0, 0)
+    float outputs:fac
+}
+
+def Shader "layer_weight"
+{
+    uniform token info:id = "cycles:layer_weight"
+    float inputs:blend = 0.5
+    normal3f inputs:normal = (0, 0, 0)
+    float outputs:facing
+    float outputs:fresnel
+}
+
+def Shader "aov_output"
+{
+    uniform token info:id = "cycles:aov_output"
+    color3f inputs:color = (0, 0, 0)
+    string inputs:name = ""
+    float inputs:value = 0
+}
+
+def Shader "wireframe"
+{
+    uniform token info:id = "cycles:wireframe"
+    float inputs:size = 0.01
+    bool inputs:use_pixel_size = 0
+    float outputs:fac
+}
+
+def Shader "blackbody"
+{
+    uniform token info:id = "cycles:blackbody"
+    float inputs:temperature = 1200
+    color3f outputs:color
+}
+
+def Shader "map_range"
+{
+    uniform token info:id = "cycles:map_range"
+    float inputs:from_max = 1
+    float inputs:from_min = 0
+    float inputs:steps = 4
+    float inputs:to_max = 1
+    float inputs:to_min = 0
+    token inputs:type = "linear" (
+        allowedTokens = ["linear", "stepped", "smoothstep", "smootherstep"]
+    )
+    float inputs:value = 1
+    float outputs:result
+}
+
+def Shader "clamp"
+{
+    uniform token info:id = "cycles:clamp"
+    float inputs:max = 1
+    float inputs:min = 0
+    token inputs:type = "minmax" (
+        allowedTokens = ["minmax", "range"]
+    )
+    float inputs:value = 1
+    float outputs:result
+}
+
+def Shader "math"
+{
+    uniform token info:id = "cycles:math"
+    token inputs:type = "add" (
+        allowedTokens = ["tangent", "greater_than", "multiply", "fraction", "add", "subtract", "divide", "cosine", "sinh", "multiply_add", "sine", "cosh", "tanh", "arcsine", "arccosine", "arctangent", "trunc", "modulo", "less_than", "power", "logarithm", "minimum", "maximum", "round", "absolute", "arctan2", "floor", "ceil", "snap", "wrap", "radians", "pingpong", "sqrt", "inversesqrt", "sign", "exponent", "degrees", "smoothmin", "smoothmax", "compare"]
+    )
+    bool inputs:use_clamp = 0
+    float inputs:value1 = 0.5
+    float inputs:value2 = 0.5
+    float inputs:value3 = 0
+    float outputs:value
+}
+
+def Shader "vector_rotate"
+{
+    uniform token info:id = "cycles:vector_rotate"
+    float inputs:angle = 0
+    vector3f inputs:axis = (0, 0, 1)
+    point3f inputs:center = (0, 0, 0)
+    bool inputs:invert = 0
+    point3f inputs:rotation = (0, 0, 0)
+    token inputs:type = "axis" (
+        allowedTokens = ["axis", "y_axis", "x_axis", "z_axis", "euler_xyz"]
+    )
+    vector3f inputs:vector = (0, 0, 0)
+    vector3f outputs:vector
+}
+
+def Shader "vector_transform"
+{
+    uniform token info:id = "cycles:vector_transform"
+    token inputs:convert_from = "world" (
+        allowedTokens = ["world", "object", "camera"]
+    )
+    token inputs:convert_to = "object" (
+        allowedTokens = ["world", "object", "camera"]
+    )
+    token inputs:type = "vector" (
+        allowedTokens = ["vector", "point", "normal"]
+    )
+    vector3f inputs:vector = (0, 0, 0)
+    vector3f outputs:vector
+}
+
+def Shader "bump"
+{
+    uniform token info:id = "cycles:bump"
+    float inputs:distance = 0.1
+    float inputs:height = 1
+    bool inputs:invert = 0
+    normal3f inputs:normal = (0, 0, 0)
+    float inputs:sample_center = 0
+    float inputs:sample_x = 0
+    float inputs:sample_y = 0
+    float inputs:strength = 1
+    bool inputs:use_object_space = 0
+    normal3f outputs:normal
+}
+
+def Shader "rgb_curves"
+{
+    uniform token info:id = "cycles:rgb_curves"
+    color3f[] inputs:curves = []
+    float inputs:fac = 0
+    float inputs:max_x = 1
+    float inputs:min_x = 0
+    color3f inputs:value = (0, 0, 0)
+    color3f outputs:value
+}
+
+def Shader "rgb_ramp"
+{
+    uniform token info:id = "cycles:rgb_ramp"
+    float inputs:fac = 0
+    bool inputs:interpolate = 1
+    color3f[] inputs:ramp = []
+    float[] inputs:ramp_alpha = []
+    float outputs:alpha
+    color3f outputs:color
+}
+
+def Shader "normal_map"
+{
+    uniform token info:id = "cycles:normal_map"
+    string inputs:attribute = ""
+    color3f inputs:color = (0.5, 0.5, 1)
+    normal3f inputs:normal_osl = (0, 0, 0)
+    token inputs:space = "tangent" (
+        allowedTokens = ["tangent", "object", "world", "blender_object", "blender_world"]
+    )
+    float inputs:strength = 1
+    normal3f outputs:normal
+}
+
+def Shader "tangent"
+{
+    uniform token info:id = "cycles:tangent"
+    string inputs:attribute = ""
+    token inputs:axis = "x" (
+        allowedTokens = ["x", "z", "y"]
+    )
+    token inputs:direction_type = "radial" (
+        allowedTokens = ["radial", "uv_map"]
+    )
+    normal3f inputs:normal_osl = (0, 0, 0)
+    normal3f outputs:tangent
+}
+
+def Shader "displacement"
+{
+    uniform token info:id = "cycles:displacement"
+    float inputs:height = 0
+    float inputs:midlevel = 0.5
+    normal3f inputs:normal = (0, 0, 0)
+    float inputs:scale = 1
+    token inputs:space = "object" (
+        allowedTokens = ["object", "world"]
+    )
+    vector3f outputs:displacement
+}

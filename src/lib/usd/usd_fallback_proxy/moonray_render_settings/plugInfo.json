@@ -1,0 +1,17 @@
+{
+    "Plugins": [
+      {
+        "Info": {
+          "Types": {
+            "MoonrayRenderSettings": {
+              "bases": [
+                "OpenDCC::RenderSettingsRegistry"
+              ]
+            }
+          }
+        },
+        "Name": "Moonray",
+        "Type": "resource"
+      }
+    ]
+}

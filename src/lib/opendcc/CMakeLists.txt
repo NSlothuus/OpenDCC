@@ -1,0 +1,8 @@
+add_subdirectory(base)
+add_subdirectory(ui)
+add_subdirectory(render_system)
+add_subdirectory(usd)
+add_subdirectory(app)
+if(DCC_BUILD_RENDER_VIEW)
+    add_subdirectory(render_view)
+endif()

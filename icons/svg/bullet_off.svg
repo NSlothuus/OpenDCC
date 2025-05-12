@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="20"
+   height="20"
+   viewBox="0 0 5.2916665 5.2916668"
+   version="1.1"
+   id="svg8"
+   inkscape:version="1.4 (86a8ad7, 2024-10-11)"
+   sodipodi:docname="bullet_off.svg"
+   inkscape:export-filename="D:\projects\dcc_platform\icons\bullet_off.png"
+   inkscape:export-xdpi="96.000008"
+   inkscape:export-ydpi="96.000008"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <defs
+     id="defs2">
+    <pattern
+       id="EMFhbasepattern"
+       patternUnits="userSpaceOnUse"
+       width="6"
+       height="6"
+       x="0"
+       y="0" />
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="8.0421936"
+     inkscape:cx="-10.631428"
+     inkscape:cy="3.357293"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     units="px"
+     inkscape:window-width="1920"
+     inkscape:window-height="1009"
+     inkscape:window-x="3832"
+     inkscape:window-y="449"
+     inkscape:window-maximized="1"
+     showguides="false"
+     inkscape:guide-bbox="true"
+     inkscape:document-rotation="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:snap-text-baseline="true"
+     width="20px"
+     inkscape:showpageshadow="2"
+     inkscape:deskcolor="#d1d1d1" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-288.53332)">
+    <path
+       d="m 3.8359136,289.16765 c -0.2108933,0.12277 -0.4228314,0.29875 -0.635379,0.50938 l 0.9953429,0.99535 c 0.1911277,-0.15707 0.3343644,-0.31739 0.4418138,-0.48012 0.6107981,-1.04419 0.065057,-1.51491 -0.8017777,-1.02461 z m -3.06683401,2.95384 0.0107095,0.0107 0.27889791,-0.27889 -0.038574,-0.0387 c -0.0731422,-0.0731 -0.0732292,-0.19278 0,-0.26601 l 1.6060806,-1.6061 c 0.073142,-0.0732 0.1928689,-0.0732 0.266011,0 l 1.046978,1.0469 c 0.073142,0.0731 0.073055,0.19288 0,0.26601 l -1.6061674,1.60619 c -0.073142,0.0731 -0.192869,0.0731 -0.266011,0 l -0.038661,-0.0387 -0.278811,0.27889 0.01071,0.0108 c 0.071923,0.0719 0.071923,0.18974 0,0.26166 -0.07201,0.072 -0.1898212,0.072 -0.2617443,0 l -0.99116346,-0.991 c -0.0720104,-0.072 -0.0720104,-0.18982 0,-0.26175 0.0720102,-0.072 0.18973417,-0.072 0.26174515,0 z"
+       id="path2"
+       style="fill:#bdbdbd;fill-opacity:1;stroke:#3a3a3a;stroke-width:0.529167;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+       sodipodi:nodetypes="cccccccccccccccccccccccc" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:900;font-stretch:normal;font-size:3.18955px;line-height:1.25;font-family:Arial;-inkscape-font-specification:'Arial Heavy';fill:#bdbdbd;fill-opacity:1;stroke:#3a3a3a;stroke-width:0.529167;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+       x="0.028230393"
+       y="292.3808"
+       id="text29459"
+       transform="scale(1.0045006,0.9955196)"><tspan
+         sodipodi:role="line"
+         style="font-style:normal;font-variant:normal;font-weight:900;font-stretch:normal;font-family:Arial;-inkscape-font-specification:'Arial Heavy';fill:#bdbdbd;fill-opacity:1;stroke:#3a3a3a;stroke-width:0.529167;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+         x="0.028230393"
+         y="292.3808"
+         id="tspan33694">B</tspan></text>
+    <path
+       style="fill:#ac2828;fill-opacity:1;fill-rule:evenodd;stroke:#3a3a3a;stroke-width:0.264583;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:3.9;stroke-opacity:1;paint-order:fill markers stroke"
+       d="m 4.3548026,291.02814 -0.5978455,0.59785 -0.5978454,-0.59785 -0.6395794,0.63958 0.5978455,0.59785 -0.5978455,0.59784 0.6395794,0.63958 0.5978454,-0.59785 0.5978455,0.59785 0.6395793,-0.63958 -0.5978453,-0.59784 0.5978453,-0.59785 z"
+       id="rect4485"
+       inkscape:connector-curvature="0" />
+  </g>
+</svg>

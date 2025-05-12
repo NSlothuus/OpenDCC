@@ -1,0 +1,17 @@
+{
+    "Plugins": [
+      {
+        "Info": {
+          "SdfMetadata": {
+            "hydraOpNodegraphPrimPath": {
+              "appliesTo": "layers",
+              "default": "",
+              "type": "string"
+            }
+          }
+        },
+        "Name": "@TARGET_NAME@",
+        "Type": "resource"
+      }
+    ]
+}

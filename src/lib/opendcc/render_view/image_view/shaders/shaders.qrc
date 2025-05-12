@@ -1,0 +1,12 @@
+<RCC>
+  <qresource prefix="shaders">
+    <file>background.frag</file>
+    <file>background.vert</file>
+    <file>image.frag</file>
+    <file>image.vert</file>
+    <file>lines.frag</file>
+    <file>lines.vert</file>
+    <file>simple_texture.frag</file>
+    <file>simple_texture.vert</file>
+  </qresource>
+</RCC>

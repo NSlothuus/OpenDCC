@@ -1,0 +1,98 @@
+{
+    "Plugins": [
+      {
+        "Info": {
+          "Types": {
+            "OpenDCC::UndoCommand": {
+              "displayName": "Base class for any command in OpenDCC application."
+            },
+            "OpenDCC::UsdEditUndoCommand": {
+                "bases": [
+                  "OpenDCC::UndoCommand"
+                ],
+                "displayName": "USD Editor command which allows to revert certain USD edits."
+            },
+            "OpenDCC::ViewportMoveToolCommand": {
+                "bases": [
+                  "OpenDCC::UndoCommand"
+                ],
+                "displayName": "Move command"
+            },
+            "OpenDCC::ViewportRotateToolCommand": {
+                "bases": [
+                  "OpenDCC::UndoCommand"
+                ],
+                "displayName": "Rotate command"
+            },
+            "OpenDCC::ViewportScaleToolCommand": {
+                "bases": [
+                  "OpenDCC::UndoCommand"
+                ],
+                "displayName": "Scale command"
+            },
+            "OpenDCC::ViewportIsolateSelectionCommand": {
+                "bases": [
+                  "OpenDCC::UndoCommand"
+                ],
+                "displayName": "Viewport command which allows to isolate selected prims."
+            },
+            "OpenDCC::ViewportSceneDelegate": {
+              "OpenDCC::displayName": "Base class for any delegate in OpenDCC application."
+            },
+            "OpenDCC::ViewportLocatorDelegate": {
+              "bases": [
+                "OpenDCC::ViewportSceneDelegate"
+              ],
+              "displayName": "Viewport UsdImaging delegate extension which allows to visualize additional prims."
+            },
+            "OpenDCC::ViewportUsdDelegate": {
+                "bases": [
+                  "OpenDCC::ViewportSceneDelegate"
+                ],
+                "displayName": "Viewport proxy over UsdImaging delegate."
+            },
+            "OpenDCC::InMemoryTexture" : {
+              "bases": ["@TEXTURE_PLUGIN_BASE@"],
+              "displayName": "In-memory texture cache.",
+              "imageTypes": ["wtex"],
+              "precedence": 0
+            },
+            "OpenDCC::PruneSceneIndexPlugin": {
+              "bases": [
+                  "HdSceneIndexPlugin"
+              ], 
+              "displayName":
+                  "PruneSceneIndex",
+              "loadWithRenderer": "",
+              "priority": 0
+            },
+          "OpenDCC::HydraExtRenderSessionAPIAdapter": {
+              "bases": ["UsdImagingAPISchemaAdapter"],
+              "apiSchemaName": "HydraRenderSessionAPI"
+            }
+          },
+          "SdfMetadata": {
+            "maxTimeCode": {
+                "appliesTo": [
+                    "layers"
+                ],
+                "documentation": "visible start time on timeline slider",
+                "type": "timecode"
+            },
+            "minTimeCode": {
+                "appliesTo": [
+                    "layers"
+                ],
+                "documentation": "visible end time on timeline slider",
+                "type": "timecode"
+            }
+          }
+        },
+        "LibraryPath": "@LIBRARY_LOCATION@/@CMAKE_SHARED_LIBRARY_PREFIX@opendcc_core@CMAKE_SHARED_LIBRARY_SUFFIX@",
+        "Name": "opendcc_core",
+        "ResourcePath": "resources",
+        "Root": "..",
+        "Type": "library"
+      }
+    ]
+}

@@ -1,0 +1,28 @@
+{
+    "Plugins": [
+      {
+        "Info": {
+          "Types": {
+            "OpenDCC::UsdPropertyProxy": {
+              "documentation": "Base class for all property proxies."
+            },
+            "OpenDCC::PropertyFactory": {
+              "documentation": "Base class for all property factories."
+            },
+            "OpenDCC::UsdPrimPropertyFactory": {
+              "bases": [
+                "OpenDCC::PropertyFactory"
+              ],
+              "documentation": "Class which reads metadata from usd prim definition.",
+              "priority" : 0
+            }
+          }
+        },
+        "LibraryPath": "@LIBRARY_LOCATION@/@CMAKE_SHARED_LIBRARY_PREFIX@usd_fallback_proxy@CMAKE_SHARED_LIBRARY_SUFFIX@",
+        "Name": "usd_fallback_proxy",
+        "ResourcePath": "resources",
+        "Root": "..",
+        "Type": "library"
+      }
+    ]
+}

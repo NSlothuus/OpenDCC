@@ -1,0 +1,11 @@
+[base]
+name = 'opendcc.anim_engine.schema'
+
+[[environment.PYTHONPATH]]
+value = 'python'
+
+[[python.entry_point]]
+module = 'opendcc.anim_engine.schema'
+
+[[native.load]]
+path = 'lib/${LIB_PREFIX}opendcc.anim_engine.schema${LIB_EXT}'

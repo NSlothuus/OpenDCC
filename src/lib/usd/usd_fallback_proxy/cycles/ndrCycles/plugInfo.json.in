@@ -1,0 +1,25 @@
+{
+    "Plugins": [
+      {
+        "Info": {
+          "Types": {
+            "OpenDCC::NdrCyclesDiscoveryPlugin" : {
+              "bases": ["NdrDiscoveryPlugin"],
+              "displayName": "Cycles Node Discovery"
+            },
+            "OpenDCC::NdrCyclesParserPlugin": {
+                "bases": [
+                    "NdrParserPlugin"
+                ],
+                "displayName": "Cycles Node Parser"
+            }
+          }
+        },
+        "LibraryPath": "@LIBRARY_LOCATION@/@CMAKE_SHARED_LIBRARY_PREFIX@ndrCycles@CMAKE_SHARED_LIBRARY_SUFFIX@",
+        "Name": "ndrCycles",
+        "ResourcePath": "resources",
+        "Root": "..",
+        "Type": "library"
+      }
+    ]
+}

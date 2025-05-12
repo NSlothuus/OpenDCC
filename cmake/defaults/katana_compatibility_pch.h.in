@@ -1,0 +1,8 @@
+#ifdef OPENDCC_KATANA_SUPPORT
+#ifndef _WIN32
+#define OpenImageIO_v@OIIO_MAJOR_MINOR@ OpenImageIO_Foundry_v@OIIO_MAJOR_MINOR@
+#define OpenColorIO_v@OCIO_MAJOR_MINOR@ FnOpenColorIO
+#endif
+#define Boost_NAMESPACE foundryboost
+#define pxr fnpxr
+#endif

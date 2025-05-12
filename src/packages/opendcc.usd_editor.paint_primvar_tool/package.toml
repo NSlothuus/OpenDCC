@@ -1,0 +1,11 @@
+[base]
+name = 'opendcc.usd_editor.paint_primvar_tool'
+
+[[environment.PYTHONPATH]]
+value = 'python'
+
+[[python.entry_point]]
+module = 'opendcc.usd_editor.paint_primvar_tool'
+
+[[native.entry_point]]
+path='lib/${LIB_PREFIX}opendcc.usd_editor.paint_primvar_tool${LIB_EXT}'

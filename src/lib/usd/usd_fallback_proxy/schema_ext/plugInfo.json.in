@@ -1,0 +1,22 @@
+{
+    "Plugins": [
+      {
+        "Info": {
+          "Types": {
+            "OpenDCC::SchemaExtFactory": {
+              "bases": [
+                "OpenDCC::PropertyFactory"
+              ],
+              "documentation": "Class which extends existing Usd schemas with new metadata.",
+              "priority" : 100
+            }
+          }
+        },
+        "LibraryPath": "@LIBRARY_LOCATION@/@CMAKE_SHARED_LIBRARY_PREFIX@schema_ext@CMAKE_SHARED_LIBRARY_SUFFIX@",
+        "Name": "SchemaExtProxy",
+        "ResourcePath": "resources",
+        "Root": "..",
+        "Type": "library"
+      }
+    ]
+}

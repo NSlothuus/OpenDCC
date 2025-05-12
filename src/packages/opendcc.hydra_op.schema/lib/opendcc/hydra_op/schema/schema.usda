@@ -1,0 +1,184 @@
+#usda 1.0
+(
+    """ schemata for HydraOp nodes
+    """
+    subLayers = [
+        @usd/schema.usda@
+    ]
+) 
+
+over "GLOBAL" (
+    customData = {
+        string libraryName       = "usdHydraOp"
+        string libraryPath       = "."
+        string libraryPrefix     = "UsdHydraOp"
+    }
+) {
+}
+
+class "HydraOpTranslateAPI" (
+    doc = """ Base HydraOp node """
+    inherits = </APISchemaBase>
+    customData = {
+        string className = "TranslateAPI"
+        dictionary extraPlugInfo = {
+            bool providesUsdShadeConnectableAPIBehavior = 1
+        }
+    })  
+{
+	token hydraOp:in
+	bool hydraOp:bypass = false
+    string hydraOp:path (
+        doc = """ source code """)
+    token hydraOp:out
+}
+
+
+class HydraOpBaseNode "HydraOpBaseNode" (
+    doc = """ Base HydraOp node """
+    inherits = </Typed>
+    customData = {
+        string className = "BaseNode"
+        dictionary extraPlugInfo = {
+            bool providesUsdShadeConnectableAPIBehavior = 1
+        }
+    })  
+{
+	bool inputs:bypass = false
+}
+
+class HydraOpNodegraph "HydraOpNodegraph" (
+    doc = """ Scope node for HydraOp nodes """
+    inherits = </HydraOpBaseNode>
+    customData = {
+        string className = "Nodegraph"
+        dictionary extraPlugInfo = {
+            bool providesUsdShadeConnectableAPIBehavior = 1
+            bool isUsdShadeContainer = 1
+        }
+    })
+{
+    token inputs:terminalOp
+}
+
+class HydraOpMerge "HydraOpMerge" (
+    doc = """ Merge inputs.   """
+    inherits = </HydraOpBaseNode>
+    customData = {
+        string className = "Merge"
+        dictionary extraPlugInfo = {
+            bool providesUsdShadeConnectableAPIBehavior = 1
+        }
+    })  
+{
+	token inputs:in
+    token outputs:out
+}
+
+class HydraOpSetAttribute "HydraOpSetAttribute" (
+    doc = """ Set attribute to location, value must bee attribute or prim with name value"""
+    inherits = </HydraOpBaseNode>
+    customData = {
+        string className = "SetAttribute"
+        dictionary extraPlugInfo = {
+            bool providesUsdShadeConnectableAPIBehavior = 1
+        }
+    })  
+{
+    token inputs:in
+	pathExpression inputs:applyTo (
+         doc = """ location paths """
+         )
+    token inputs:attrName
+    token inputs:attrType = "string" (
+        allowedTokens = ["string", "int", "float", "double"]
+    );
+    string inputs:value_string
+    int inputs:value_int
+    float inputs:value_float
+    double inputs:value_double
+
+    token outputs:out
+}
+
+class HydraOpPrune "HydraOpPrune" (
+    doc = """ Prune paths which match the path expression """
+    inherits = </HydraOpBaseNode>
+    customData = {
+        string className = "Prune"
+    })
+{
+    token inputs:in
+	pathExpression inputs:applyTo (
+         doc = """ prune predicate """
+    )
+    token outputs:out
+} 
+
+
+class HydraOpIsolate "HydraOpIsolate" (
+    doc = """ Isolate location which match the path expression """
+    inherits = </HydraOpBaseNode>
+    customData = {
+        string className = "Isolate"
+    })
+{
+    token inputs:in
+	pathExpression inputs:applyTo (
+         doc = """ isolate predicate """
+    )
+    string inputs:isolateFrom (
+        doc = """ isolate from path """
+    )
+    token outputs:out
+}
+
+
+class HydraOpMaterialAssign "HydraOpMaterialAssign" (
+    doc = """ Node for assign one material to multiple lights or pieces of geometry """
+    inherits = </HydraOpBaseNode>
+    customData = {
+        string className = "MaterialAssign"
+    })
+{
+    token inputs:in
+    string inputs:materialAssign (
+        doc = """ Specifies the material to assign """
+    )
+	pathExpression inputs:applyTo (
+         doc = """ material assign predicate """
+    )
+    token outputs:out
+} 
+
+class HydraOpUsdIn "HydraOpUsdIn" (
+    doc = """ Load usd from file """
+    inherits = </HydraOpBaseNode>
+    customData = {
+        string className = "UsdIn"
+        dictionary extraPlugInfo = {
+            bool providesUsdShadeConnectableAPIBehavior = 1
+        }
+    })  
+{
+	asset inputs:filePath (doc = """ path to usd scene """)
+	string inputs:rootPrim (doc = """ root prim of scene """)
+	string inputs:stagePrefix = "/root/world/geo"
+
+    token outputs:out
+}
+
+
+class HydraOpGroup "HydraOpGroup" (
+    inherits = </HydraOpBaseNode>
+    customData = {
+        string className = "Group"
+        dictionary extraPlugInfo = {
+            bool providesUsdShadeConnectableAPIBehavior = 1
+            bool isUsdShadeContainer = 1
+        }
+    })
+{
+    token inputs:in
+    token outputs:out
+}

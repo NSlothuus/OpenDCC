@@ -1,0 +1,15 @@
+[base]
+name = 'opendcc.expression'
+autoload = true
+
+[[environment.PYTHONPATH]]
+value = 'python'
+
+[[python.entry_point]]
+module = 'opendcc.expression'
+
+[[native.load]]
+path='${APP_LIB_DIR}/${LIB_PREFIX}expression_engine_usd_schema${LIB_EXT}'
+
+[[native.entry_point]]
+path='${APP_LIB_DIR}/${LIB_PREFIX}expression_engine_extension${LIB_EXT}'

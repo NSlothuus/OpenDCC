@@ -1,0 +1,12 @@
+[base]
+name = 'opendcc.ui.script_editor'
+
+
+[dependencies]
+'opendcc.ui.code_editor' = {}
+
+[[environment.PYTHONPATH]]
+value = 'python'
+
+[[python.entry_point]]
+module = 'opendcc.ui.script_editor'

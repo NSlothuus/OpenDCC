@@ -1,0 +1,3252 @@
+# options
+[node options]
+    [attr AA_samples]
+        hints.slider        BOOL true
+        hints.slidermin                 INT     -10
+        hints.slidermax                 INT     100
+        default             INT     3
+    [attr AA_samples_max]
+        hints.slider        BOOL true
+        hints.slidermin                 INT     0
+        hints.slidermax                 INT     100
+    [attr bucket_size]
+        hints.slider        BOOL true
+        hints.slidermin             INT     16
+        hints.slidermax             INT     256
+    [attr abort_on_error]
+    [attr abort_on_license_fail]
+    [attr AA_sample_clamp]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0.001
+        hints.slidermax             FLOAT   100.0
+        default             FLOAT   10.0
+    [attr indirect_sample_clamp]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0.001
+        hints.slidermax             FLOAT   100.0
+    [attr AA_samples_max]
+        hints.slider        BOOL true
+        hints.slidermin                 INT     0
+        hints.slidermax              INT     10
+    [attr AA_adaptive_threshold]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT     0
+        hints.slidermax             FLOAT     1
+    [attr AA_sample_clamp_affects_aovs]
+    [attr ignore_textures]
+    [attr ignore_operators]
+    [attr ignore_shaders]
+    [attr ignore_lights]
+    [attr ignore_shadows]
+    [attr ignore_subdivision]
+    [attr ignore_displacement]
+    [attr ignore_motion_blur]
+    [attr ignore_motion]
+    [attr ignore_smoothing]
+    [attr ignore_sss]
+    [attr ignore_bump]
+    [attr auto_transparency_depth]
+        hints.slider        BOOL true
+        hints.slidermin             INT     0
+        hints.slidermax             INT     16
+    [attr show_samples]
+    [attr max_subdivisions]
+        hints.slider        BOOL true
+        hints.slidermin                 INT     0
+        hints.slidermax                 INT     255
+    [attr texture_max_memory_MB]
+    [attr texture_automip]
+    [attr texture_autotile]
+    [attr texture_specular_blur]
+        default             FLOAT   0
+    [attr GI_diffuse_depth]
+        hints.slider        BOOL true
+        hints.slidermin                 INT     0
+        hints.slidermax             INT     16
+        default             INT     1
+    [attr GI_specular_depth]
+        hints.slider        BOOL true
+        hints.slidermin                 INT     0
+        hints.slidermax             INT     16
+        default             INT     1
+    [attr GI_transmission_depth]
+        hints.slider        BOOL true
+        hints.slidermin                 INT     0
+        hints.slidermax             INT     16
+        default             INT     8
+    [attr GI_volume_depth]
+        hints.slider        BOOL true
+        hints.slidermin                 INT     0
+        hints.slidermax             INT     16
+    [attr GI_total_depth]
+        hints.slider        BOOL true
+        hints.slidermin                 INT     0
+        hints.slidermax             INT     16
+    [attr GI_diffuse_samples]
+        hints.slider        BOOL true
+        hints.slidermin                 INT     0
+        hints.slidermax                 INT     100
+    [attr GI_specular_samples]
+        hints.slider        BOOL true
+        hints.slidermin                 INT     0
+        hints.slidermax                 INT     100
+    [attr GI_transmission_samples]
+        hints.slider        BOOL true
+        hints.slidermin                 INT     0
+        hints.slidermax                 INT     100
+    [attr GI_sss_samples]
+        hints.slider        BOOL true
+        hints.slidermin                 INT     0
+        hints.slidermax                 INT     100
+    [attr GI_volume_samples]
+        hints.slider        BOOL true
+        hints.slidermin                 INT     0
+        hints.slidermax             INT     10
+    [attr low_light_threshold]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax             FLOAT   0.1
+    [attr atmosphere]
+    [attr subdiv_dicing_camera]
+# lights
+[node distant_light]
+    [attr exposure]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   -5.0
+        hints.slidermax             FLOAT   5.0
+    [attr angle]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax                 FLOAT   180.0
+    [attr samples]
+        hints.slider        BOOL true
+        hints.slidermin                 INT     0
+        hints.slidermax                 INT     100
+        default             INT     1
+    [attr bounce_factor]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax             FLOAT   20.0
+    [attr shadow_density]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax                 FLOAT   1.0
+    [attr bounces]
+        hints.slider        BOOL true
+        hints.slidermin                 INT     0
+        hints.slidermax                 INT     10000
+    [attr diffuse]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax             FLOAT   1.0
+    [attr specular]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax             FLOAT   1.0
+    [attr sss]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax             FLOAT   1.0
+    [attr indirect]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax             FLOAT   1.0
+    [attr volume]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax             FLOAT   1.0
+    [attr volume_samples]
+        hints.slider        BOOL true
+        hints.slidermin                 INT     0
+        hints.slidermax                 INT     100
+    [attr cast_volumetric_shadows]
+    [attr color]
+[node point_light]
+    [attr exposure]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   -5.0
+        hints.slidermax             FLOAT   5.0
+    [attr radius]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax             FLOAT   10.0
+    [attr samples]
+        hints.slider        BOOL true
+        hints.slidermin                 INT     0
+        hints.slidermax                 INT     100
+        default             INT     1
+    [attr bounce_factor]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax             FLOAT   20.0
+    [attr shadow_density]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax                 FLOAT   1.0
+    [attr bounces]
+        hints.slider        BOOL true
+        hints.slidermin                 INT     0
+        hints.slidermax                 INT     10000
+    [attr camera]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax             FLOAT   1.0
+    [attr transmission]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax             FLOAT   1.0
+    [attr diffuse]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax             FLOAT   1.0
+    [attr specular]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax             FLOAT   1.0
+    [attr sss]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax             FLOAT   1.0
+    [attr indirect]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax             FLOAT   1.0
+    [attr volume]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax             FLOAT   1.0
+    [attr volume_samples]
+        hints.slider        BOOL true
+        hints.slidermin                 INT     0
+        hints.slidermax                 INT     100
+    [attr normalize]
+    [attr cast_volumetric_shadows]
+    [attr color]
+[node spot_light]
+    [attr exposure]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   -5.0
+        hints.slidermax             FLOAT   5.0
+    [attr radius]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax             FLOAT   10.0
+    [attr samples]
+        hints.slider        BOOL true
+        hints.slidermin                 INT     0
+        hints.slidermax                 INT     100
+        default             INT     1
+    [attr bounce_factor]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax             FLOAT   20.0
+    [attr bounces]
+        hints.slider        BOOL true
+        hints.slidermin                 INT     0
+        hints.slidermax                 INT     10000
+    [attr aspect_ratio]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax                 FLOAT   100.0
+    [attr shadow_density]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax                 FLOAT   1.0
+    [attr lens_radius]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax             FLOAT   1.0
+    [attr roundness]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax                 FLOAT   1.0
+    [attr diffuse]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax             FLOAT   1.0
+    [attr specular]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax             FLOAT   1.0
+    [attr sss]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax             FLOAT   1.0
+    [attr indirect]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax             FLOAT   1.0
+    [attr volume]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax             FLOAT   1.0
+    [attr volume_samples]
+        hints.slider        BOOL true
+        hints.slidermin                 INT     0
+        hints.slidermax                 INT     100
+    [attr cast_volumetric_shadows]
+    [attr normalize]
+    [attr color]
+[node skydome_light]
+    [attr intensity]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax             FLOAT   10.0
+    [attr exposure]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   -5.0
+        hints.slidermax             FLOAT   5.0
+    [attr shadow_density]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax                 FLOAT   1.0
+    [attr samples]
+        hints.slider        BOOL true
+        hints.slidermin                 INT     0
+        hints.slidermax                 INT     100
+        default             INT     1
+    [attr color]
+    [attr camera]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax             FLOAT   1.0
+    [attr transmission]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax             FLOAT   1.0
+    [attr diffuse]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax             FLOAT   1.0
+    [attr specular]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax             FLOAT   1.0
+    [attr sss]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax             FLOAT   1.0
+    [attr indirect]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax             FLOAT   1.0
+    [attr volume]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax             FLOAT   1.0
+    [attr volume_samples]
+        hints.slider        BOOL true
+        hints.slidermin                 INT     0
+        hints.slidermax                 INT     100
+    [attr cast_volumetric_shadows]
+        
+[node photometric_light]
+    [attr intensity]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax             FLOAT   10.0
+    [attr filename]
+    [attr exposure]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   -5.0
+        hints.slidermax             FLOAT   5.0
+    [attr shadow_density]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax                 FLOAT   1.0
+    [attr samples]
+        hints.slider        BOOL true
+        hints.slidermin                 INT     0
+        hints.slidermax                 INT     100
+        default             INT     1
+    [attr radius]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0
+        hints.slidermax             FLOAT   10.0
+    [attr color]
+    [attr diffuse]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax             FLOAT   1.0
+    [attr specular]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax             FLOAT   1.0
+    [attr sss]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax             FLOAT   1.0
+    [attr indirect]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax             FLOAT   1.0
+    [attr volume]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax             FLOAT   1.0
+    [attr volume_samples]
+        hints.slider        BOOL true
+        hints.slidermin                 INT     0
+        hints.slidermax                 INT     100
+    [attr cast_volumetric_shadows]
+[node quad_light]
+    [attr intensity]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax             FLOAT   10.0
+    [attr exposure]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   -5.0
+        hints.slidermax             FLOAT   5.0
+    [attr shadow_density]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0.0
+        hints.slidermax             FLOAT   1.0
+    [attr samples]
+        hints.slider        BOOL true
+        hints.slidermin                 INT     0
+        hints.slidermax                 INT     100
+        default             INT     1
+    [attr spread]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0
+        hints.slidermax                 FLOAT   1
+    [attr roundness]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0
+        hints.slidermax                 FLOAT   1
+    [attr soft_edge]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0
+        hints.slidermax                 FLOAT   1
+    [attr camera]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax             FLOAT   1.0
+    [attr transmission]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax             FLOAT   1.0
+    [attr bounce_factor]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax             FLOAT   20.0
+    [attr bounces]
+        hints.slider        BOOL true
+        hints.slidermin                 INT     0
+        hints.slidermax                 INT     10000
+    [attr color]
+    [attr diffuse]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax             FLOAT   1.0
+    [attr specular]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax             FLOAT   1.0
+    [attr sss]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax             FLOAT   1.0
+    [attr indirect]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax             FLOAT   1.0
+    [attr volume]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax             FLOAT   1.0
+    [attr volume_samples]
+        hints.slider        BOOL true
+        hints.slidermin                 INT     0
+        hints.slidermax                 INT     100
+    [attr normalize]
+    [attr cast_volumetric_shadows]
+[node cylinder_light]
+    [attr intensity]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax             FLOAT   10.0
+    [attr exposure]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   -5.0
+        hints.slidermax             FLOAT   5.0
+    [attr shadow_density]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax                 FLOAT   1.0
+    [attr samples]
+        hints.slider        BOOL true
+        hints.slidermin                 INT     0
+        hints.slidermax                 INT     100
+        default             INT     1
+    [attr camera]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax             FLOAT   1.0
+    [attr transmission]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax             FLOAT   1.0
+    [attr diffuse]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax             FLOAT   1.0
+    [attr specular]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax             FLOAT   1.0
+    [attr sss]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax             FLOAT   1.0
+    [attr indirect]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax             FLOAT   1.0
+    [attr volume]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax             FLOAT   1.0
+    [attr volume_samples]
+        hints.slider        BOOL true
+        hints.slidermin                 INT     0
+        hints.slidermax                 INT     100
+    [attr normalize]
+    [attr cast_volumetric_shadows]
+[node disk_light]
+    [attr intensity]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax             FLOAT   10.0
+    [attr exposure]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   -5.0
+        hints.slidermax             FLOAT   5.0
+    [attr spread]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0
+        hints.slidermax                 FLOAT   1
+    [attr shadow_density]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax                 FLOAT   1.0
+    [attr samples]
+        hints.slider        BOOL true
+        hints.slidermin                 INT     0
+        hints.slidermax                 INT     100
+        default             INT     1
+    [attr camera]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax             FLOAT   1.0
+    [attr transmission]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax             FLOAT   1.0
+    [attr diffuse]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax             FLOAT   1.0
+    [attr specular]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax             FLOAT   1.0
+    [attr sss]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax             FLOAT   1.0
+    [attr indirect]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax             FLOAT   1.0
+    [attr volume]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax             FLOAT   1.0
+    [attr volume_samples]
+        hints.slider        BOOL true
+        hints.slidermin                 INT     0
+        hints.slidermax                 INT     100
+    [attr normalize]
+    [attr cast_volumetric_shadows]
+[node mesh_light]
+    gpu_support             BOOL    true
+    [attr color]
+    [attr intensity]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax             FLOAT   10.0
+    [attr exposure]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   -5.0
+        hints.slidermax             FLOAT   5.0
+    [attr shadow_density]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax                 FLOAT   1.0
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0.0
+        hints.slidermax             FLOAT   1.0
+    [attr diffuse]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax             FLOAT   1.0
+    [attr specular]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax             FLOAT   1.0
+    [attr sss]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax             FLOAT   1.0
+    [attr indirect]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax             FLOAT   1.0
+    [attr volume]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax             FLOAT   1.0
+    [attr filters]
+# light filters
+[node barndoor]
+    # AI_TYPE_RGB   0x05
+    [attr barndoor_bottom_edge]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0
+        hints.slidermax                 FLOAT   1.0
+    [attr barndoor_bottom_left]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0
+        hints.slidermax                 FLOAT   1.0
+    [attr barndoor_bottom_right]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0
+        hints.slidermax                 FLOAT   1.0
+    [attr barndoor_top_edge]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0
+        hints.slidermax                 FLOAT   1.0
+    [attr barndoor_top_left]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0
+        hints.slidermax                 FLOAT   1.0
+    [attr barndoor_top_right]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0
+        hints.slidermax                 FLOAT   1.0
+    [attr barndoor_left_edge]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0
+        hints.slidermax                 FLOAT   1.0
+    [attr barndoor_left_bottom]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0
+        hints.slidermax                 FLOAT   1.0
+    [attr barndoor_left_top]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0
+        hints.slidermax                 FLOAT   1.0
+    [attr barndoor_right_edge]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0
+        hints.slidermax                 FLOAT   1.0
+    [attr barndoor_right_bottom]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0
+        hints.slidermax                 FLOAT   1.0
+    [attr barndoor_right_top]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0
+        hints.slidermax                 FLOAT   1.0
+[node gobo]
+    # AI_TYPE_RGB   0x05
+    [attr density]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax             FLOAT   10.0
+    [attr rotate]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax                 FLOAT   360.0
+    [attr sscale]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax             FLOAT   1000.0
+    [attr tscale]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax             FLOAT   1000.0
+[node light_blocker]
+    # AI_TYPE_RGB   0x05
+    [attr density]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax             FLOAT   10.0
+    [attr height_edge]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax             FLOAT   1000.0
+    [attr ramp]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax             FLOAT   1000.0
+    [attr width_edge]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax             FLOAT   1000.0
+    [attr roundness]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax             FLOAT   1000.0
+# scale 1 means it's a distance typed attribute
+# so we are just simply multiplying it with the
+# scene scale option
+[node light_decay]
+    [attr far_end]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax             FLOAT   1000.0
+        scale               INT     1
+    [attr far_start]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax             FLOAT   1000.0
+        scale               INT     1
+    [attr near_end]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax             FLOAT   1000.0
+        scale               INT     1
+    [attr near_start]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax             FLOAT   1000.0
+        scale               INT     1
+# cameras
+[node persp_camera]
+    [attr focus_distance]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax                 FLOAT   1000000000.0
+        default             FLOAT   5.0
+        animatable          BOOL    true
+    [attr aperture_size]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax                 FLOAT   20.0
+        # default           FLOAT   0.2
+        animatable          BOOL    true
+    [attr aperture_blades]
+        hints.slider        BOOL true
+        hints.slidermin                 INT     0
+        hints.slidermax                 INT     40
+        default             INT     0
+    [attr aperture_blade_curvature]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   -20.0
+        hints.slidermax                 FLOAT   20.0
+    [attr aperture_rotation]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax                 FLOAT   360.0
+    [attr aperture_aspect_ratio]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax             FLOAT   1.0
+    [attr exposure]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   -100.0
+        hints.slidermax                 FLOAT   100.0
+    [attr shutter_start]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT     0.0
+        hints.slidermax             FLOAT     1.0
+        default             FLOAT     0.0
+    [attr shutter_end]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT     0.0
+        hints.slidermax             FLOAT     1.0
+        default             FLOAT     1.0
+    [attr rolling_shutter_duration]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT     0.0
+        hints.slidermax                 FLOAT     1.0
+    [attr radial_distortion]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT     -0.2
+        hints.slidermax             FLOAT     2.0
+    [attr horizontal_fov]
+[node ortho_camera]
+    [attr exposure]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   -100.0
+        hints.slidermax                 FLOAT   100.0
+    [attr shutter_start]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT     0.0
+        hints.slidermax             FLOAT     1.0
+        default             FLOAT     0.0
+    [attr shutter_end]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT     0.0
+        hints.slidermax             FLOAT     1.0
+        default             FLOAT     1.0
+    [attr rolling_shutter_duration]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT     0.0
+        hints.slidermax                 FLOAT     1.0
+[node fisheye_camera]
+    [attr fov]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax             FLOAT   360.0
+        animatable          BOOL    true
+    [attr focus_distance]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax                 FLOAT   1000000000.0
+        # default           FLOAT   5.0
+        animatable          BOOL    true
+    [attr aperture_size]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax                 FLOAT   20.0
+        # default           FLOAT   0.2
+        animatable          BOOL    true
+    [attr aperture_blades]
+        hints.slider        BOOL true
+        hints.slidermin                 INT     0
+        hints.slidermax                 INT     40
+        default             INT     0
+    [attr aperture_blade_curvature]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   -20.0
+        hints.slidermax                 FLOAT   20.0
+    [attr aperture_rotation]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax                 FLOAT   360.0
+    [attr aperture_aspect_ratio]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax             FLOAT   1.0
+    [attr exposure]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   -100.0
+        hints.slidermax                 FLOAT   100.0
+    [attr shutter_start]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT     0.0
+        hints.slidermax             FLOAT     1.0
+        default             FLOAT     0.0
+    [attr shutter_end]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT     0.0
+        hints.slidermax             FLOAT     1.0
+        default             FLOAT     1.0
+    [attr rolling_shutter_duration]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT     0.0
+        hints.slidermax                 FLOAT     1.0
+        
+[node cyl_camera]
+    [attr horizontal_fov]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax             FLOAT   360.0
+        animatable          BOOL    true
+    [attr vertical_fov]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax             FLOAT   180.0
+        animatable          BOOL    true
+    [attr exposure]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   -100.0
+        hints.slidermax                 FLOAT   100.0
+    [attr shutter_start]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT     0.0
+        hints.slidermax             FLOAT     1.0
+        default             FLOAT     0.0
+    [attr shutter_end]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT     0.0
+        hints.slidermax             FLOAT     1.0
+        default             FLOAT     1.0
+    [attr rolling_shutter_duration]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT     0.0
+        hints.slidermax                 FLOAT     1.0
+[node spherical_camera]
+    [attr exposure]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   -100.0
+        hints.slidermax                 FLOAT   100.0
+    [attr shutter_start]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT     0.0
+        hints.slidermax             FLOAT     1.0
+        default             FLOAT     0.0
+    [attr shutter_end]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT     0.0
+        hints.slidermax             FLOAT     1.0
+        default             FLOAT     1.0
+    [attr rolling_shutter_duration]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT     0.0
+        hints.slidermax                 FLOAT     1.0
+[node vr_camera]
+    [attr mode]
+        default             INT     0
+     
+    [attr projection]
+        default             INT     0
+    [attr eye_separation]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0
+        hints.slidermax             FLOAT   1
+        default             FLOAT   0.65
+    [attr eye_to_neck]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0
+        hints.slidermax             FLOAT   1
+        default             FLOAT   0.0
+    [attr top_merge_mode]
+        default             INT     1
+     
+    [attr top_merge_angle]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0
+        hints.slidermax             FLOAT   90
+        default             FLOAT   90
+        
+    [attr bottom_merge_mode]
+        default             INT     1
+     
+    [attr bottom_merge_angle]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0
+        hints.slidermax             FLOAT   90
+        default             FLOAT   90
+    [attr merge_shader]
+    [attr exposure]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   -100.0
+        hints.slidermax                 FLOAT   100.0
+    [attr shutter_start]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT     0.0
+        hints.slidermax             FLOAT     1.0
+        default             FLOAT     0.0
+    [attr shutter_end]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT     0.0
+        hints.slidermax             FLOAT     1.0
+        default             FLOAT     1.0
+    [attr rolling_shutter_duration]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT     0.0
+        hints.slidermax                 FLOAT     1.0
+# shaders
+[node standard]
+
+    [attr IOR]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax             FLOAT   3.0
+    [attr Kb]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax                 FLOAT   1.0
+    [attr Kd]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax                 FLOAT   1.0
+    [attr Kd_color]
+    [attr Kr]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax                 FLOAT   1.0
+    [attr Krn]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax                 FLOAT   1.0
+    [attr refraction_roughness]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax                 FLOAT   1.0
+    [attr dispersion_abbe]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax             FLOAT   100.0
+    [attr Ks]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax                 FLOAT   1.0
+    [attr Ksn]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax                 FLOAT   1.0
+    [attr Ksss]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax             FLOAT   1.0
+    [attr Kt]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax                 FLOAT   1.0
+    [attr Phong_exponent]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax                 FLOAT   5000.0
+    [attr bounce_factor]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax             FLOAT   4.0
+    [attr diffuse_roughness]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax                 FLOAT   1.0
+    [attr direct_diffuse]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax             FLOAT   1.0
+    [attr direct_specular]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax             FLOAT   1.0
+    [attr emission]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax             FLOAT   1.0
+    [attr indirect_diffuse]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax             FLOAT   1.0
+    [attr indirect_specular]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax             FLOAT   1.0
+    [attr specular_roughness]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax                 FLOAT   1.0
+    [attr specular_anisotropy]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax                 FLOAT   1.0
+    [attr specular_rotation]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax             FLOAT   1.0
+   
+[node standard_surface]
+
+    [attr aov_id1]
+        displayGroup STRING "AOVs"
+    [attr aov_id2]
+        displayGroup STRING "AOVs"
+    [attr aov_id3]
+        displayGroup STRING "AOVs"
+    [attr aov_id4]
+        displayGroup STRING "AOVs"
+    [attr aov_id5]
+        displayGroup STRING "AOVs"
+    [attr aov_id6]
+        displayGroup STRING "AOVs"
+    [attr aov_id7]
+        displayGroup STRING "AOVs"
+    [attr aov_id8]
+        displayGroup STRING "AOVs"
+    [attr id1]
+        displayGroup STRING "AOVs"
+    [attr id2]
+        displayGroup STRING "AOVs"
+    [attr id3]
+        displayGroup STRING "AOVs"
+    [attr id4]
+        displayGroup STRING "AOVs"
+    [attr id5]
+        displayGroup STRING "AOVs"
+    [attr id6]
+        displayGroup STRING "AOVs"
+    [attr id7]
+        displayGroup STRING "AOVs"
+    [attr id8]
+        displayGroup STRING "AOVs"
+    
+    [attr base_color]
+        displayGroup STRING "Base"
+    [attr base]
+        displayGroup        STRING "Base"
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax                 FLOAT   1.0
+    [attr diffuse_roughness]
+        displayGroup        STRING "Base"
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax                 FLOAT   1.0
+    [attr metalness]
+        displayGroup        STRING "Base"
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0.0
+        hints.slidermax             FLOAT   1.0
+
+    [attr specular_color]
+        displayGroup        STRING "Specular"
+    [attr specular]
+        displayGroup        STRING "Specular"
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax                 FLOAT   1.0
+    [attr specular_roughness]
+        displayGroup        STRING "Specular"
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax                 FLOAT   1.0
+    [attr specular_IOR]
+        displayGroup        STRING "Specular"
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax             FLOAT   3.0
+    [attr specular_anisotropy]
+        displayGroup        STRING "Specular"
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax                 FLOAT   1.0
+    [attr specular_rotation]
+        displayGroup        STRING "Specular"
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0.0
+        hints.slidermax             FLOAT   1.0
+
+    [attr transmission_color]
+        displayGroup        STRING "Transmission"
+
+    [attr transmission]
+        displayGroup        STRING "Transmission"
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0.0
+        hints.slidermax             FLOAT   1.0
+    [attr transmission_depth]
+        displayGroup        STRING "Transmission"
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0.0
+        hints.slidermax         FLOAT   100.0
+    [attr transmission_scatter_anisotropy]
+        displayGroup        STRING "Transmission"
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   -1.0
+        hints.slidermax             FLOAT   1.0
+    [attr transmission_dispersion]
+        displayGroup        STRING "Transmission"
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0.0
+        hints.slidermax         FLOAT   100.0
+    [attr transmission_extra_roughness]
+        displayGroup        STRING "Transmission"
+        hints.slider        BOOL true
+        hints.slidermin         FLOAT   0.0
+        hints.slidermax         FLOAT   1.0
+    [attr transmission_scatter]
+        displayGroup        STRING "Transmission"
+    [attr transmit_aovs]
+        displayGroup        STRING "Transmission"
+    [attr dielectric_priority]
+        displayGroup        STRING "Transmission"
+        hints.slider        BOOL true
+        hints.slidermin         INT     -10
+        hints.slidermax         INT     10
+
+    [attr subsurface_color]
+        displayGroup        STRING "Subsurface"
+    [attr subsurface_radius]
+        displayGroup        STRING "Subsurface"
+    [attr subsurface]
+        displayGroup        STRING "Subsurface"
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0.0
+        hints.slidermax             FLOAT   1.0
+    [attr subsurface_scale]
+        displayGroup        STRING "Subsurface"
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0.0
+        hints.slidermax         FLOAT   10.0
+    [attr subsurface_anisotropy]
+        displayGroup        STRING "Subsurface"
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   -1.0
+        hints.slidermax             FLOAT   1.0
+    [attr subsurface_type]
+        displayGroup        STRING "Subsurface"
+
+    [attr coat_color]
+        displayGroup        STRING "Coat"
+    [attr coat]
+        displayGroup        STRING "Coat"
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0.0
+        hints.slidermax             FLOAT   1.0
+    [attr coat_roughness]
+        displayGroup        STRING "Coat"
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0.0
+        hints.slidermax             FLOAT   1.0
+    [attr coat_IOR]
+        displayGroup        STRING "Coat"
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0.0
+        hints.slidermax         FLOAT   5.0
+    [attr coat_affect_color]
+        displayGroup        STRING "Coat"
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0.0
+        hints.slidermax             FLOAT   1.0
+    [attr coat_affect_roughness]
+        displayGroup        STRING "Coat"
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0.0
+        hints.slidermax             FLOAT   1.0
+    [attr coat_anisotropy]
+        displayGroup        STRING "Coat"
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0.0
+        hints.slidermax             FLOAT   1.0
+    [attr coat_normal]
+        displayGroup        STRING "Coat"
+    [attr coat_rotation]
+        displayGroup        STRING "Coat"
+        hints.slider        BOOL true
+        hints.slidermin         FLOAT   0.0
+        hints.slidermax         FLOAT   1.0
+
+    [attr sheen_color]
+        displayGroup        STRING "Sheen"
+    [attr sheen]
+        displayGroup        STRING "Sheen"
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0.0
+        hints.slidermax             FLOAT   1.0
+    [attr sheen_roughness]
+        displayGroup        STRING "Sheen"
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0.0
+        hints.slidermax             FLOAT   1.0
+
+    [attr emission_color]
+        displayGroup        STRING "Emission"
+    [attr emission]
+        displayGroup        STRING "Emission"
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0.0
+        hints.slidermax         FLOAT   1.0
+
+    [attr indirect_diffuse]
+        displayGroup        STRING "Indirect"
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0.0
+        hints.slidermax         FLOAT   1.0
+    [attr indirect_specular]
+        displayGroup        STRING "Indirect"
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0.0
+        hints.slidermax         FLOAT   1.0
+    
+    [attr thin_walled]
+        displayGroup        STRING "Geometry"
+    [attr opacity]
+        displayGroup        STRING "Geometry"
+    [attr tangent]
+        displayGroup        STRING "Geometry"
+    [attr normal]
+        displayGroup        STRING "Geometry"
+    
+    [attr thin_film_thickness]
+        displayGroup        STRING "Thin Film"
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0.0
+        hints.slidermax         FLOAT   2000.0
+    [attr thin_film_IOR]
+        displayGroup        STRING "Thin Film"
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0.0
+        hints.slidermax         FLOAT   3.0
+
+    [attr caustics]
+        displayGroup        STRING "Other"
+    [attr exit_to_background]
+        displayGroup        STRING "Other"
+    [attr internal_reflections]
+        displayGroup        STRING "Other"
+
+[node utility]
+
+    [attr opacity]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT 0.0
+        hints.slidermax                 FLOAT 1.0
+    [attr ao_distance]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT 0.0
+        hints.slidermax             FLOAT 200.0
+    [attr roughness]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax                 FLOAT   1.0
+    
+[node ray_switch_rgba]
+    
+[node ambient_occlusion]
+
+    [attr falloff]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax             FLOAT   100.0
+    [attr far_clip]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax             FLOAT   2000.0
+    [attr near_clip]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax             FLOAT   100.0
+    [attr samples]
+        hints.slider        BOOL true
+        hints.slidermin                 INT     0
+        hints.slidermax             INT     10
+    [attr spread]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax                 FLOAT   1.0
+[node wireframe]
+
+    [attr line_width]
+
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax             FLOAT   10.0
+    [attr fill_color]
+
+    [attr line_color]
+
+    [attr raster_space]
+
+    [attr edge_type]
+
+[node flat]
+[node color_jitter]
+    [attr data_gain_min]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0.0
+        hints.slidermax             FLOAT   10.0
+    [attr data_gain_max]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0.0
+        hints.slidermax             FLOAT   10.0
+    [attr data_hue_min]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   -1.0
+        hints.slidermax             FLOAT   1.0
+    [attr data_hue_max]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   -1.0
+        hints.slidermax             FLOAT   1.0
+    [attr data_saturation_min]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0.0
+        hints.slidermax             FLOAT   10.0
+    [attr data_saturation_max]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0.0
+        hints.slidermax             FLOAT   10.0
+    [attr proc_gain_min]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0.0
+        hints.slidermax             FLOAT   10.0
+    [attr proc_gain_max]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0.0
+        hints.slidermax             FLOAT   10.0
+    [attr proc_hue_min]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   -1.0
+        hints.slidermax             FLOAT   1.0
+    [attr proc_hue_max]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   -1.0
+        hints.slidermax             FLOAT   1.0
+    [attr proc_saturation_min]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0.0
+        hints.slidermax             FLOAT   10.0
+    [attr proc_saturation_max]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0.0
+        hints.slidermax             FLOAT   10.0
+    [attr obj_gain_min]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0.0
+        hints.slidermax             FLOAT   10.0
+    [attr obj_gain_max]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0.0
+        hints.slidermax             FLOAT   10.0
+    [attr obj_hue_min]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   -1.0
+        hints.slidermax             FLOAT   1.0
+    [attr obj_hue_max]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   -1.0
+        hints.slidermax             FLOAT   1.0
+    [attr obj_saturation_min]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0.0
+        hints.slidermax             FLOAT   10.0
+    [attr obj_saturation_max]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0.0
+        hints.slidermax             FLOAT   10.0
+    [attr face_gain_min]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0.0
+        hints.slidermax             FLOAT   10.0
+    [attr face_gain_max]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0.0
+        hints.slidermax             FLOAT   10.0
+    [attr face_hue_min]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   -1.0
+        hints.slidermax             FLOAT   1.0
+    [attr face_hue_max]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   -1.0
+        hints.slidermax             FLOAT   1.0
+    [attr face_saturation_min]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0.0
+        hints.slidermax             FLOAT   10.0
+    [attr face_saturation_max]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0.0
+        hints.slidermax             FLOAT   10.0
+[node lambert]
+    [attr Kd]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax             FLOAT   1.0
+    
+[node noise]
+
+    [attr octaves]
+        hints.slider        BOOL true
+        hints.slidermin             INT   1
+        hints.slidermax             INT   8
+    [attr distortion]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0.0
+        hints.slidermax             FLOAT   10.0
+    [attr lacunarity]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0001
+        hints.slidermax             FLOAT   5.0
+    [attr amplitude]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0.0
+        hints.slidermax             FLOAT   1.0
+    
+[node cell_noise]
+
+    [attr octaves]
+        hints.slider        BOOL true
+        hints.slidermin             INT   1
+        hints.slidermax             INT   8
+    [attr randomness]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT 0
+        hints.slidermax             FLOAT 1
+    [attr lacunarity]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0001
+        hints.slidermax             FLOAT   5.0
+    [attr amplitude]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0.0
+        hints.slidermax             FLOAT   1.0
+    [attr density]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0.0
+        hints.slidermax             FLOAT   1.0
+[node bump2d]
+
+    [attr bump_height]
+
+
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0.0
+        hints.slidermax             FLOAT   1.0
+        default             FLOAT   0.01
+[node image]
+
+    [attr filename]
+    [attr multiply]
+    [attr offset]
+    
+[node motion_vector]
+
+    [attr time0]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0.0
+        hints.slidermax             FLOAT   1.0
+        default             FLOAT   0.0
+    [attr time1]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0.0
+        hints.slidermax             FLOAT   1.0
+        default             FLOAT   1.0
+    [attr max_displace]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0.0
+        hints.slidermax             FLOAT   1.0
+        default             FLOAT   0.0
+[node bump3d]
+
+    [attr bump_height]
+
+
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0.0
+        hints.slidermax             FLOAT   1.0
+        default             FLOAT   0.01
+    [attr epsilon]
+
+
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0000001
+        hints.slidermax             FLOAT   1.0
+        default             FLOAT   0.001
+[node hair]
+
+    [attr ambdiff]
+
+
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax                 FLOAT   1.0
+    [attr gloss]
+
+
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax                 FLOAT   5000.0
+        default             FLOAT   10.0
+    [attr gloss2]
+
+
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax                 FLOAT   5000.0
+        default             FLOAT   7.0
+    [attr kd_ind]
+
+
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax             FLOAT   10.0
+    [attr rootcolor]
+
+
+    [attr spec]
+
+
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax             FLOAT   1.0
+    [attr spec_color]
+
+
+    [attr tipcolor]
+
+
+    [attr spec_shift]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   -10.0
+        hints.slidermax             FLOAT   -5.0
+    [attr spec2]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax             FLOAT   1.0
+    [attr spec2_shift]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   7.5
+        hints.slidermax             FLOAT   15.0
+        
+    [attr transmission]
+
+
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0.0
+        hints.slidermax             FLOAT   1.0
+        default             FLOAT   0.0
+    [attr transmission_color]
+
+
+    
+    [attr transmission_spread]
+
+
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0.5
+        hints.slidermax             FLOAT   5.0
+        default             FLOAT   1.0
+[node standard_hair]
+
+    [attr base]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax                 FLOAT   1.0
+    [attr diffuse]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax                 FLOAT   1.0
+    [attr specular]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax                 FLOAT   1.0
+    [attr specular2]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax                 FLOAT   1.0
+    [attr transmission]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax                 FLOAT   1.0
+    [attr roughness]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax                 FLOAT   1.0
+    [attr roughness_azimuthal]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax                 FLOAT   1.0
+    [attr ior]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax             FLOAT   5.0
+    [attr shift]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   -90
+        hints.slidermax                 FLOAT   90
+    [attr melanin]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax             FLOAT   1.0
+    [attr melanin_redness]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax                 FLOAT   1.0
+    [attr melanin_randomize]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax             FLOAT   1.0
+    [attr emission]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax             FLOAT   1.0
+    [attr indirect_diffuse]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax             FLOAT   1.0
+    [attr indirect_specular]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax             FLOAT   1.0
+   
+   
+[node standard_volume]
+
+    [attr density]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax             FLOAT   5.0
+    [attr scatter]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax                 FLOAT   1.0
+    [attr scatter_anisotropy]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   -1.0
+        hints.slidermax                 FLOAT   1.0
+    [attr emission]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax                 FLOAT   1.0
+    [attr blackbody_kelvin]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax             FLOAT   20000.0
+    [attr blackbody_intensity]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax             FLOAT   1.0
+[node mix_shader]
+
+    [attr mix]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax                 FLOAT   1.0
+[node ray_switch_shader]
+
+[node osl]
+
+[node sky]
+
+    [attr intensity]
+
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax             FLOAT   10.0
+        default             FLOAT   1.0
+[node fog]
+
+    [attr distance]
+
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax             FLOAT   1000.0
+    [attr height]
+
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax             FLOAT   1000.0
+    [attr color]
+    [attr ground_point]
+    [attr ground_normal]
+[node atmosphere_volume]
+
+    [attr affect_camera]
+
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax                 FLOAT   1.0
+    [attr affect_diffuse]
+
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax                 FLOAT   1.0
+    [attr affect_specular]
+
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax                 FLOAT   1.0
+    [attr attenuation]
+
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax                 FLOAT   1.0
+    [attr density]
+
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax                 FLOAT   1.0
+    [attr eccentricity]
+
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   -0.9
+        hints.slidermax                 FLOAT   0.9
+    [attr samples]
+
+        hints.slider        BOOL true
+        hints.slidermin                 INT     1
+        hints.slidermax                 INT     100
+[node physical_sky]
+
+    [attr turbidity]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   1
+        hints.slidermax             FLOAT   10
+    [attr elevation]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0.0
+        hints.slidermax             FLOAT   90.0
+    [attr use_degrees]
+    [attr azimuth]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0.0
+        hints.slidermax             FLOAT   360.0
+    [attr intensity]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0.1
+        hints.slidermax             FLOAT   10
+    [attr sun_direction]
+    [attr enable_sun]
+    [attr sun_size]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0.1
+        hints.slidermax             FLOAT   5.0
+    [attr sun_tint]
+    [attr sky_tint]
+    [attr ground_albedo]
+        
+# dag nodes
+[node polymesh]
+    [attr diffuse_visibility]
+
+    [attr glossy_visibility]
+
+    [attr subdiv_iterations]
+
+        hints.slider        BOOL true
+        hints.slidermin                 INT     0
+        hints.slidermax                 INT     100
+    [attr subdiv_adaptive_error]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax             FLOAT   10.0
+[node procedural]
+    [attr opaque]
+
+    [attr self_shadows]
+
+    [attr diffuse_visibility]
+
+    [attr glossy_visibility]
+
+# drivers
+[node driver_deepexr]
+    [attr filename]
+    [attr color_space]
+    [attr tiled]
+    [attr input]
+    
+    
+[node driver_exr]
+    [attr filename]
+    [attr compression]
+    [attr color_space]
+    [attr tiled]
+    [attr input]
+    
+    
+[node driver_jpeg]
+    [attr filename]
+    [attr gamma]
+        default             FLOAT   2.2
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0001
+        hints.slidermax             FLOAT   5.0
+    [attr quality]
+        hints.slider        BOOL true
+        hints.slidermin                 INT     0
+        hints.slidermax                 INT     100
+    [attr color_space]
+    [attr input]
+    
+[node driver_png]
+    [attr filename]
+    [attr gamma]
+        default             FLOAT   2.2
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0001
+        hints.slidermax             FLOAT   5.0
+    [attr format]
+    [attr color_space]
+    [attr input]
+    
+[node driver_tiff]
+    [attr filename]
+    [attr gamma]
+        default             FLOAT   2.2
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0001
+        hints.slidermax             FLOAT   5.0
+    [attr compression]
+    [attr format]
+    [attr tiled]
+    [attr input]
+    [attr color_space]
+# filters
+# If each filter has a different value, only the first one to be initialized will be taken into account, and this 
+# but changing this would break existing scenes
+[node blackman_harris_filter]
+    [attr width]
+        default             FLOAT   2.0
+[node box_filter]
+[node catrom_filter]
+[node closest_filter]
+[node farthest_filter]
+[node heatmap_filter]
+[node mitnet_filter]
+    
+[node sinc_filter]
+    [attr width]
+        default             FLOAT   2.0
+[node triangle_filter]
+    [attr width]
+        default             FLOAT   2.0
+[node variance_filter]
+    [attr width]
+        default             FLOAT   2.0
+[node gaussian_filter]
+    [attr width]
+        default             FLOAT   2.0
+[node contour_filter]
+    [attr width]
+        default             FLOAT   2.0
+# We don't want to expose the optix filter, as this is controlled by the AOV parameter ""
+[node denoise_optix_filter]
+        
+# COMMON SHADERS
+[node abs]
+[node add]
+[node aov_write_float]
+    aov_shader              BOOL    true
+    [attr aov_input]
+    [attr passthrough]
+    
+[node aov_write_int]
+    aov_shader              BOOL    true
+    [attr aov_input]
+    [attr passthrough]
+[node aov_write_rgb]
+    aov_shader              BOOL    true
+    [attr aov_input]
+    [attr passthrough]
+    [attr blend_opacity]
+[node aov_write_rgba]
+    aov_shader              BOOL    true
+    [attr aov_input]
+    [attr passthrough]
+    [attr blend_opacity]
+[node aov_write_vector]
+    aov_shader              BOOL    true
+    [attr aov_input]
+    [attr passthrough]
+    [attr blend_opacity]
+[node aov_read_int]
+    aov_shader              BOOL    true
+[node aov_read_float]
+    aov_shader              BOOL    true
+[node aov_read_rgb]
+    aov_shader              BOOL    true
+ 
+[node aov_read_rgba]
+    aov_shader              BOOL    true    
+[node atan]
+[node blackbody]
+    [attr temperature]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax             FLOAT   20000.0
+    [attr intensity]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax             FLOAT   1.0
+[node cache]
+[node camera_projection]
+    [attr mask]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0
+        hints.slidermax             FLOAT   1
+    [attr aspect_ratio]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0001
+        hints.slidermax             FLOAT   2
+[node checkerboard]
+    [attr u_frequency]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax             FLOAT   10.0
+    [attr v_frequency]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax             FLOAT   10.0
+    [attr u_offset]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   -1.0
+        hints.slidermax             FLOAT   1.0
+    [attr v_offset]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   -1.0
+        hints.slidermax             FLOAT   1.0
+    [attr contrast]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0
+        hints.slidermax                 FLOAT   1
+    [attr filter_strength]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0
+        hints.slidermax             FLOAT   10
+    [attr filter_offset]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   -1.0
+        hints.slidermax             FLOAT   1.0
+[node clamp]
+    [attr min]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax             FLOAT   10.0
+    [attr max]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax             FLOAT   10.0
+    
+[node color_convert]
+[node color_correct]
+    [attr gamma]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax             FLOAT   10.0
+    [attr hue_shift]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   -1.0
+        hints.slidermax             FLOAT   1.0
+    [attr saturation]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax             FLOAT   10.0
+    [attr contrast]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0.0
+        hints.slidermax             FLOAT   10.0
+    [attr contrast_pivot]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0.0
+        hints.slidermax             FLOAT   1.0
+    [attr exposure]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0.0
+        hints.slidermax             FLOAT   10.0
+    [attr alpha_multiply]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax             FLOAT   10.0
+    [attr alpha_add]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   -1.0
+        hints.slidermax             FLOAT   1.0
+    
+[node compare]
+# enable complex_ior
+[node complex_ior]
+[attr material]
+
+[attr mode]
+
+[attr reflectivity]
+
+[attr edgetint]
+
+[attr eta]
+
+[node complement]
+    
+[node composite]
+[node cross]
+# enable curvature
+[node curvature]
+[attr output]
+
+ "or output both with the convex curvature in the red channel and concave curvature in the green channel."
+[attr samples]
+
+ "will reduce noise and give a better quality result. The actual number of rays is the square of this value."
+        hints.slider        BOOL true
+        hints.slidermin INT 1
+        hints.slider        BOOL true
+        hints.slidermin INT 10
+[attr radius]
+
+  "Smaller values show finer details, while larger values give a smoother result."
+        hints.slider        BOOL true
+        hints.slidermin FLOAT 0
+        hints.slidermax FLOAT 5
+[attr spread]
+        hints.slider        BOOL true
+        hints.slidermin     FLOAT 0
+        hints.slidermax     FLOAT 1
+
+"and the default value of 1 means that rays are shot in all directions."
+[attr threshold]
+        hints.slider        BOOL true
+        hints.slidermin FLOAT 0
+        hints.slidermax FLOAT 1
+[attr bias]
+        hints.slider        BOOL true
+        hints.slidermin FLOAT 0
+        hints.slidermax FLOAT 1
+
+"importance decreases linearly with the distance to the shading point."
+[attr multiply]
+        hints.slider        BOOL true
+        hints.slidermin FLOAT 0
+        hints.slidermax FLOAT 10
+
+[node divide]
+[node dot]
+[node exp]
+[node facing_ratio]
+    [attr bias]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax             FLOAT   1.0
+    [attr gain]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax             FLOAT   1.0
+# enable flakes
+[node flakes]
+    [attr scale]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax             FLOAT   100.0
+    [attr density]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax                 FLOAT   1.0
+    [attr depth]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax             FLOAT   10.0
+    [attr step]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax             FLOAT   10.0
+    [attr IOR]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax             FLOAT   10.0
+    [attr normal_randomize]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0
+        hints.slidermax                 FLOAT   1.0
+[node float_to_int]
+    [attr input]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0.0
+        hints.slidermax             FLOAT   10.0
+    
+[node float_to_matrix]
+    [attr input00]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   -10.0
+        hints.slidermax             FLOAT   10.0
+    [attr input01]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   -10.0
+        hints.slidermax             FLOAT   10.0
+    [attr input02]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   -10.0
+        hints.slidermax             FLOAT   10.0
+    [attr input03]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   -10.0
+        hints.slidermax             FLOAT   10.0
+    [attr input10]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   -10.0
+        hints.slidermax             FLOAT   10.0
+    [attr input11]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   -10.0
+        hints.slidermax             FLOAT   10.0
+    [attr input12]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   -10.0
+        hints.slidermax             FLOAT   10.0
+    [attr input13]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   -10.0
+        hints.slidermax             FLOAT   10.0
+    [attr input20]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   -10.0
+        hints.slidermax             FLOAT   10.0
+    [attr input21]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   -10.0
+        hints.slidermax             FLOAT   10.0
+    [attr input22]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   -10.0
+        hints.slidermax             FLOAT   10.0
+    [attr input23]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   -10.0
+        hints.slidermax             FLOAT   10.0
+    [attr input30]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   -10.0
+        hints.slidermax             FLOAT   10.0
+    [attr input31]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   -10.0
+        hints.slidermax             FLOAT   10.0
+    [attr input32]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   -10.0
+        hints.slidermax             FLOAT   10.0
+    [attr input33]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   -10.0
+        hints.slidermax             FLOAT   10.0
+    
+[node float_to_rgb]
+[node float_to_rgba]
+    [attr r]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0.0
+        hints.slidermax             FLOAT   1.0
+    [attr g]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0.0
+        hints.slidermax             FLOAT   1.0
+    [attr b]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0.0
+        hints.slidermax             FLOAT   1.0
+    [attr a]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0.0
+        hints.slidermax             FLOAT   1.0    
+[node fraction]
+[node is_finite]
+[node length]
+[node log]
+[node matte]
+[node        hints.slidermax]
+[node        hints.slider        BOOL true
+        hints.slidermin]
+[node mix_rgba]
+    [attr input1]
+    [attr input2]
+[node modulo]
+[node motion_vector]
+[node multiply]
+[node negate]
+[node normalize]
+[node pow]
+[node ramp_float]
+    [attr position]
+    [attr value]
+    [attr interpolation]
+    [attr input]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0
+        hints.slidermax                 FLOAT   1
+    [attr type]
+        default             INT     2
+[node ramp_rgb]
+    [attr position]
+    [attr color]
+    [attr interpolation]
+    [attr input]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0
+        hints.slidermax                 FLOAT   1
+    [attr type]
+        default             INT     2
+[node random]
+[node range]
+    [attr input_min]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0.0
+        hints.slidermax             FLOAT   10.0
+    [attr input_max]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0.0
+        hints.slidermax             FLOAT   10.0
+    [attr output_min]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0.0
+        hints.slidermax             FLOAT   10.0
+    [attr output_max]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0.0
+        hints.slidermax             FLOAT   10.0
+    [attr contrast]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0.0
+        hints.slidermax             FLOAT   10.0
+    [attr contrast_pivot]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0.0
+        hints.slidermax             FLOAT   1.0
+    [attr bias]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0.0
+        hints.slidermax             FLOAT   1.0
+    [attr gain]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0.0
+        hints.slidermax             FLOAT   10.0
+   
+        
+[node passthrough]
+    
+[node reciprocal]
+[node rgb_to_float]
+[node shuffle]
+    [attr alpha]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0.0
+        hints.slidermax             FLOAT   1.0
+    
+[node rgb_to_vector]
+    
+[node rgba_to_float]
+    
+# enable shadow matte
+[node shadow_matte]
+    [attr shadow_opacity]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0    
+        hints.slidermax                 FLOAT   1.0
+    [attr diffuse_intensity]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0    
+        hints.slidermax             FLOAT   1.0
+    [attr backlighting]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0    
+        hints.slidermax                 FLOAT   1.0
+    [attr specular_intensity]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0    
+        hints.slidermax             FLOAT   1.0
+    [attr specular_roughness]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0    
+        hints.slidermax                 FLOAT   1.0
+    [attr specular_IOR]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0.0    
+        hints.slidermax             FLOAT   10.0
+    [attr aov_shadow]
+        aov.type                INT     0x05
+    [attr aov_shadow_matte]
+        aov.type                INT     0x05
+    [attr aov_shadow_diff]
+        aov.type                INT     0x05
+    [attr aov_shadow_mask]
+        aov.type                INT     0x05
+    [attr aov_indirect_diffuse]
+        aov.type                INT     0x05
+    [attr aov_indirect_specular]
+        aov.type                INT     0x05
+    
+[node sign]
+[node skin]
+[node space_transform]
+[node sqrt]
+[node state_float]
+[node state_int]
+[node state_vector]
+[node subtract]
+[node switch_rgba]
+[node switch_shader]
+    [attr index]
+        hints.slider        BOOL true
+        hints.slidermin INT 0
+        hints.slidermax INT 19
+    
+#enable thin_film
+[node thin_film]
+[attr thickness_min]
+
+
+        hints.slidermin. Thickness (nm)"
+        hints.slider        BOOL true
+        hints.slidermin FLOAT 0.0
+        hints.slidermax FLOAT 1000.0
+c4d.step FLOAT 1.0
+[attr thickness_max]
+
+
+        hints.slider        BOOL true
+        hints.slidermin FLOAT 0.0
+        hints.slidermax FLOAT 1000.0
+c4d.step FLOAT 1.0
+[attr thickness]
+
+        hints.slidermin and        hints.slidermax thickness values. Normally this would be something like a noise map to give some variation to the interference effect."
+        hints.slider        BOOL true
+        hints.slidermin FLOAT 0.0
+        hints.slidermax FLOAT 1.0
+c4d.step FLOAT 0.01
+[attr ior_medium]
+
+
+        hints.slider        BOOL true
+        hints.slidermin FLOAT 0.0
+        hints.slidermax FLOAT 3.0
+c4d.step FLOAT 0.01
+[attr ior_film]
+
+
+        hints.slider        BOOL true
+        hints.slidermin FLOAT 0.0
+        hints.slidermax FLOAT 3.0
+c4d.step FLOAT 0.01
+[attr ior_internal]
+
+
+        hints.slider        BOOL true
+        hints.slidermin FLOAT 0.0
+        hints.slidermax FLOAT 3.0
+c4d.step FLOAT 0.01
+[node trace_set]
+[node trigo]
+#enable two_sided
+[node two_sided]
+    [attr front]
+    [attr back]
+[node user_data_float]
+    [attr attribute]
+    [attr default]
+[node user_data_rgba]
+    [attr attribute]
+    [attr default]
+[node user_data_int]
+    [attr attribute]
+    [attr default]
+[node user_data_rgb]
+    
+[node user_data_string]
+    [attr attribute]
+    [attr default]
+[node uv_transform]
+[node vector_to_rgb]
+    
+[node volume_collector]
+# enable volume_sample_float
+# enable volume_sample_rgb
+[node volume_sample_float]
+    [attr channel]
+
+    [attr position_offset]
+
+    "add noise to the volume. Remember to pad the volume's volume_padding accordingly."
+    [attr interpolation]
+
+    [attr input_min]
+        hints.slider        BOOL true
+        hints.slidermin FLOAT 0
+        hints.slidermax FLOAT 2
+
+    [attr input_max]
+        hints.slider        BOOL true
+        hints.slidermin FLOAT 0
+        hints.slidermax FLOAT 2
+
+    [attr contrast]
+        hints.slider        BOOL true
+        hints.slidermin FLOAT 0
+        hints.slidermax FLOAT 2
+
+    [attr contrast_pivot]
+        hints.slider        BOOL true
+        hints.slidermin FLOAT 0
+        hints.slidermax FLOAT 1
+
+    [attr bias]
+        hints.slider        BOOL true
+        hints.slidermin FLOAT 0
+        hints.slidermax FLOAT 1
+
+    "range. Bias values below 0.5 decrease the slope and lower values overall. "
+    "Above 0.5, the slope is higher and value grow more quickly. A value of 0.5 has "
+    "no effect."
+    [attr gain]
+        hints.slider        BOOL true
+        hints.slidermin FLOAT 0
+        hints.slidermax FLOAT 1
+
+    "below 0.5 increase the contrast whereas values above 0.5 flatten the mid range "
+    "values. A value of 0.5 has no effect."
+    [attr output_min]
+        hints.slider        BOOL true
+        hints.slidermin FLOAT 0
+        hints.slidermax FLOAT 2
+
+    [attr output_max]
+        hints.slider        BOOL true
+        hints.slidermin FLOAT 0
+        hints.slidermax FLOAT 2
+
+    [attr clamp_min]
+
+    [attr clamp_max]
+
+[node volume_sample_rgb]
+[attr channel]
+
+[attr position_offset]
+
+"add noise to the volume. Remember to pad the volume's volume_padding accordingly."
+[attr interpolation]
+
+[attr hue_shift]
+        hints.slider        BOOL true
+        hints.slidermin FLOAT -1
+        hints.slidermax FLOAT 1
+
+[attr saturation]
+        hints.slider        BOOL true
+        hints.slidermin FLOAT 0
+        hints.slidermax FLOAT 2
+
+[attr add]
+        hints.slider        BOOL true
+        hints.slidermin FLOAT -1
+        hints.slidermax FLOAT 1
+
+[attr contrast]
+        hints.slider        BOOL true
+        hints.slidermin FLOAT 0
+        hints.slidermax FLOAT 2
+
+[attr contrast_pivot]
+        hints.slider        BOOL true
+        hints.slidermin FLOAT 0
+        hints.slidermax FLOAT 1
+
+[attr exposure]
+        hints.slider        BOOL true
+        hints.slidermin FLOAT -10
+        hints.slidermax FLOAT 10
+
+[attr multiply]
+        hints.slider        BOOL true
+        hints.slidermin FLOAT 0
+        hints.slidermax FLOAT 2
+
+[attr gamma]
+        hints.slider        BOOL true
+        hints.slidermin FLOAT 0
+        hints.slidermax FLOAT 3
+
+[node normal_map]
+    [attr strength]
+        hints.slider        BOOL true
+        hints.slidermin     FLOAT 0
+        hints.slidermax FLOAT 4
+[node vector_map]
+[node triplanar]
+    [attr blend]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0
+        hints.slidermax             FLOAT   1
+    [attr cell_blend]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT   0
+        hints.slidermax                 FLOAT   1
+    [attr cell_rotate]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0
+        hints.slidermax             FLOAT   1
+    
+[node car_paint]
+
+    [attr coat]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0
+        hints.slidermax             FLOAT   1
+    [attr coat_color]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0
+        hints.slidermax             FLOAT   1
+    [attr coat_roughness]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0
+        hints.slidermax             FLOAT   1
+    [attr coat_IOR]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0
+        hints.slidermax         FLOAT   5
+    [attr specular]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0
+        hints.slidermax             FLOAT   1
+    [attr specular_color]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0
+        hints.slidermax             FLOAT   1
+    [attr specular_light_facing]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0
+        hints.slidermax             FLOAT   1
+    [attr specular_falloff]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0
+        hints.slidermax             FLOAT   1
+    [attr specular_roughness]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0
+        hints.slidermax             FLOAT   1
+    [attr specular_IOR]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0
+        hints.slidermax         FLOAT   3
+    [attr transmission_color]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0
+        hints.slidermax             FLOAT   1
+    [attr flake_color]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0
+        hints.slidermax             FLOAT   1
+    [attr flake_light_facing]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0
+        hints.slidermax             FLOAT   1
+    [attr flake_falloff]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0
+        hints.slidermax             FLOAT   1
+    [attr flake_roughness]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0
+        hints.slidermax             FLOAT   1
+    [attr flake_IOR]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0
+        hints.slidermax         FLOAT   100
+    [attr flake_scale]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0.000001
+        hints.slidermax         FLOAT   100
+    [attr flake_density]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0
+        hints.slidermax             FLOAT   1
+    [attr flake_layers]
+        hints.slider        BOOL true
+        hints.slidermin             INT   1
+        hints.slidermax         INT   4
+    [attr flake_normal_randomize]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0
+        hints.slidermax             FLOAT   1
+    [attr base]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0
+        hints.slidermax             FLOAT   1
+    [attr base_color]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0
+        hints.slidermax             FLOAT   1
+    [attr base_roughness]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0
+        hints.slidermax             FLOAT   1
+[node layer_shader]
+
+    [attr mix1]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0
+        hints.slidermax         FLOAT   1
+    [attr mix2]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0
+        hints.slidermax         FLOAT   1
+    [attr mix3]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0
+        hints.slidermax         FLOAT   1
+    [attr mix4]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0
+        hints.slidermax         FLOAT   1
+    [attr mix5]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0
+        hints.slidermax         FLOAT   1
+    [attr mix6]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0
+        hints.slidermax         FLOAT   1
+    [attr mix7]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0
+        hints.slidermax         FLOAT   1
+    [attr mix8]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0
+        hints.slidermax         FLOAT   1
+    [attr enable2]
+        default         BOOL    false
+    [attr enable3]
+        default         BOOL    false
+    [attr enable4]
+        default         BOOL    false
+    [attr enable5]
+        default         BOOL    false
+    [attr enable6]
+        default         BOOL    false
+    [attr enable7]
+        default         BOOL    false
+    [attr enable8]
+        default         BOOL    false
+    
+    
+[node layer_rgba]
+
+    [attr mix1]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0
+        hints.slidermax         FLOAT   1
+    [attr mix2]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0
+        hints.slidermax         FLOAT   1
+    [attr mix3]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0
+        hints.slidermax         FLOAT   1
+    [attr mix4]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0
+        hints.slidermax         FLOAT   1
+    [attr mix5]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0
+        hints.slidermax         FLOAT   1
+    [attr mix6]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0
+        hints.slidermax         FLOAT   1
+    [attr mix7]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0
+        hints.slidermax         FLOAT   1
+    [attr mix8]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0
+        hints.slidermax         FLOAT   1
+    [attr enable2]
+        default         BOOL    false
+    [attr enable3]
+        default         BOOL    false
+    [attr enable4]
+        default         BOOL    false
+    [attr enable5]
+        default         BOOL    false
+    [attr enable6]
+        default         BOOL    false
+    [attr enable7]
+        default         BOOL    false
+    [attr enable8]
+        default         BOOL    false
+[node layer_float]
+
+    [attr input1]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0
+        hints.slidermax         FLOAT   10
+    [attr input2]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0
+        hints.slidermax         FLOAT   10
+    [attr input3]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0
+        hints.slidermax         FLOAT   10
+    [attr input4]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0
+        hints.slidermax         FLOAT   10
+    [attr input4]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0
+        hints.slidermax         FLOAT   10
+    [attr input5]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0
+        hints.slidermax         FLOAT   10
+    [attr input6]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0
+        hints.slidermax         FLOAT   10
+    [attr input7]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0
+        hints.slidermax         FLOAT   10
+    [attr input8]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0
+        hints.slidermax         FLOAT   10
+    [attr mix1]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0
+        hints.slidermax         FLOAT   1
+    [attr mix2]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0
+        hints.slidermax         FLOAT   1
+    [attr mix3]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0
+        hints.slidermax         FLOAT   1
+    [attr mix4]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0
+        hints.slidermax         FLOAT   1
+    [attr mix5]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0
+        hints.slidermax         FLOAT   1
+    [attr mix6]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0
+        hints.slidermax         FLOAT   1
+    [attr mix7]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0
+        hints.slidermax         FLOAT   1
+    [attr mix8]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0
+        hints.slidermax         FLOAT   1
+    [attr enable2]
+        default         BOOL    false
+    [attr enable3]
+        default         BOOL    false
+    [attr enable4]
+        default         BOOL    false
+    [attr enable5]
+        default         BOOL    false
+    [attr enable6]
+        default         BOOL    false
+    [attr enable7]
+        default         BOOL    false
+    [attr enable8]
+        default         BOOL    false
+[node toon]
+
+    [attr mask_color]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0
+        hints.slidermax             FLOAT   1
+    [attr edge_color]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0
+        hints.slidermax             FLOAT   1
+    [attr edge_tonemap]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0
+        hints.slidermax             FLOAT   1
+    [attr edge_opacity]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0
+        hints.slidermax             FLOAT   1
+    [attr edge_width_scale]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0
+        hints.slidermax             FLOAT   1
+    [attr uv_threshold]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0
+        hints.slidermax         FLOAT   1
+    [attr angle_threshold]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0
+        hints.slidermax             FLOAT   180
+    [attr base]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0
+        hints.slidermax             FLOAT   1
+    [attr base_color]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0
+        hints.slidermax             FLOAT   1
+    [attr base_tonemap]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0
+        hints.slidermax             FLOAT   1
+    [attr specular]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0
+        hints.slidermax             FLOAT   1
+    [attr specular_color]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0
+        hints.slidermax             FLOAT   1
+    [attr specular_roughness]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0
+        hints.slidermax             FLOAT   1
+    [attr specular_anisotropy]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0
+        hints.slidermax             FLOAT   1
+    [attr specular_rotation]
+        hints.slider        BOOL true
+        hints.slidermin         FLOAT   0
+        hints.slidermax         FLOAT   1
+    [attr specular_tonemap]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0
+        hints.slidermax             FLOAT   1
+    [attr highlight_color]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0
+        hints.slidermax         FLOAT   1
+    [attr rim_light_width]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0
+        hints.slidermax         FLOAT   1
+    [attr rim_light_tint]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0
+        hints.slidermax         FLOAT   1
+    [attr highlight_size]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0
+        hints.slidermax             FLOAT   1
+    [attr transmission]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0
+        hints.slidermax             FLOAT   1
+    [attr transmission_color]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0
+        hints.slidermax             FLOAT   1
+    [attr transmission_roughness]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0
+        hints.slidermax             FLOAT   1
+    [attr transmission_anisotropy]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0
+        hints.slidermax             FLOAT   1
+    [attr transmission_rotation]
+        hints.slider        BOOL true
+        hints.slidermin         FLOAT   0
+        hints.slidermax         FLOAT   1
+    [attr emission]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0
+        hints.slidermax         FLOAT   1
+    [attr emission_color]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0
+        hints.slidermax         FLOAT   1
+    [attr IOR]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0
+        hints.slidermax         FLOAT   3
+    [attr silhouette_opacity]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0
+        hints.slidermax             FLOAT   1
+    [attr silhouette_width_scale]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0
+        hints.slidermax         FLOAT   1
+    [attr indirect_diffuse]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0
+        hints.slidermax             FLOAT   1
+    [attr indirect_specular]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0
+        hints.slidermax             FLOAT   1
+    [attr sheen]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0
+        hints.slidermax             FLOAT   1
+    [attr sheen_roughness]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0
+        hints.slidermax             FLOAT   1
+    [attr aov_highlight]
+        aov.type        INT     0x05
+    [attr aov_rim_light]
+        aov.type        INT     0x05
+[node round_corners]
+    [attr radius]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT 0
+        hints.slidermax             FLOAT 10    
+        default             FLOAT 0.1
+    [attr normal]
+# Operators
+[node merge]
+
+[node disable]
+
+[node set_parameter]
+
+[node set_transform]
+
+[node switch_operator]
+
+[node collection]
+
+[node materialx]
+
+[node include_graph]
+
+[node string_replace]
+
+# Cryptomatte
+[node cryptomatte]
+
+    aov_shader  BOOL TRUE
+    
+    [attr sidecar_manifests]
+
+    [attr cryptomatte_depth]
+
+    [attr strip_obj_namespaces]
+
+    [attr strip_mat_namespaces]
+
+    [attr user_crypto_aov_0]
+
+    [attr user_crypto_src_0]
+
+    [attr user_crypto_aov_1]
+
+    [attr user_crypto_src_1]
+
+    [attr user_crypto_aov_2]
+
+    [attr user_crypto_src_2]
+
+    [attr user_crypto_aov_3]
+
+    [attr user_crypto_src_3]
+
+    [attr aov_crypto_asset]
+        aov.type INT 0x05
+        aov.enable_composition BOOL TRUE
+        default STRING "crypto_asset"
+    [attr aov_crypto_object]
+        aov.type INT 0x05
+        aov.enable_composition BOOL TRUE
+        default STRING "crypto_object"
+    [attr aov_crypto_material]
+        aov.type INT 0x05
+        aov.enable_composition BOOL TRUE
+        default STRING "crypto_material"
+[node cryptomatte_filter]
+[node cryptomatte_manifest_driver]
+[node uv_projection]
+    [attr u_angle]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT     0
+        hints.slidermax             FLOAT     360
+    [attr v_angle]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT     0
+        hints.slidermax             FLOAT     360
+    [attr matrix]
+[node matrix_multiply_vector]
+[node matrix_transform]
+[node matrix_interpolate]
+    [attr value]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT     0
+        hints.slidermax             FLOAT     1
+    [attr matrix]
+    
+[node c4d_texture_tag]
+    
+[node c4d_texture_tag_rgba]
+[node driver_no_op]
+[node query_shape]
+[node visible_light]
+[node clip_geo]
+
+#### Imagers
+[node imager_exposure]
+    [attr exposure]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT     -10
+        hints.slidermax             FLOAT     10
+    [attr input]
+    [attr layer_selection]
+        default             STRING     "RGBA"
+[node imager_color_correct]
+    [attr input]
+    [attr main_saturation]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT    0
+        hints.slidermax             FLOAT    2
+    [attr main_contrast]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT    0
+        hints.slidermax             FLOAT    2
+    [attr main_gamma]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT    0
+        hints.slidermax             FLOAT    5
+    [attr main_gain]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT    0
+        hints.slidermax             FLOAT    2
+    [attr main_offset]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT    -1
+        hints.slidermax             FLOAT    1
+    [attr shadows_saturation]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT    0
+        hints.slidermax             FLOAT    2
+    [attr shadows_contrast]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT    0
+        hints.slidermax             FLOAT    2
+    [attr shadows_gamma]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT    0
+        hints.slidermax             FLOAT    5
+    [attr shadows_gain]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT    0
+        hints.slidermax             FLOAT    2
+    [attr shadows_offset]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT    -1
+        hints.slidermax             FLOAT    1
+    [attr midtones_saturation]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT    0
+        hints.slidermax             FLOAT    2
+    [attr midtones_contrast]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT    0
+        hints.slidermax             FLOAT    2
+    [attr midtones_gamma]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT    0
+        hints.slidermax             FLOAT    5
+    [attr midtones_gain]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT    0
+        hints.slidermax             FLOAT    2
+    [attr midtones_offset]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT    -1
+        hints.slidermax             FLOAT    1
+    [attr highlights_saturation]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT    0
+        hints.slidermax             FLOAT    2
+    [attr highlights_contrast]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT    0
+        hints.slidermax             FLOAT    2
+    [attr highlights_gamma]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT    0
+        hints.slidermax             FLOAT    5
+    [attr highlights_gain]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT    0
+        hints.slidermax             FLOAT    2
+    [attr highlights_offset]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT    -1
+        hints.slidermax             FLOAT    1
+    [attr layer_selection]
+        default             STRING     "RGBA"
+[node imager_lens_effects]
+    [attr vignetting]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT     0
+        hints.slidermax             FLOAT     100
+    [attr bloom_threshold]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT     0
+        hints.slidermax             FLOAT     10
+    [attr bloom_radius]
+        hints.slider        BOOL true
+        hints.slidermin                 INT     1
+        hints.slidermax             INT     12
+    [attr bloom_strength]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT     0
+        hints.slidermax             FLOAT     10
+    [attr input]
+    [attr layer_selection]
+        default             STRING     "RGBA"
+    
+[node imager_white_balance]
+    [attr input]
+    [attr temperature]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT   0
+        hints.slidermax             FLOAT   15000
+    [attr layer_selection]
+        default             STRING     "RGBA"
+[node imager_tonemap]
+    [attr input]
+    [attr filmic_toe_strength]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT    0
+        hints.slidermax                 FLOAT    1
+    [attr filmic_toe_length]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT    0
+        hints.slidermax                 FLOAT    1
+    [attr filmic_shoulder_strength]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT    0
+        hints.slidermax                 FLOAT    1
+    [attr filmic_shoulder_length]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT    0
+        hints.slidermax             FLOAT    3
+    [attr filmic_shoulder_angle]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT    0
+        hints.slidermax                 FLOAT    1
+    [attr reinhard_highlights]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT    0
+        hints.slidermax                 FLOAT    1
+    [attr reinhard_shadows]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT    0
+        hints.slidermax                 FLOAT    1
+    [attr gamma]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT    0
+        hints.slidermax             FLOAT    5
+    [attr layer_selection]
+        default             STRING     "RGBA"
+[node imager_denoiser_optix]
+    [attr input]
+    [attr layer_selection]
+        default             STRING     "RGBA"
+    [attr blend]
+        hints.slider        BOOL true
+        hints.slidermin                 FLOAT     0
+        hints.slidermax                 FLOAT     1
+    [attr clamp_min]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT     0
+        hints.slidermax             FLOAT     1
+    [attr clamp_max]
+        hints.slider        BOOL true
+        hints.slidermin             FLOAT     0
+        hints.slidermax             FLOAT     1
+[node imager_light_mixer]
+    [attr input]
+    [attr layer_selection]
+        default             STRING     "RGBA"
+[node imager_denoiser_noice]
+    [attr input]
+    [attr tile_size]
+    [attr layer_selection]
+        default             STRING     "RGBA"

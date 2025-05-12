@@ -1,0 +1,25 @@
+[settings.app]
+type = "usd_editor"
+version = "@OPENDCC_VERSION_STRING@"
+
+[settings.ui]
+color_theme = "dark"
+language = "en"
+
+[settings.app.window]
+title = "OpenDCC"
+
+[settings.app.window.about]
+company = "OpenDCC Contributors"
+
+[python]
+init = "import opendcc.startup;opendcc.startup.init()"
+init_ui = "import opendcc.startup;opendcc.startup.init_ui()"
+
+[render]
+active_control = "usd"
+
+[ipc.command_server]
+port = 8000
+
+server_timeout = 1000 # ms

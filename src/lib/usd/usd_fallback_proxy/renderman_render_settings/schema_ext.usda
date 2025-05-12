@@ -1,0 +1,49 @@
+#usda 1.0
+
+def RenderSettings "RenderSettings"
+{	
+    token renderman:hider = "raytrace" (
+        allowedTokens = ["raytrace"]
+        displayGroup = "hider"
+    )
+
+    int renderman:min_samples = -1 (displayGroup = "hider")
+    int renderman:max_samples = 0 (displayGroup = "hider")
+    
+    int renderman:min_extra_samples = -1 (displayGroup = "hider")
+    
+    int renderman:sample_offset = 0 (displayGroup = "hider")
+    
+    bool renderman:incremental = 0 (
+        displayGroup = "hider"
+    )
+    
+    int renderman:decidither = 0 (displayGroup = "hider")
+    
+    bool renderman:blue_noise = 1 (displayGroup = "hider")
+    
+    bool renderman:geom_shadow_term_bias = 1 (displayGroup = "hider")
+
+    token renderman:pixel_filter_mode = "importance" (
+        allowedTokens = ["importance", "weighted"]
+        displayGroup = "hider"
+    )
+    
+    bool renderman:sample_motion = 1 ( displayGroup = "hider" )
+
+    bool renderman:extreme_motion_dof = 0 ( displayGroup = "hider" )
+
+    bool renderman:adaptall = 0 ( displayGroup = "hider" )
+    
+    token renderman:adaptive_metric = "variance" (
+        allowedTokens = ["contrast", "variance", "halfbuffer", "contrast-v22", "variance-v22"]
+        displayGroup = "hider"
+    )
+    
+    float renderman:dark_falloff = 0.025 (displayGroup = "hider")
+
+    token renderman:integrator = "PxrPathTracer" (
+        allowedTokens = ["PxrPathTracer"]
+        displayGroup = "integrator"
+    )
+}

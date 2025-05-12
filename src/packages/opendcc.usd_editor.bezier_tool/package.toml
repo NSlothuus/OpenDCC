@@ -1,0 +1,11 @@
+[base]
+name = 'opendcc.usd_editor.bezier_tool'
+
+[[environment.PYTHONPATH]]
+value = 'python'
+
+[[python.entry_point]]
+module = 'opendcc.usd_editor.bezier_tool'
+
+[[native.entry_point]]
+path='lib/${LIB_PREFIX}opendcc.usd_editor.bezier_tool${LIB_EXT}'

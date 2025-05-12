@@ -1,0 +1,17 @@
+{
+    "Plugins": [
+      {
+        "Info": {
+          "Types": {
+            "PrmanRenderSettings": {
+              "bases": [
+                "OpenDCC::RenderSettingsRegistry"
+              ]
+            }
+          }
+        },
+        "Name": "Prman",
+        "Type": "resource"
+      }
+    ]
+}

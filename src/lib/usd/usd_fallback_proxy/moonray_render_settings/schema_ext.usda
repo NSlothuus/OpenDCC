@@ -1,0 +1,338 @@
+#usda 1.0
+
+def RenderSettings "RenderSettings"
+{	
+    // Caching attributes
+	bool moonray:fast_geometry_update = false ( displayGroup = "Caching attributes" )
+    int moonray:texture_cache_size = 4000 (
+        doc = """ size is in Mb and this is the maximum cache size """
+        displayGroup = "Caching attributes"
+    )
+    int moonray:texture_file_handles = 24000 (
+        doc = """ maximum number of simultaneous open file handles """
+        displayGroup = "Caching attributes"
+    )
+
+    // Skip Camera and Layer attributes
+
+    // Checkpoint attributes
+    bool moonray:checkpoint_active = false ( displayGroup = "Checkpoint attributes" )
+    bool moonray:checkpoint_bg_write = true (
+        doc = """ If true, the checkpoint file write is written in a background thread that runs in parallel with the MCRT threads. Otherwise, all MCRT threads wait while the checkpoint file is written. """
+        displayGroup = "Checkpoint attributes"
+    )
+    float moonray:checkpoint_interval = 15.0 (
+        doc = """ Length of time, in minutes, between checkpoint file writes. Time must be greater or equal to 0.1 """
+        displayGroup = "Checkpoint attributes"
+    )
+    int moonray:checkpoint_max_bgcache = 2 (
+        doc = """ Specify the maximum number of queued checkpoint images that the checkpoint-writing background thread can handle. The value of checkpoint_max_bgcache must be greater than or equal to 1. Once this number is exceeded, the MCRT threads are suspended while background images are written to create room in the queue. A larger number can robustly support background writing even with short checkpoint intervals at the expense of memory. A value of 2 is best for most cases. """
+        displayGroup = "Checkpoint attributes"
+    )
+    float moonray:checkpoint_max_snapshot_overhead = 0.0 (
+        doc = """ Specify max fraction of snapshot overhead threshold for extra snapshot action regarding unexpected interruption by SIGINT. This value is fraction. If this value is ZERO or negative, no extra snapshot action is executed and no checkpoint file is generated when SIGINT is received. """
+        displayGroup = "Checkpoint attributes"
+    )
+    token moonray:checkpoint_mode = "time" (
+        doc = """ Select whether checkpoint images are written depending on time elapsed or on quality reached.Select whether checkpoint images are written depending on time elapsed or on quality reached. """
+        displayGroup = "Checkpoint attributes"
+        allowedTokens = ["time", "quality"]
+    )
+    bool moonray:checkpoint_overwrite = true (
+        doc = """ If true, the last checkpoint file is overwritten when writing out the checkpoint file. If false, the checkpoint filename is appended with the total number of samples, resulting in the retention of all checkpoint files. """
+        displayGroup = "Checkpoint attributes"
+    )
+    token moonray:checkpoint_post_script (
+        doc = """ This defines the file name of a Lua script executed after every checkpoint file has been written, which is run in parallel with the ongoing MCRT threads. See further documentation for MoonRay-provided Lua variables accessible within the script. """
+        displayGroup = "Checkpoint attributes"
+    )
+    int moonray:checkpoint_quality_steps = 2 (
+        doc = """ Steps of quality, internal sampling iteration count, between checkpoint file writes. Value should be equal or bigger than 1. Uniform sampling case, this steps number is equivalent as each pixel's pixel sampling steps. If you set quality steps=2, checkpoint file is created at every timing of each pixel's sample count exceeds at 2, 4, 6, 8, 10, ... Adaptive sampling case, this steps number is equivalent as internal adaptive sampling iteration steps. Recommended number is 1~3 range. You can use more than 4 but bigger number always require longer rendering time. If you set 2, checkpoint file is created after finish every 2 adaptive sampling iteration execution. """
+        displayGroup = "Checkpoint attributes"
+    )
+    int moonray:checkpoint_sample_cap = 0 (
+        doc = """ When total pixel sample count exceeds this value at every pixel (If you set 1024, each pixel exceeds 1024, then try to finish), the render will finish after the next checkpoint write. Disabled sample cap feature when set to 0. """
+        displayGroup = "Checkpoint attributes"
+    )
+    float moonray:checkpoint_snapshot_interval = 0.0 (
+        doc = """ Interval of time in minutes, about snapshot refreshment regarding interruption by SIGINT. Unit is minute. If this value is ZERO or negative, checkpoint_max_snapshot_overhead parameter is used instead. """
+        displayGroup = "Checkpoint attributes"
+    )
+    int moonray:checkpoint_start_sample = 1 (
+        doc = """ Specify samples per pixel (SPP) number. Checkpoint file is created when all pixel's SPP are same or bigger than this number. Until then, checkpoint file is not created. """
+        displayGroup = "Checkpoint attributes"
+    )
+    float moonray:checkpoint_time_cap = 0.0 (
+        doc = """ When total render process time exceeds this value, in minutes, the render will finish after the next checkpoint write. Disabled time cap feature when set to 0. """
+        displayGroup = "Checkpoint attributes"
+    )
+    int moonray:checkpoint_total_files = 0 (
+        doc = """ Specify total number of checkpoint files for quality based checkpoint mode.This variable is a substitute parameter of checkpoint_quality_steps.If this value is 0 (= default), the checkpoint generation interval is controlled by checkpoint_quality_steps variable. If this value is 1 or bigger, checkpoint generation interval is calculated based on this value and the renderer tries to generate a user defined number of checkpoint files automatically.This option respects the checkpoint_start_sample variable.In some cases, the renderer might not create the requested checkpoint_total_files due to current limitation of internal implementation or user specified bigger than 1 for checkpoint_start_sample variable. However even in that case, the renderer tries to create the closest number of total checkpoint files which user defined number as checkpoint_total_files. """
+        displayGroup = "Checkpoint attributes"
+    )
+
+    // Debug attributes
+    int moonray:debug_console  = -1 (
+        doc = """ Specify port number for debug console. If you set -1 (=default), all debug console functionalities are disabled. If you set 0 or positive port number, debug console functionalities are enabled. If enabled, we can send commands via telnet connection and control rendering behavior for debugging purposes. If you set 0, the kernel finds the available port for you and displays the port number to the cerr. Otherwise you have to set the available port number yourself. """
+        displayGroup = "Debug attributes"
+    )
+    // int[] moonray:debug_pixel ( displayGroup = "Debug attributes" )
+    // int[] moonray:debug_rays_depth_range ( displayGroup = "Debug attributes" )
+    token moonray:debug_rays_file ( displayGroup = "Debug attributes" )
+    // int[] moonray:debug_rays_primary_range ( displayGroup = "Debug attributes" )
+    bool moonray:validate_geometry = false (
+        doc = """ Checks geometry for bad data """
+        displayGroup = "Debug attributes"
+    )
+
+    // Deep Images attributes
+    float moonray:deep_curvature_tolerance = 45.0 (
+        doc = """ Maximum curvature (in degrees) of the deep surface within a pixel before it is split """
+        displayGroup = "Deep Images attributes"
+    )
+    token moonray:deep_format = "opendcx2.0" (
+        doc = """ Deep image format: openexr2.0: vanilla OpenEXR deep, opendcx2.0: DCX abuffer mask encoding """
+        displayGroup = "Deep Images attributes"
+        allowedTokens = ["openexr2.0", "opendcx2.0"]
+    )
+    token[] moonray:deep_id_attribute_names (
+        doc = """ Names of primitive attributes containing deep IDs """
+        displayGroup = "Deep Images attributes"
+    )
+    float moonray:deep_layer_bias = 0.10000000149 (
+        doc = """ Minimum distance between deep layers """
+        displayGroup = "Deep Images attributes"
+    )
+    int moonray:deep_max_layers = 1 (
+        doc = """ Maximum number of depth layers to output """
+        displayGroup = "Deep Images attributes"
+    )
+    int moonray:deep_vol_compression_res = 10 (
+        doc = """ Volume opacity compression resolution. Lower values gives higher compression. """
+        displayGroup = "Deep Images attributes"
+    )
+    float moonray:deep_z_tolerance = 2.0 (
+        doc = """ Maximum range of the deep surface's Z values within a pixel before it is split """
+        displayGroup = "Deep Images attributes"
+    )
+
+    // Driver attributes
+    bool moonray:interactive_mode = false ( displayGroup = "Driver attributes" )
+    int moonray:machine_id = -1 ( displayGroup = "Driver attributes" )
+    int moonray:num_machines = -1 ( displayGroup = "Driver attributes" )
+    token moonray:output_file = "scene.exr" (
+        doc = """ This specifies the output path for the beauty image (RGBA). This is independent of the AOV RenderOutputs, which can also write a beauty image. """
+        displayGroup = "Driver attributes"
+    )
+    bool moonray:progressive_shading = false ( displayGroup = "Driver attributes" )
+    token moonray:task_distribution_type = "multiplex pixel" (
+        displayGroup = "Driver attributes"
+        allowedTokens = ["non-overlapped tile", "multiplex pixel"]
+    )
+    int moonray:threads = 0 ( displayGroup = "Driver attributes" )
+    token moonray:tmp_dir (
+        doc = """ Define temporary directory name for temporary file generation. Use $TMPDIR environment variable value if this variable is empty.If $TMPDIR is also empty, use /tmp """
+        displayGroup = "Driver attributes"
+    )
+
+    // Filtering attributes
+    token moonray:pixel_filter = "cubic b-spline" (
+        doc = """ The type of filter used for filter importance sampling. A box filter with a width of 1 is analogous to disabling pixel filtering. """
+        displayGroup = "Filtering attributes"
+        allowedTokens = ["box", "cubic b-spline", "quadratic b-spline"]
+    )
+    float moonray:pixel_filter_width = 3.0 (
+        doc = """ The overall extents, in pixels, of the pixel filter. Larger values will result in softer images. """
+        displayGroup = "Filtering attributes"
+    )
+    float moonray:texture_blur = 0.0 ( displayGroup = "Filtering attributes" )
+
+    // Firefiles Removal attributes
+    float moonray:roughness_clamping_factor = 0.0 (
+        doc = """ Clamp material roughness along paths. A value of 1 clamps values to the maximum roughness encountered, while lower values temper the clamping value. 0 disables the effect. Using this technique reduces fireflies from indirect caustics but is biased. """
+        displayGroup = "Firefiles Removal attributes"
+    )
+    int moonray:sample_clamping_depth = 1 (
+        doc = """ Clamp sample values only after the given non-specular ray depth. """
+        displayGroup = "Firefiles Removal attributes"
+    )
+    float moonray:sample_clamping_value = 10.0 (
+        doc = """ Clamp sample radiance values to this maximum value (the feature is disabled if the value is 0.0). Using this technique reduces fireflies, but is biased. """
+        displayGroup = "Firefiles Removal attributes"
+    )
+
+    // Skip Frame attributes
+
+    // Global Toggles attributes
+    bool moonray:enable_displacement = true ( displayGroup = "Global Toggles attributes" )
+    bool moonray:enable_dof = true ( displayGroup = "Global Toggles attributes" )
+    bool moonray:enable_max_geometry_resolution = false ( displayGroup = "Global Toggles attributes" )
+    bool moonray:enable_motion_blur = true ( displayGroup = "Global Toggles attributes" )
+    bool moonray:enable_presence_shadows = false ( displayGroup = "Global Toggles attributes" )
+    bool moonray:enable_shadowing = true ( displayGroup = "Global Toggles attributes" )
+    bool moonray:enable_subsurface_scattering = true ( displayGroup = "Global Toggles attributes" )
+    bool moonray:lights_visible_in_camera = false ( displayGroup = "Global Toggles attributes" )
+    int moonray:max_geometry_resolution = 2147483647 ( displayGroup = "Global Toggles attributes" )
+    bool moonray:propagate_visibility_bounce_type = false (
+        doc = """ turns on/off propagation for ray visibility masks """
+        displayGroup = "Global Toggles attributes"
+    )
+    token moonray:shadow_terminator_fix = "Off" (
+        doc = """ Attempt to soften hard shadow terminator boundaries due to shading/geometric normal deviations. "ON uses a custom terminator softening method. Cosine Compensation" is Chiang's 2019 SIGGRAPH technique. "GGX" is Estevez's raytracing gems technique. "Sine Compensation" is a sine based modification of Chiang's method. Different scenes may work better with different techniques. The recommendation is to start with the custom compensation ON, then sine compensation technique, then GGX, then cosine. """
+        displayGroup = "Global Toggles attributes"
+        allowedTokens = ["Off", "On", "On (Sine Compensation Alternative)", "On (GGX Compensation Alternative)", "On (Cosine Compensation Alternative)"]
+    )
+
+    // Skip Image Size attributes
+
+    // Logging attributes
+    // Skip athena_debug
+    bool moonray:debug = false ( displayGroup = "Logging attributes" )
+    bool moonray:error = true ( displayGroup = "Logging attributes" )
+    color3f moonray:fatal_color = ( 1, 0, 1 ) ( displayGroup = "Logging attributes" )
+    bool moonray:info = false ( displayGroup = "Logging attributes" )
+    token moonray:stats_file ( displayGroup = "Logging attributes" )
+    bool moonray:warning = true ( displayGroup = "Logging attributes" )
+
+    // Metadata attributes
+    // Skip exr_header_attributes
+
+    // Motion and Scale attributes
+    // Skip motion_steps
+    float moonray:scene_scale = 0.00999999977648 (
+        doc = """ (in meters): one unit in world space = 'scene scale' meters """
+        displayGroup = "Motion and Scale attributes"
+    )
+
+    // Path Guide attributes
+    bool moonray:path_guide_enable = false (
+        doc = """ Turn on path guiding to handle difficult light transport problems (e.g. caustics) at the cost of increased memory """
+        displayGroup = "Path Guide attributes"
+    )
+
+    // Resume Render attributes
+    token moonray:on_resume_script (
+        doc = """ Define on-resume lua script name. This script is loaded into the renderer just after renderPrep execution under resume render mode then executed. This script is not executed if non-resume render mode even if you set script name.Renderer sets some lua global variables and lua script can access them. We can get resume render start condition (true=properly started or false=failed to start as resume render and fall back to normal rendering) via lua global variable. See details in rendering-wiki checkpoint/resume page. If empty, on-resume script execution is disabled. """
+        displayGroup = "Resume Render attributes"
+    )
+    bool moonray:resumable_output = false (
+        doc = """ make aov output as resumable for resume render """
+        displayGroup = "Resume Render attributes"
+    )
+    bool moonray:resume_render = false (
+        doc = """ resuming render process """
+        displayGroup = "Resume Render attributes"
+    )
+
+    // Sampling attributes
+    token moonray:bsdf_sampler_strategy = "multi-sample" (
+        doc = """ Indirect sampling and evaluation strategy: all lobes using one path segment per lobe (multi-sample), all lobes using one shared path segment (one-sample), or one lobe. """
+        displayGroup = "Sampling attributes"
+        allowedTokens = ["multi-sample", "one-sample", "one-lobe"]
+    )
+    int moonray:bsdf_samples = 2 ( displayGroup = "Sampling attributes" )
+    int moonray:bssrdf_samples = 2 (
+        displayGroup = "Sampling attributes"
+    )
+    bool moonray:disable_optimized_hair_sampling = false (
+        doc = """ Forces all hair materials to sample each hair BSDF lobe independently. This will enable the LPE label syntax for 'hair R', 'hair TT', 'hair TRT' and 'hair TRRT ' but will result in slower rendering """
+        displayGroup = "Sampling attributes"
+    )
+    int moonray:light_samples = 2 ( displayGroup = "Sampling attributes" )
+    bool moonray:lock_frame_noise = false ( displayGroup = "Sampling attributes" )
+    int moonray:max_depth = 5 ( displayGroup = "Sampling attributes" )
+    int moonray:max_diffuse_depth = 2 ( displayGroup = "Sampling attributes" )
+    int moonray:max_glossy_depth = 2 ( displayGroup = "Sampling attributes" )
+    int moonray:max_hair_depth = 5 ( displayGroup = "Sampling attributes" )
+    int moonray:max_mirror_depth = 3 ( displayGroup = "Sampling attributes" )
+    int moonray:max_presence_depth = 16 ( displayGroup = "Sampling attributes" )
+    int moonray:max_subsurface_per_path = 1 ( displayGroup = "Sampling attributes" )
+    int moonray:pixel_samples = 8 (
+        doc = """ The square root of the number of primary samples taken for each pixel in uniform sampling mode. For example, a value of 4 will result in 4*4 = 16 uniform pixel samples. """
+        displayGroup = "Sampling attributes"
+    )
+    float moonray:presence_threshold = 0.999000012875 (
+        doc = """ Defines at which point the accumulated presence can be considered as opaque, skipping generation of presence continuation rays. """
+        displayGroup = "Sampling attributes"
+    )
+    float moonray:russian_roulette_threshold = 0.0375000014901 (
+        displayGroup = "Sampling attributes"
+    )
+    float moonray:transparency_threshold = 1.0 (
+        doc = """ Defines at which point the accumulated opacity can be considered as opaque, skipping generation of new transparency rays. """
+        displayGroup = "Sampling attributes"
+    )
+
+    // Volumes attributes
+    int moonray:max_volume_depth = 16 ( displayGroup = "Volumes attributes" )
+    float moonray:volume_attenuation_factor = 0.649999976158 (
+        doc = """ Controls how volume attenuation gets exponentially scaled down when rendering multiple scattering volumes. Dialing down the value generally results in more translucent look. This variable is only effective when "max volume depth" is greater than 1 """
+        displayGroup = "Volumes attributes"
+    )
+    float moonray:volume_contribution_factor = 0.649999976158 (
+        doc = """ Controls how scattering contribution gets exponentially scaled down when rendering multiple scattering volumes. Dialing down the value generally results in a darker volume scattering look. This variable is only effective when "max volume depth" is greater than 1 """
+        displayGroup = "Volumes attributes"
+    )
+    int moonray:volume_illumination_samples = 4 (
+        doc = """ Sample number along the ray when computing volume scattering radiance towards the eye. Set to 0 to turn off volume lighting completely. """
+        displayGroup = "Volumes attributes"
+    )
+    float moonray:volume_opacity_threshold = 0.995000004768 (
+        doc = """ As a ray travels through volume regions, it will accumulate the amount of opacity. When the value exceeds volume opacity threshold the renderer will stop the further volume integration along this ray. """
+        displayGroup = "Volumes attributes"
+    )
+    token moonray:volume_overlap_mode = "sum" (
+        doc = """ Selects how to handle contributions from overlapping volumes: sum: add contributions from all volumes, max: only consider maximum volume based on extinction, rnd: randomly choose one value weighted by extinction. Warning: light linking does not work correctly in sum mode. """
+        displayGroup = "Volumes attributes"
+        allowedTokens = ["sum", "max", "rnd"]
+    )
+    float moonray:volume_phase_attenuation_factor = 0.5 (
+        doc = """ Controls how phase function (anisotropy) gets exponentially scaled down when rendering multiple scattering volumes. This variable is only effective when "max volume depth" is greater than 1 """
+        displayGroup = "Volumes attributes"
+    )
+    float moonray:volume_quality = 0.5 (
+        doc = """ Controls the overall quality of volume rendering. The higher number gives better volume shape detail and more accurate scattering integration result. """
+        displayGroup = "Volumes attributes"
+    )
+    float moonray:volume_shadow_quality = 1.0 (
+        doc = """ Controls the quality of volume shadow (transmittance). The higher number gives more accurate volume shadow. """
+        displayGroup = "Volumes attributes"
+    )
+
+    // General attributes
+    token moonray:batch_tile_order = "morton" (
+        displayGroup = "General attributes"
+        allowedTokens = ["top", "bottom", "left", "right", "morton", "random", "spiral square", "spiral rect"]
+    )
+    token moonray:checkpoint_tile_order = "morton" (
+        displayGroup = "General attributes"
+        allowedTokens = ["top", "bottom", "left", "right", "morton", "random", "spiral square", "spiral rect"]
+    )
+    float moonray:fps = 24.0 ( displayGroup = "General attributes" )
+    int moonray:max_adaptive_samples = 4096 (
+        doc = """ When adaptive sampling is turned on, this represents the max number of samples we can throw at a pixel. It's best to err on the high side since adaptive sampling will cull out samples where they're not needed based on the target adaptive error, in which case we should rarely hit the max samples value. """
+        displayGroup = "General attributes"
+    )
+    int moonray:min_adaptive_samples = 16 (
+        doc = """ When adaptive sampling is turned on, it's possible that a tile may be mis-classified as having converged before it has actually converged. This manifests itself as square 8x8 artifacts in the final image. The higher this value, the less the chance of this happening. """
+        displayGroup = "General attributes"
+    )
+    token moonray:progressive_tile_order = "morton" (
+        displayGroup = "General attributes"
+        allowedTokens = ["top", "bottom", "left", "right", "morton", "random", "spiral square", "spiral rect"]
+    )
+    token moonray:sampling_mode = "uniform" (
+        doc = """ Controls which sampling scheme to use: uniform or adaptive. """
+        displayGroup = "General attributes"
+        allowedTokens = ["uniform", "adaptive"]
+    )
+    float moonray:target_adaptive_error = 10.0 (
+        doc = """ When adaptive sampling is turned on, this represents the desired quality of the output images. Lower values will give higher quality but take longer to render. Higher values will give lower quality but render quicker. """
+        displayGroup = "General attributes"
+    )
+    bool moonray:two_stage_output = true (
+        doc = """ Selection of image file write uses two stage output logic or not. Two stage output (=true: default) is that the image file is written out to temporary file location first and copy/rename next. This solution greatly reduces the risk of output data collapsing from unexpected render process termination for both of final output and checkpoint output. Temporary file directory is defined by tmp_dir scene_variable. """
+        displayGroup = "General attributes"
+    )
+
+}

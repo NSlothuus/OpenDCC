@@ -1,0 +1,17 @@
+{
+    "Plugins": [
+      {
+        "Info": {
+          "Types": {
+            "CyclesRenderSettings": {
+              "bases": [
+                "OpenDCC::RenderSettingsRegistry"
+              ]
+            }
+          }
+        },
+        "Name": "Cycles",
+        "Type": "resource"
+      }
+    ]
+}

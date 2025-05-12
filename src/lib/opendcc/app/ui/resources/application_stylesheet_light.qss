@@ -1,0 +1,133 @@
+QMainWindow > QToolBar
+{
+    border: 0px;
+}
+
+QMainWindow > QToolBar::handle
+{
+    image: url(":icons/handle-horizontal");
+}
+
+QMainWindow > QToolBar::handle:vertical
+{
+    image: url(":icons/handle-vertical");
+}
+
+QStatusBar
+{
+    background: #d6d6d6;
+}
+
+QSizeGrip
+{
+    image: url(:icons/QSizeGrip);
+}
+
+QComboBox, QLineEdit, QDoubleSpinBox, QIntSpinBox
+{
+    border: 1px solid #cdcdcd;
+    border-radius: 2px;
+    background: palette(base);
+    padding-left: 4px;
+    padding-right: 1px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    selection-background-color: palette(highlight);
+}
+
+QComboBox
+{
+    background: #e8e8e8;
+}
+
+QComboBox:focus, QLineEdit:focus, QDoubleSpinBox:focus, QIntSpinBox:focus
+{
+    border: 1px solid palette(highlight);
+}
+
+QComboBox:hover:!disabled:!focus
+{
+    border: 1px solid #5b5b5b;
+}
+
+QComboBox:disabled
+{
+    color: #555555;
+}
+
+QComboBox::drop-down
+{
+    subcontrol-origin: padding;
+    subcontrol-position: top right;
+    width: 20px;
+
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+
+QComboBox::down-arrow
+{
+    image: url(:icons/tabsMenu);
+}
+
+QComboBox::down-arrow:disabled
+{
+    image: url(:icons/tabsMenu_disabled);
+}
+
+QComboBox::down-arrow:hover:!disabled
+{
+    image: url(:icons/tabsMenu_hover);
+}
+
+QComboBox QAbstractItemView
+{
+    color: palette(window-text);
+}
+
+QComboBox QLineEdit
+{
+    border: 0px;
+    background: #e8e8e8;
+}
+
+QComboBox QLineEdit:focus
+{
+    border: 0px;
+}
+
+QComboBox QLineEdit:hover
+{
+    border: 0px;
+}
+
+QTreeView {
+    border: 0px solid black;
+}
+
+QTableView {
+    border: 0px solid black;
+}
+
+/*
+QHeaderView {
+    border: 0px solid black;
+}
+
+QHeaderView::section {
+    background-color: palette(light);
+    border: 0px solid black;
+    border-right: 1px solid #cdcdcd;
+
+    color: rgb(170, 170, 170);
+
+    padding-left: 4px;
+    padding-right: 4px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+}
+
+QHeaderView::section:last {
+    border: 0px solid black;
+}
+*/

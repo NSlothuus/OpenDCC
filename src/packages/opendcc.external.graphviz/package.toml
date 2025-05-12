@@ -1,0 +1,8 @@
+[base]
+name = 'opendcc.external.graphviz'
+
+[[environment.PYTHONPATH]]
+value = 'python'
+
+[[environment.PATH]]
+value= 'bin'

@@ -1,0 +1,17 @@
+[base]
+name = 'opendcc.hydra_op'
+
+[dependencies]
+'opendcc.ui.code_editor' = {}
+'opendcc.hydra_op.schema' = {}
+'opendcc.hydra_op.translator' = {}
+
+[[environment.PYTHONPATH]]
+value = 'python'
+
+[[native.entry_point]]
+path = 'lib/${LIB_PREFIX}opendcc.hydra_op${LIB_EXT}'
+
+[[python.entry_point]]
+module = 'opendcc.hydra_op.init'
+

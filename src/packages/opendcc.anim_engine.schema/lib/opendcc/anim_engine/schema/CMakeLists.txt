@@ -1,0 +1,20 @@
+opendcc_make_usd_schema(
+    anim_engine_usd_schema
+    AFTER_GEN_SCRIPT
+    fix_generated.py
+    ${USD_VERSION}
+    VS_FOLDER
+    packages/anim_engine
+    PACKAGE_DIR
+    opendcc.anim_engine/pxr_plugins
+    SCHEMA_FILE
+    schema.usda
+    PYTHON_FILES
+    __init__.py
+    HEADER_INSTALL_DIR
+    "include/opendcc/anim_engine/usd_schema"
+    SRC_GENERATION_DIR
+    "opendcc/anim_engine/usd_schema"
+    # CUSTOM_RUNTIME_DIR packages/opendcc.expression/lib
+    PYTHON_INSTALL_DIR
+    "${CMAKE_INSTALL_PREFIX}/packages/opendcc.anim_engine/python/opendcc/anim_engine")

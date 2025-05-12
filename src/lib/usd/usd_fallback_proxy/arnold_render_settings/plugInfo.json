@@ -1,0 +1,17 @@
+{
+    "Plugins": [
+      {
+        "Info": {
+          "Types": {
+            "ArnoldRenderSettings": {
+              "bases": [
+                "OpenDCC::RenderSettingsRegistry"
+              ]
+            }
+          }
+        },
+        "Name": "Arnold",
+        "Type": "resource"
+      }
+    ]
+}

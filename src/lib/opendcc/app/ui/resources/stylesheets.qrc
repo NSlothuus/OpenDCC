@@ -1,0 +1,8 @@
+<RCC>
+  <qresource prefix="stylesheets">
+    <file>application_stylesheet.qss</file>
+    <file>docking_stylesheet.qss</file>
+    <file>application_stylesheet_light.qss</file>
+    <file>docking_stylesheet_light.qss</file>
+  </qresource>
+</RCC>

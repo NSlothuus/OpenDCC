@@ -1,0 +1,20 @@
+{
+    "Plugins": [
+      {
+        "Info": {
+          "Types": {
+            "OpenDCC::RenderSettingsPropertyFactory": {
+              "bases": [
+                "OpenDCC::PropertyFactory"
+              ],
+              "displayName": "Class which creates new render settings property proxies."
+            }
+          }
+        },
+        "LibraryPath": "@LIBRARY_LOCATION@/@CMAKE_SHARED_LIBRARY_PREFIX@render_settings_property_proxy@CMAKE_SHARED_LIBRARY_SUFFIX@",
+        "Name": "render_settings_property_proxy",
+        "ResourcePath": "resources",
+        "Type": "library"
+      }
+    ]
+}

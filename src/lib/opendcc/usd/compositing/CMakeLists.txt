@@ -1,0 +1,20 @@
+opendcc_make_library(
+    compositing
+    TYPE
+    SHARED
+    PUBLIC_HEADERS
+    api.h
+    compositor.h
+    frame_info.h
+    layer.h
+    CPPFILES
+    compositor.cpp
+    frame_info.cpp
+    VS_FOLDER
+    usd/dcc
+    PRIVATE_DEFINITIONS
+    OPENDCC_COMPOSITING_EXPORT
+    LIBRARY_DEPENDENCIES
+    usdImagingGL
+    usdImaging
+    tf)

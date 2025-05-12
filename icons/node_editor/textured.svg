@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="20"
+   height="20"
+   viewBox="0 0 5.2916665 5.2916668"
+   version="1.1"
+   id="svg8"
+   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
+   sodipodi:docname="textured.svg"
+   inkscape:export-filename="D:\projects\git\dcc_platform\icons\textured.png"
+   inkscape:export-xdpi="96.000008"
+   inkscape:export-ydpi="96.000008"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <defs
+     id="defs2">
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient4497">
+      <stop
+         style="stop-color:#f0f0f0;stop-opacity:1"
+         offset="0"
+         id="stop4493" />
+      <stop
+         style="stop-color:#7a7a7a;stop-opacity:1"
+         offset="1"
+         id="stop4495" />
+    </linearGradient>
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient4497"
+       id="radialGradient4503"
+       cx="3.090169"
+       cy="293.74612"
+       fx="3.090169"
+       fy="293.74612"
+       r="1.8317137"
+       gradientUnits="userSpaceOnUse" />
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="16"
+     inkscape:cx="1.65625"
+     inkscape:cy="6.375"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     units="px"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     showguides="true"
+     inkscape:guide-bbox="true"
+     inkscape:pagecheckerboard="0" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-291.70832)">
+    <g
+       id="path4567">
+      <path
+         style="color:#000000;fill:url(#radialGradient4503);fill-rule:evenodd;stroke-width:0.264583;stroke-linecap:round;stroke-linejoin:round;stroke-dashoffset:3.9;-inkscape-stroke:none;paint-order:fill markers stroke"
+         d="m 4.3452553,294.35416 a 1.699422,1.699422 0 0 1 -1.699422,1.69942 1.699422,1.699422 0 0 1 -1.69942205,-1.69942 1.699422,1.699422 0 0 1 1.69942205,-1.69943 1.699422,1.699422 0 0 1 1.699422,1.69943 z"
+         id="path830" />
+      <path
+         style="color:#000000;fill:#3a3a3a;fill-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-dashoffset:3.9;-inkscape-stroke:none;paint-order:fill markers stroke"
+         d="m 2.6464844,292.52148 c -1.0100596,0 -1.83203127,0.82198 -1.83203127,1.83204 0,1.01006 0.82197167,1.83203 1.83203127,1.83203 1.0100595,0 1.8320312,-0.82197 1.8320312,-1.83203 0,-1.01006 -0.8219717,-1.83204 -1.8320312,-1.83204 z m 0,0.26563 c 0.8670682,0 1.5664062,0.69934 1.5664062,1.56641 0,0.86706 -0.699338,1.56835 -1.5664062,1.56835 -0.8670683,0 -1.5683594,-0.70129 -1.5683594,-1.56835 0,-0.86707 0.7012911,-1.56641 1.5683594,-1.56641 z"
+         id="path832" />
+    </g>
+    <circle
+       style="opacity:1;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.26458332;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:3.9000001;stroke-opacity:1;paint-order:stroke fill markers"
+       id="path4505"
+       cx="3.2809014"
+       cy="293.75299"
+       r="0.32740518" />
+  </g>
+</svg>

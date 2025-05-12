@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<typesystem package="opendcc.common_widgets">
+
+  <load-typesystem name="typesystem_core.xml" generate="no"/>
+  <load-typesystem name="typesystem_gui.xml" generate="no"/>
+  <load-typesystem name="typesystem_widgets.xml" generate="no"/>
+  <primitive-type name="uint32_t"/>
+  <primitive-type name="size_t"/>
+
+  <namespace-type name="OpenDCC" generate="no">
+  <object-type name="ColorWidget"/>
+  <object-type name="ColorButton"/>
+  <object-type name="ColorPickDialog"/>
+  <object-type name="GradientEditor"/>
+  <object-type name="GradientWidget"/>
+  <object-type name="RampPoint"/>
+  <object-type name="RampEdit"/>
+  <object-type name="MarkingMenu"/>
+  <object-type name="RoundMarkingMenu"/>
+  <object-type name="FloatSlider"/>
+  <object-type name="FloatValueWidget"/>
+  <object-type name="GroupWidget"/>
+  <object-type name="PopupWindow"/>
+  <object-type name="RolloutWidget">
+    <modify-function signature="set_layout(QLayout*)">
+      <modify-argument index="1">
+        <define-ownership class="target" owner="c++" />
+      </modify-argument>
+    </modify-function> 
+  </object-type>
+  <object-type name="DoubleWidget"/>
+  <object-type name="HelpButtonWidget"/>
+  <object-type name="SearchWidget"/>
+  </namespace-type>
+</typesystem>

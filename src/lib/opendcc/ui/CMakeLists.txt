@@ -1,0 +1,5 @@
+add_subdirectory(common_widgets)
+add_subdirectory(ocio_color_widgets)
+add_subdirectory(timeline_widget)
+add_subdirectory(logger_panel)
+add_subdirectory(color_theme)

@@ -1,0 +1,8 @@
+[base]
+name = 'opendcc.hydra_op.ui.scene_browser'
+
+[dependencies]
+'opendcc.hydra_op' = {}
+
+[[native.entry_point]]
+path='lib/${LIB_PREFIX}opendcc.hydra_op.ui.scene_browser${LIB_EXT}'

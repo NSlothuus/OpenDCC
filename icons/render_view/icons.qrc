@@ -1,0 +1,19 @@
+<RCC>
+  <qresource prefix="icons">
+    <file>gamma.png</file>
+    <file>exposure.png</file>
+    <file>handle-horizontal.png</file>
+    <file>handle-vertical.png</file>
+    <file>eye_icon.png</file>
+    <file>eye_icon_highlight.png</file>
+    <file>branch-open.png</file>
+    <file>branch-closed.png</file>
+    <file>pan.png</file>
+    <file>crop.png</file>
+    <file>dock_close.png</file>
+    <file>dock_normal.png</file>
+    <file alias="tabsMenu">tabsMenu.png</file>
+    <file alias="tabsMenu_disabled">tabsMenu_disabled.png</file>
+    <file alias="tabsMenu_hover">tabsMenu_hover.png</file>
+  </qresource>
+</RCC>

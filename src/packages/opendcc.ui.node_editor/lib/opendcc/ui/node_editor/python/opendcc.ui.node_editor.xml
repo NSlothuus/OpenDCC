@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<typesystem package="opendcc.ui.node_editor._node_editor">
+
+  <load-typesystem name="typesystem_core.xml" generate="no"/>
+  <load-typesystem name="typesystem_gui.xml" generate="no"/>
+  <load-typesystem name="typesystem_widgets.xml" generate="no"/>
+  <primitive-type name="uint32_t"/>
+  <primitive-type name="size_t"/>
+  <primitive-type name="std::string"/>
+
+  <namespace-type name="OpenDCC" generate="no">
+    <primitive-type name="NodeId"/>
+    <primitive-type name="PortId"/>
+    <object-type name="ConnectionItem"/>
+    <object-type name="BasicConnectionItem"/>
+    <object-type name="BasicLiveConnectionItem"/>
+    <object-type name="ConnectionSnapper"/>
+    <value-type name="Port">
+      <enum-type name="Type"/>
+    </value-type>
+    <value-type name="ConnectionId"/>
+    <object-type name="GraphModel"/>
+    <object-type name="NodeEditorItemRegistry"/>
+    <object-type name="NodeItem"/>
+	<object-type name="NodeEditorScene">
+    <enum-type name="GraphicsItemType"/>
+		<modify-function signature="get_selection(QVector&lt;OpenDCC::NodeId&gt;&amp;, QVector&lt;OpenDCC::ConnectionId&gt;&amp;)const">
+			<modify-argument index="return">
+				<replace-type modified-type="PyObject"/>
+			</modify-argument>
+			<modify-argument index="1">
+				<remove-argument/>
+			</modify-argument>
+			<modify-argument index="2">
+				<remove-argument/>
+			</modify-argument>
+			<inject-code class="target">
+				QVector&lt;OpenDCC::NodeId&gt; nodes;
+				QVector&lt;OpenDCC::ConnectionId&gt; connections;
+				%CPPSELF.%FUNCTION_NAME(nodes, connections);
+				%PYARG_0 = PyTuple_New(2);
+				PyTuple_SET_ITEM(%PYARG_0, 0, %CONVERTTOPYTHON[QVector&lt;OpenDCC::NodeId&gt;](nodes));
+				PyTuple_SET_ITEM(%PYARG_0, 1, %CONVERTTOPYTHON[QVector&lt;OpenDCC::ConnectionId&gt;](connections));
+			</inject-code>"
+		</modify-function>
+	</object-type>
+    <object-type name="TabSearchMenu"/>
+    <!-- TODO: wrap lambda or remove it -->
+    <object-type name="NodeTextItem"/>
+    <object-type name="EditNodeName"/>
+    <object-type name="ThumbnailCache"/>
+    <object-type name="BottomHintWidget"/>
+    <object-type name="NodeEditorView">
+      <enum-type name="GridType"/>
+    </object-type>
+  </namespace-type>
+</typesystem>

@@ -1,0 +1,508 @@
+<RCC>
+   <qresource prefix="icons">
+    <file alias="opendcc">opendcc.png</file>
+
+    <file alias="handle-horizontal">handle-horizontal.png</file>
+    <file alias="handle-vertical">handle-vertical.png</file>
+    <file alias="QSizeGrip">QSizeGrip.png</file>
+
+    <file alias="settings">settings.png</file>
+
+    <file alias="cursor_tumble">cursor_tumble.png</file>
+    <file alias="cursor_track">cursor_track.png</file>
+    <file alias="cursor_dolly">cursor_dolly.png</file>
+    <file alias="cursor_crosshair">cursor_crosshair.png</file>
+
+    <file alias="sl_arrow_off">sl_arrow_off.png</file>
+    <file alias="sl_arrow_on">sl_arrow_on.png</file>
+
+    <file alias="small_default">small_default.png</file>
+
+    <file alias="function">function.png</file>
+
+    <file alias="activation_on">activation_on.png</file>
+    <file alias="activation_off">activation_off.png</file>
+
+    <file alias="payload">payload.png</file>
+    <file alias="payload_on">payload_on.png</file>
+    <file alias="payload_off">payload_off.png</file>
+
+    <file alias="panel_hydra_scene_browser">panel_hydra_scene_browser.png</file>
+    <file alias="panel_hydraop_scene_graph">panel_hydraop_scene_graph.png</file>
+    <file alias="panel_hydraop_attribute_view">panel_hydraop_attribute_view.png</file>
+    <file alias="panel_hydraop_node_editor">panel_hydraop_node_editor.png</file>
+
+    <file alias="small_mesh">small_mesh.png</file>
+    <file alias="small_light">small_light.png</file>
+    <file alias="small_group">small_group.png</file>
+    <file alias="small_asset">small_asset.png</file>
+    <file alias="small_instance">small_instance.png</file>
+    <file alias="small_xform">small_xform.png</file>
+
+    <file alias="panel_layers">panel_layers.png</file>
+    <file alias="panel_outliner">panel_outliner.png</file>
+    <file alias="panel_uv_editor">panel_uv_editor.png</file>
+    <file alias="panel_attribute_editor">panel_attribute_editor.png</file>
+    <file alias="panel_viewport">panel_viewport.png</file>
+    <file alias="panel_usd_light_outliner">panel_usd_light_outliner.png</file>
+    <file alias="panel_usd_details_view">panel_usd_details_view.png</file>
+    <file alias="panel_tool_settings">panel_tool_settings.png</file>
+    <file alias="panel_logger">panel_logger.png</file>
+    <file alias="panel_render_log">panel_render_log.png</file>
+    <file alias="panel_node_editor">panel_node_editor.png</file>
+    <file alias="panel_node_editor_material">panel_node_editor_material.png</file>
+    <file alias="panel_graph_editor">panel_graph_editor.png</file>
+    <file alias="panel_channel_editor">panel_channel_editor.png</file>
+    <file alias="panel_script_editor">panel_script_editor.png</file>
+    <file alias="panel_image_view">panel_image_view.png</file>
+    <file alias="panel_usd_layer_text">panel_usd_layer_text.png</file>
+
+    <file alias="shader_preview">shader_preview.png</file>
+    <file alias="shader_preview_active">shader_preview_active.png</file>
+
+
+
+    <file alias="render_cycles">render_cycles.png</file>
+
+    <file alias="render_materialx">render_materialx.png</file>
+    <file alias="render_usd">render_usd.png</file>
+
+    <file alias="ham_00">ham_00.png</file>
+    <file alias="ham_01">ham_01.png</file>
+    <file alias="ham_02">ham_02.png</file>
+    <file alias="ham_03">ham_03.png</file>
+
+    <file alias="usd_small">usd_small.png</file>
+    <file alias="usd_small_disabled">usd_small_disabled.png</file>
+    <file alias="output_small">output_small.png</file>
+
+    <file alias="layout">layout.png</file>
+    <file alias="layout_default">layout_default.png</file>
+    <file alias="layout_lighting">layout_lighting.png</file>
+    <file alias="layout_scripting">layout_scripting.png</file>
+
+
+    <file alias="save_small">save_small.png</file>
+
+    <file alias="close_dock">close_dock.png</file>
+    <file alias="close_dock_hover">close_dock_hover.png</file>
+    <file alias="undock">undock.png</file>
+    <file alias="tabsMenu">tabsMenu.png</file>
+    <file alias="tabsMenu_disabled">tabsMenu_disabled.png</file>
+    <file alias="tabsMenu_hover">tabsMenu_hover.png</file>
+    <file alias="new_tab">new_tab.png</file>
+
+    <file alias="warning">warning.png</file>
+    <file alias="error">error.png</file>
+
+    <file alias="back">back.png</file>
+    <file alias="back_small">back_small.png</file>
+    <file alias="up_small">up_small.png</file>
+
+
+    <file alias="gamma">gamma.png</file>
+    <file alias="exposure">exposure.png</file>
+
+    <file alias="bullet">bullet.png</file>
+    <file alias="bullet_on">bullet_on.png</file>
+    <file alias="bullet_off">bullet_off.png</file>
+    <file alias="bullet_play">bullet_play.png</file>
+    <file alias="bullet_stop">bullet_stop.png</file>
+    <file alias="bullet_dynamic">bullet_dynamic.png</file>
+    <file alias="bullet_static">bullet_static.png</file>
+    <file alias="clear_selected">clear_selected.png</file>
+    <file alias="bullet_relax">bullet_relax.png</file>
+    <file alias="bug">bug.png</file>
+
+    <file alias="paint">paint.png</file>
+    <file alias="paint_small">paint_small.png</file>
+    <file alias="sculpt">sculpt.png</file>
+    <file alias="paint_instance">paint_instance.png</file>
+
+    <file alias="sculpt_tool_sculpt">sculpt_tool_sculpt.png</file>
+    <file alias="sculpt_tool_flatten">sculpt_tool_flatten.png</file>
+    <file alias="sculpt_tool_move">sculpt_tool_move.png</file>
+    <file alias="sculpt_tool_noise">sculpt_tool_noise.png</file>
+    <file alias="sculpt_tool_smooth">sculpt_tool_smooth.png</file>
+    <file alias="sculpt_tool_relax">sculpt_tool_relax.png</file>
+
+    <file alias="connect">connect.png</file>
+    <file alias="small_connect">small_connect.png</file>
+    <file alias="connected">connected.png</file>
+
+    <file alias="live_share">live_share.png</file>
+
+    <file alias="small_snap">small_snap.png</file>
+    <file alias="small_snap_off">small_snap_off.png</file>
+    <file alias="small_relative">small_relative.png</file>
+    <file alias="small_absolute">small_absolute.png</file>
+    <file alias="small_snap_grid">small_snap_grid.png</file>
+    <file alias="small_snap_vertex">small_snap_vertex.png</file>
+    <file alias="small_snap_edge">small_snap_edge.png</file>
+    <file alias="small_snap_edge_center">small_snap_edge_center.png</file>
+    <file alias="small_snap_face_center">small_snap_face_center.png</file>
+    <file alias="small_snap_object_surface">small_snap_object_surface.png</file>
+
+    <file alias="shading_mode_points">shading_mode_points.png</file>
+    <file alias="shading_mode_wireframe">shading_mode_wireframe.png</file>
+    <file alias="shading_mode_wireframe_on_surface">shading_mode_wireframe_on_surface.png</file>
+    <file alias="shading_mode_shaded_smooth">shading_mode_shaded_smooth.png</file>
+    <file alias="shading_mode_shaded_flat">shading_mode_shaded_flat.png</file>
+
+    <file alias="use_default_lighting">use_default_lighting.png</file>
+    <file alias="use_all_lights">use_all_lights.png</file>
+    <file alias="enable_shadows">enable_shadows.png</file>
+
+    <file alias="small_open">small_open.png</file>
+
+    <file alias="snap">snap.png</file>
+    <file alias="snap_grid">snap_grid.png</file>
+    <file alias="snap_points">snap_points.png</file>
+    <file alias="snap_curves">snap_curves.png</file>
+    <file alias="snap_view_planes">snap_view_planes.png</file>
+
+    <file alias="cube">cube.png</file>
+    <file alias="sphere">sphere.png</file>
+    <file alias="cylinder">cylinder.png</file>
+    <file alias="capsule">capsule.png</file>
+    <file alias="cone">cone.png</file>
+    <file alias="sphere_mesh">sphere_mesh.png</file>
+
+    <file alias="nodegraph">nodegraph.png</file>
+
+    <file alias="select_points">select_points.png</file>
+    <file alias="select_edges">select_edges.png</file>
+    <file alias="select_faces">select_faces.png</file>
+    <file alias="select_instances">select_instances.png</file>
+    <file alias="select_prims">select_prims.png</file>
+    <file alias="select_models">select_models.png</file>
+    <file alias="select_groups">select_groups.png</file>
+    <file alias="select_assemblies">select_assemblies.png</file>
+    <file alias="select_components">select_components.png</file>
+    <file alias="select_subcomponents">select_subcomponents.png</file>
+
+    <file alias="shelf">shelf.png</file>
+    <file alias="garbage">garbage.png</file>
+
+    <file alias="color_picker">color_picker.png</file>
+
+    <file alias="small_garbage">small_garbage.png</file>
+    <file alias="small_plus">small_plus.png</file>
+    <file alias="small_up">small_up.png</file>
+    <file alias="small_down">small_down.png</file>
+
+    <file alias="small_textured">small_textured.png</file>
+
+    <file alias="small_right">small_right.png</file>
+    <file alias="small_left">small_left.png</file>
+
+    <file alias="small_search">small_search.png</file>
+    <file alias="small_filter">small_filter.png</file>
+    <file alias="match_case">match_case.png</file>
+    <file alias="re">re.png</file>
+    <file alias="replace">replace.png</file>
+    <file alias="replace_all">replace_all.png</file>
+    <file alias="small_shelf">small_shelf.png</file>
+
+    <file alias="unlock">unlock.png</file>
+    <file alias="save">save.png</file>
+
+    <file alias="level">level.png</file>
+    <file alias="level_log">level_log.png</file>
+
+    <file alias="small_lock">small_lock.png</file>
+
+    <file alias="no_icon">no_icon.png</file>
+    <file alias="separator">separator.png</file>
+
+    <file alias="python">python.png</file>
+    <file alias="python_color">python_color.png</file>
+
+    <file alias="gear">gear.png</file>
+    <file alias="equal">equal.png</file>
+
+    <file alias="default">default.png</file>
+    <file alias="layers">layers.png</file>
+
+    <file alias="scope">scope.png</file>
+    <file alias="withouttype">withouttype.png</file>
+    <file alias="package">package.png</file>
+    <file alias="component">component.png</file>
+    <file alias="subcomponent">subcomponent.png</file>
+    <file alias="xform_instance">xform_instance.png</file>
+    <file alias="mesh_instance">mesh_instance.png</file>
+    <file alias="volume">volume.png</file>
+    <file alias="openvdbasset">openvdbasset.png</file>
+    <file alias="fieldbase">fieldbase.png</file>
+    <file alias="fieldasset">fieldasset.png</file>
+    <file alias="field3dasset">field3dasset.png</file>
+
+
+    <file alias="nurbscurves">nurbscurves.png</file>
+    <file alias="nurbspatch">nurbspatch.png</file>
+    <file alias="points">points.png</file>
+    <file alias="geomsubset">geomsubset.png</file>
+
+    <file alias="basiscurves">basiscurves.png</file>
+    <file alias="shader">shader.png</file>
+    <file alias="array-open">array-open.png</file>
+    <file alias="array-closed">array-closed.png</file>
+
+    <file alias="geometrylight">GeometryLight.png</file>
+    <file alias="lightfilter">LightFilter.png</file>
+    <file alias="portallight">PortalLight.png</file>
+
+    <file alias="hydraopnodegraph">hydraopnodegraph.png</file>
+    <file alias="hydraopusdin">HydraOpUsdIn.png</file>
+    <file alias="hydraopgroup">HydraOpGroup.png</file>
+    <file alias="hydraopsetattribute">HydraOpSetAttribute.png</file>
+    <file alias="hydraopmerge">HydraOpMerge.png</file>
+    <file alias="hydraopisolate">HydraOpIsolate.png</file>
+    <file alias="hydraopprune">HydraOpPrune.png</file>
+
+
+    <file alias="backdrop">backdrop.png</file>
+
+
+    <file alias="rendersettings">render_settings.png</file>
+    <file alias="renderproduct">render_product.png</file>
+    <file alias="rendervar">aov.png</file>
+
+
+
+    <file>light_cylinder.png</file>
+    <file>light_default.png</file>
+    <file>light_disk.png</file>
+    <file>light_distant.png</file>
+    <file>light_environment.png</file>
+    <file>light_quad.png</file>
+    <file>light_sphere.png</file>
+    <file>light_spot.png</file>
+    <file alias="home">home.png</file>
+    <file alias="path_right">path_right.png</file>
+    <file alias="path_down">path_down.png</file>
+    <file alias="path_back">path_back.png</file>
+
+    <file>docker/guiders.png</file>
+    <file>docker/buttons.png</file>
+    <file>docker/extents.png</file>
+
+    <file>select_tool.png</file>
+    <file>move_tool.png</file>
+    <file>rotate_tool.png</file>
+    <file>scale_tool.png</file>
+    <file>create_reference.png</file>
+    <file>camera.png</file>
+    <file alias="small_camera">small_camera.png</file>
+    <file alias="select_camera">select_camera.png</file>
+    <file>Textured.png</file>
+    <file>IsolateSelected.png</file>
+    <file>render.png</file>
+    <file>render_settings.png</file>
+    <file>render_playblast.png</file>
+    <file>ipr.png</file>
+    <file>ipr_stop.png</file>
+    <file>reset_output.png</file>
+    <file>send_to_farm.png</file>
+    <file>open_render_view.png</file>
+    <file>attributes.png</file>
+    <file>dd_open.png</file>
+    <file>dd_close.png</file>
+    <file>key.png</file>
+    <file>expression.png</file>
+    <file>regionSelectKeySmall.png</file>
+    <file>small_regionSelectKeySmall.png</file>
+    <file>insertKeySmall.png</file>
+    <file>linearTangent.png</file>
+    <file>flatTangent.png</file>
+    <file>splineTangent.png</file>
+    <file>stepTangent.png</file>
+    <file>plateauTangent.png</file>
+    <file>clampedTangent.png</file>
+    <file>autoTangent.png</file>
+    <file>traxFrameAll.png</file>
+    <file>breakTangent.png</file>
+    <file>unifyTangent.png</file>
+    <file>snapTime.png</file>
+    <file>snapValue.png</file>
+    <file>stepNextTangent.png</file>
+    <file>menuIconTangents.png</file>
+    <file alias="add">add.png</file>
+    <file alias="plus">plus.png</file>
+    <file alias="cross">cross.png</file>
+    <file>preInfinityCycle.png</file>
+    <file>preInfinityCycleOffset.png</file>
+    <file>postInfinityCycle.png</file>
+    <file>postInfinityCycleOffset.png</file>
+    <file>step_back.png</file>
+    <file>step_forward.png</file>
+    <file>goto_start.png</file>
+    <file>goto_end.png</file>
+    <file>stop_play.png</file>
+    <file>play_forward.png</file>
+    <file>play_backward.png</file>
+    <file>step_forward_key.png</file>
+    <file>step_back_key.png</file>
+    <file>arealight.png</file>
+    <file>arealight_cylinder.png</file>
+    <file>arealight_disk.png</file>
+    <file>arealight_distant.png</file>
+    <file>arealight_photometric.png</file>
+    <file>arealight_quad.png</file>
+    <file>arealight_sphere.png</file>
+    <file>lightblockerfilter.png</file>
+    <file>lightdecayfilter.png</file>
+    <file>envlight.png</file>
+    <file>asset.png</file>
+    <file alias="group">group.png</file>
+    <file>mesh.png</file>
+    <file>xform.png</file>
+    <file>instance.png</file>
+    <file>resolution_gate.png</file>
+    <file alias="attr_animated">attr_animated.png</file>
+    <file alias="question">question.png</file>
+
+    <file alias="delete">delete.png</file>
+    <file alias="clean">clean.png</file>
+    <file alias="close_tab">close_tab.png</file>
+    <file alias="run">run.png</file>
+    <file alias="camera">camera.png</file>
+    <file alias="material">Textured.png</file>
+
+    <file alias="cylinderlight">light_cylinder.png</file>
+    <file alias="disklight">light_disk.png</file>
+    <file alias="distantlight">light_distant.png</file>
+    <file alias="domelight">light_environment.png</file>
+    <file alias="rectlight">light_quad.png</file>
+    <file alias="spherelight">light_sphere.png</file>
+
+    <file alias="eye_open">eye_open.png</file>
+    <file alias="eye_closed">eye_closed.png</file>
+    <file alias="eye_open_faded">eye_open_faded.png</file>
+    <file alias="eye_closed_faded">eye_closed_faded.png</file>
+    <file alias="checkmark">checkmark.png</file>
+    <file alias="checkmark_white">checkmark_white.png</file>
+    <file alias="is_not_on_edit_target">is_not_on_edit_target.png</file>
+    <file alias="arrow_from">arrow_from.png</file>
+
+    <file alias="bezier_curve_tool">bezier_curve_tool.png</file>
+
+    <file alias="pointinstancer">pointinstancer.png</file>
+    <file alias="collapse">collapse.png</file>
+    <file alias="expand">expand.png</file>
+    <file alias="refresh">refresh.png</file>
+  </qresource>
+
+  <qresource prefix="icons/node_editor">
+    <file alias="Palette">node_editor/palette.svg</file>
+    <file alias="shader_preview">node_editor/shader_preview.svg</file>
+    <file alias="shader_preview_active">node_editor/shader_preview_active.svg</file>
+
+    <file alias="render_cycles">node_editor/render_cycles.svg</file>
+    <file alias="render_materialx">node_editor/render_materialx.svg</file>
+    <file alias="render_usd">node_editor/render_usd.svg</file>
+
+    <file alias="ham_00">node_editor/ham_00.svg</file>
+    <file alias="ham_01">node_editor/ham_01.svg</file>
+    <file alias="ham_02">node_editor/ham_02.svg</file>
+    <file alias="ham_03">node_editor/ham_03.svg</file>
+
+    <file alias="nurbscurves">node_editor/nurbscurves.svg</file>
+    <file alias="nurbspatch">node_editor/nurbspatch.svg</file>
+    <file alias="points">node_editor/points.svg</file>
+    <file alias="geomsubset">node_editor/geomsubset.svg</file>
+
+    <file alias="geometrylight">node_editor/GeometryLight.svg</file>
+    <file alias="lightfilter">node_editor/LightFilter.svg</file>
+    <file alias="portallight">node_editor/PortalLight.svg</file>
+
+    <file alias="mesh">node_editor/mesh.svg</file>
+    <file alias="xform">node_editor/xform.svg</file>
+    <file alias="camera">node_editor/camera.svg</file>
+    <file alias="material">node_editor/textured.svg</file>
+    <file alias="cylinderlight">node_editor/light_cylinder.svg</file>
+    <file alias="disklight">node_editor/light_disk.svg</file>
+    <file alias="distantlight">node_editor/light_distant.svg</file>
+    <file alias="domelight">node_editor/light_environment.svg</file>
+    <file alias="rectlight">node_editor/light_quad.svg</file>
+    <file alias="spherelight">node_editor/light_sphere.svg</file>
+    <file alias="pointinstancer">node_editor/pointinstancer.svg</file>
+    <file alias="scope">node_editor/scope.svg</file>
+    <file alias="basiscurves">node_editor/basiscurves.svg</file>
+    <file alias="shader">node_editor/shader.svg</file>
+    <file alias="cube">node_editor/cube.svg</file>
+    <file alias="capsule">node_editor/capsule.svg</file>
+    <file alias="cone">node_editor/cone.svg</file>
+    <file alias="cylinder">node_editor/cylinder.svg</file>
+    <file alias="sphere">node_editor/sphere.svg</file>
+    <file alias="render">node_editor/render.svg</file>
+
+    <file alias="hydraopsetattribute">node_editor/HydraOpSetAttribute.svg</file>
+    <file alias="hydraopmerge">node_editor/HydraOpMerge.svg</file>
+    <file alias="hydraopisolate">node_editor/HydraOpIsolate.svg</file>
+    <file alias="hydraopprune">node_editor/HydraOpPrune.svg</file>
+
+
+    <file alias="group">node_editor/group.svg</file>
+    <file alias="component">node_editor/component.svg</file>
+    <file alias="asset">node_editor/asset.svg</file>
+    <file alias="subcomponent">node_editor/subcomponent.svg</file>
+    <file alias="default">node_editor/default.svg</file>
+    <file alias="withouttype">node_editor/withouttype.svg</file>
+    <file alias="xform_instance">node_editor/xform_instance.svg</file>
+    <file alias="mesh_instance">node_editor/mesh_instance.svg</file>
+    <file alias="backdrop">node_editor/backdrop.svg</file>
+
+    <file alias="rendersettings">node_editor/render_settings.svg</file>
+	<file alias="bypass">node_editor/bypass.svg</file>
+
+    <file alias="nodegraph">node_editor/nodegraph.svg</file>
+  </qresource>
+
+  <qresource prefix="tree">
+    <file alias="branch-closed">branch-closed.png</file>
+    <file alias="branch-open">branch-open.png</file>
+    <file alias="branch-closed-selected">branch-closed-selected.png</file>
+    <file alias="branch-open-selected">branch-open-selected.png</file>
+  </qresource>
+
+  <qresource prefix="layer_icons">
+    <file alias="muted">muted.png</file>
+    <file alias="unmuted">unmuted.png</file>
+    <file alias="add_layer">add_layer.png</file>
+    <file alias="layer_up">layer_up.png</file>
+    <file alias="layer_down">layer_down.png</file>
+  </qresource>
+
+  <qresource prefix="light_linking">
+    <file alias="sun">sun.png</file>
+    <file alias="moon">moon.png</file>
+    <file alias="sun_dimmed">sun_dimmed.png</file>
+    <file alias="moon_dimmed">moon_dimmed.png</file>
+  </qresource>
+
+  <qresource prefix="icons/render_view">
+    <file alias="gamma">render_view/gamma.png</file>
+    <file alias="exposure">render_view/exposure.png</file>
+    <file alias="handle-horizontal">render_view/handle-horizontal.png</file>
+    <file alias="handle-vertical">render_view/handle-vertical.png</file>
+    <file alias="eye_icon">render_view/eye_icon.png</file>
+    <file alias="eye_icon_highlight">render_view/eye_icon_highlight.png</file>
+    <file alias="branch-open">render_view/branch-open.png</file>
+    <file alias="branch-closed">render_view/branch-closed.png</file>
+    <file alias="pan">render_view/pan.png</file>
+    <file alias="crop">render_view/crop.png</file>
+    <file alias="dock_close">render_view/dock_close.png</file>
+    <file alias="dock_normal">render_view/dock_normal.png</file>
+    <file alias="tabsMenu">render_view/tabsMenu.png</file>
+    <file alias="tabsMenu_disabled">render_view/tabsMenu_disabled.png</file>
+    <file alias="tabsMenu_hover">render_view/tabsMenu_hover.png</file>
+  </qresource>
+
+  <qresource prefix="icons/svg">
+    <file alias="layers">final_svg/layers.svg</file>
+    <file alias="usd_small">final_svg/usd_small.svg</file>
+    <file alias="usd_small_disabled">final_svg/usd_small_disabled.svg</file>
+  </qresource>
+
+</RCC>

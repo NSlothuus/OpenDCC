@@ -1,0 +1,19 @@
+#usda 1.0
+(
+    """ This file contains an example schemata for code generation using
+        usdGenSchema.
+    """
+) 
+over "GLOBAL" (
+    customData = {
+        string libraryName       = "usdExpression"
+        string libraryPath       = "."
+        string libraryPrefix     = "UsdExpression"
+        dictionary libraryTokens = {
+            dictionary expression_type = { }
+            dictionary expression_string = { }
+        }
+    }
+)
+{
+}
