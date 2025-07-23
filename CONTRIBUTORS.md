@@ -14,6 +14,7 @@ Listed alphabetically by first name:
 * Alexander Masyukov  
 * Anna Ilina  
 * Daria Gorodnyanskaya  
+* Denis Ivannikov  
 * Ekaterina Evdokimova  
 * Elena Mostepanova  
 * Ihtier Rahimov  
