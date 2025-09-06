@@ -6,7 +6,7 @@
 #include <opendcc/base/logging/logger.h>
 #include <opendcc/app/core/application.h>
 #include <opendcc/render_system/irender.h>
-#include <QApplication>
+#include <QtWidgets/QApplication>
 #include <opendcc/app/viewport/viewport_scene_context.h>
 #include "opendcc/usd/render/ipc_render.h"
 

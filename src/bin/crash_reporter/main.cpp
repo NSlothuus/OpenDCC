@@ -6,15 +6,15 @@
 #include "opendcc/opendcc.h"
 #include "opendcc/base/defines.h"
 
-#include <QApplication>
-#include <QMessageBox>
+#include <QtWidgets/QApplication>
+#include <QtWidgets/QMessageBox>
 #include "crash_reporter_window.h"
 #include "opendcc/base/app_config/config.h"
 #include "opendcc/base/utils/file_system.h"
-#include <QProcess>
-#include <QStyleFactory>
-#include <QFile>
-#include <QDir>
+#include <QtCore/QProcess>
+#include <QtWidgets/QStyleFactory>
+#include <QtCore/QFile>
+#include <QtCore/QDir>
 
 #ifdef OPENDCC_OS_WINDOWS
 #include <Windows.h>

@@ -2,7 +2,7 @@
 # SPDX-License-Identifier: Apache-2.0
 
 import opendcc.core as dcc_core
-from Qt import QtWidgets, QtSvg, QtCore
+from PySide6 import QtWidgets, QtSvg, QtCore
 from pxr import Usd, Tf, Sdf
 
 from opendcc.i18n import i18n

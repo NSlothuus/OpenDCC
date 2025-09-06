@@ -29,8 +29,8 @@
 
 #include <opendcc/base/vendor/ghc/filesystem.hpp>
 
-#include <QOffscreenSurface>
-#include <QOpenGLContext>
+#include <QtGui/QOffscreenSurface>
+#include <QtOpenGL/QOpenGLContext>
 
 OPENDCC_NAMESPACE_OPEN
 

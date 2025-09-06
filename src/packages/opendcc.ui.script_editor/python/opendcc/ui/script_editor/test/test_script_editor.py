@@ -4,8 +4,8 @@
 import unittest
 import sys
 import os
-from Qt import QtCore, QtGui, QtWidgets
-from Qt.QtTest import QTest
+from PySide6 import QtCore, QtGui, QtWidgets
+from PySide6.QtTest import QTest
 import script_editor
 from _conf import SETTINGS_PATH
 

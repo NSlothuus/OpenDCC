@@ -47,7 +47,7 @@ def init_ui():
     from .actions.remove_prim import RemoveAction
     from .actions.duplicate_prims import DuplicateAction
     from .actions.change_prims_visibility import VisibilityAction
-    from Qt import QtWidgets, QtCore
+    from PySide6 import QtWidgets, QtCore
 
     undo_stack = app.get_undo_stack()
     menu_bar = mw.menuBar()
@@ -131,7 +131,7 @@ def init_ui():
         CreateReferenceAction(i18n("main_menu.create", "Reference"), parent=menu_create)
     )
     from .actions.create_prim import CreatePrimAction
-    from Qt.QtGui import QIcon
+    from PySide6.QtGui import QIcon
 
     menu_create.addAction(
         CreatePrimAction(
@@ -290,7 +290,7 @@ def init_ui():
     from .actions.tab_toolbar import Shelf
 
     shelf = Shelf()
-    from Qt import QtCore
+    from PySide6 import QtCore
 
     mw.addToolBarBreak(QtCore.Qt.TopToolBarArea)
     mw.addToolBar(QtCore.Qt.TopToolBarArea, shelf)

@@ -11,20 +11,20 @@
 #include "opendcc/base/defines.h"
 #include "opendcc/base/ipc_commands_api/server.h"
 
-#include <QApplication>
-#include <QLabel>
+#include <QtWidgets/QApplication>
+#include <QtWidgets/QLabel>
 
-#include <QMessageBox>
-#include <QThreadPool>
-#include <QPushButton>
-#include <QTreeWidget>
-#include <QFileInfo>
-#include <QRunnable>
-#include <QDateTime>
-#include <QTimer>
-#include <QMenu>
-#include <QDir>
-#include <QUrl>
+#include <QtWidgets/QMessageBox>
+#include <QtCore/QThreadPool>
+#include <QtWidgets/QPushButton>
+#include <QtWidgets/QTreeWidget>
+#include <QtCore/QFileInfo>
+#include <QtCore/QRunnable>
+#include <QtCore/QDateTime>
+#include <QtCore/QTimer>
+#include <QtWidgets/QMenu>
+#include <QtCore/QDir>
+#include <QtCore/QUrl>
 
 #include <opendcc/base/vendor/ghc/filesystem.hpp>
 

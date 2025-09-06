@@ -19,8 +19,8 @@
 #include <QtWidgets/QToolButton>
 #include <QtWidgets/QSplitter>
 #include <QtCore/QSignalBlocker>
-#include <QUndoStack>
-#include <QSettings>
+#include <QtWidgets/QUndoStack>
+#include <QtCore/QSettings>
 #include <FloatingDockContainer.h>
 #include <DockAreaWidget.h>
 #include <DockAreaTitleBar.h>

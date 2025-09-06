@@ -6,7 +6,7 @@
 #pragma once
 #include "opendcc/opendcc.h"
 #include <queue>
-#include <QOpenGLWidget>
+#include <QtOpenGL/QOpenGLWidget>
 #include <OpenImageIO/imagebuf.h>
 #include "HUD.hpp"
 

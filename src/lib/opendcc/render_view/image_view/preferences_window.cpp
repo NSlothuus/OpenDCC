@@ -5,19 +5,19 @@
 #include "opendcc/render_view/image_view/translator.h"
 #include "opendcc/render_view/image_view/app.h"
 
-#include <QDir>
-#include <QLabel>
-#include <QSettings>
-#include <QComboBox>
-#include <QMetaType>
-#include <QTabWidget>
-#include <QMessageBox>
-#include <QFileDialog>
-#include <QPushButton>
-#include <QGridLayout>
-#include <QHeaderView>
-#include <QTableWidget>
-#include <QApplication>
+#include <QtCore/QDir>
+#include <QtWidgets/QLabel>
+#include <QtCore/QSettings>
+#include <QtWidgets/QComboBox>
+#include <QtCore/QMetaType>
+#include <QtWidgets/QTabWidget>
+#include <QtWidgets/QMessageBox>
+#include <QtWidgets/QFileDialog>
+#include <QtWidgets/QPushButton>
+#include <QtWidgets/QGridLayout>
+#include <QtWidgets/QHeaderView>
+#include <QtWidgets/QTableWidget>
+#include <QtWidgets/QApplication>
 
 #include <iostream>
 

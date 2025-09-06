@@ -51,8 +51,8 @@
 #include <pxr/usd/usd/stageCacheContext.h>
 #include <pxr/usd/sdr/registry.h>
 
-#include <QDir>
-#include <QLibraryInfo>
+#include <QtCore/QDir>
+#include <QtCore/QLibraryInfo>
 
 #include <string>
 #include <algorithm>

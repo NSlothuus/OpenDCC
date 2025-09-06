@@ -17,12 +17,12 @@
 #include <pxr/imaging/glf/contextCaps.h>
 #include <pxr/imaging/cameraUtil/conformWindow.h>
 
-#include <QMenu>
-#include <QTimer>
-#include <QPainter>
-#include <QSurfaceFormat>
-#include <QGuiApplication>
-#include <QScreen>
+#include <QtWidgets/QMenu>
+#include <QtCore/QTimer>
+#include <QtGui/QPainter>
+#include <QtOpenGL/QSurfaceFormat>
+#include <QtGui/QGuiApplication>
+#include <QtGui/QScreen>
 
 #include "opendcc/base/qt_python.h"
 #include "opendcc/app/ui/application_ui.h"

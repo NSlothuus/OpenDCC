@@ -3,7 +3,7 @@
 
 from __future__ import absolute_import
 import opendcc.core as dcc_core
-from Qt import QtWidgets, QtCore, QtGui
+from PySide6 import QtWidgets, QtCore, QtGui
 from opendcc.common_widgets import DoubleWidget, RolloutWidget, ColorButton
 from opendcc.i18n import i18n
 

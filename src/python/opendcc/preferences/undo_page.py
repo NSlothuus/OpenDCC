@@ -2,7 +2,7 @@
 # SPDX-License-Identifier: Apache-2.0
 
 from __future__ import absolute_import
-from Qt import QtWidgets, QtCore, QtGui
+from PySide6 import QtWidgets, QtCore, QtGui
 import opendcc.core as dcc_core
 from opendcc.common_widgets import DoubleWidget, RolloutWidget
 from opendcc.i18n import i18n

@@ -6,8 +6,8 @@
 #pragma once
 #include "opendcc/opendcc.h"
 #include <QtWidgets/QMainWindow>
-#include <QMessageBox>
-#include <QSettings>
+#include <QtWidgets/QMessageBox>
+#include <QtCore/QSettings>
 #include <DockManager.h>
 #include <DockWidget.h>
 #include "opendcc/app/core/api.h"

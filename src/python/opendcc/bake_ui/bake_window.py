@@ -4,7 +4,7 @@
 import opendcc.core as dcc_core
 import opendcc.attribute_editor as ae
 
-from Qt import QtCore, QtGui, QtWidgets
+from PySide6 import QtCore, QtGui, QtWidgets
 
 
 class BakeWindow(QtWidgets.QWidget):

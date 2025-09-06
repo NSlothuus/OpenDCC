@@ -3,13 +3,13 @@
 
 #include "image_cache.h"
 
-#include <QDir>
-#include <QFile>
-#include <QFileInfo>
-#include <QRunnable>
-#include <QDateTime>
-#include <QThreadPool>
-#include <QCoreApplication>
+#include <QtCore/QDir>
+#include <QtCore/QFile>
+#include <QtCore/QFileInfo>
+#include <QtCore/QRunnable>
+#include <QtCore/QDateTime>
+#include <QtCore/QThreadPool>
+#include <QtCore/QCoreApplication>
 
 OPENDCC_NAMESPACE_OPEN
 

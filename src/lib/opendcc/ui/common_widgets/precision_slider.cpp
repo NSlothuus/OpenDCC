@@ -1,14 +1,14 @@
 // Copyright Contributors to the OpenDCC project
 // SPDX-License-Identifier: Apache-2.0
 
-#include <QPainter>
-#include <QBoxLayout>
-#include <QLabel>
-#include <QStyle>
-#include <QStyleOption>
-#include <QPalette>
+#include <QtGui/QPainter>
+#include <QtWidgets/QBoxLayout>
+#include <QtWidgets/QLabel>
+#include <QtWidgets/QStyle>
+#include <QtWidgets/QStyleOption>
+#include <QtGui/QPalette>
 #include "opendcc/ui/common_widgets/precision_slider.h"
-#include <QWheelEvent>
+#include <QtGui/QWheelEvent>
 #include <cmath>
 
 OPENDCC_NAMESPACE_OPEN

@@ -4,7 +4,7 @@
 # Originally based on work by the Jupyter Development Team.
 # Distributed under the terms of the Modified BSD License.
 
-from Qt import QtGui
+from PySide6 import QtGui
 
 from pygments.formatters.html import HtmlFormatter
 from pygments.lexer import RegexLexer, _TokenType, Text, Error

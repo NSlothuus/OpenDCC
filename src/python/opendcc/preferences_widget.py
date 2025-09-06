@@ -1,7 +1,7 @@
 # Copyright Contributors to the OpenDCC project
 # SPDX-License-Identifier: Apache-2.0
 
-from Qt import QtWidgets, QtCore, QtGui
+from PySide6 import QtWidgets, QtCore, QtGui
 from opendcc.preferences.common_page import CommonPage
 from opendcc.preferences.def_cam_page import DefCamPage
 from opendcc.preferences.undo_page import UndoPage

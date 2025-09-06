@@ -1,7 +1,7 @@
 # Copyright Contributors to the OpenDCC project
 # SPDX-License-Identifier: Apache-2.0
 
-from Qt import QtWidgets, QtCore, QtGui
+from PySide6 import QtWidgets, QtCore, QtGui
 from opendcc.actions.options_widget import make_option
 from opendcc.core import Application
 from opendcc.common_widgets import RolloutWidget

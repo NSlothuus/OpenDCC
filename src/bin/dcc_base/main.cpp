@@ -25,14 +25,14 @@
 #define DOCTEST_CONFIG_IMPLEMENTATION_IN_DLL
 #include <doctest/doctest.h>
 
-#include <QDir>
-#include <QTimer>
-#include <QScopeGuard>
-#include <QApplication>
-#include <QStyleFactory>
-#include <QSurfaceFormat>
-#include <QCommandLineParser>
-#include <QHostInfo>
+#include <QtCore/QDir>
+#include <QtCore/QTimer>
+#include <QtCore/QScopeGuard>
+#include <QtWidgets/QApplication>
+#include <QtWidgets/QStyleFactory>
+#include <QtOpenGL/QSurfaceFormat>
+#include <QtCore/QCommandLineParser>
+#include <QtNetwork/QHostInfo>
 
 #include <iostream>
 

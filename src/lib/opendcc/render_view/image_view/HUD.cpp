@@ -1,8 +1,8 @@
 // Copyright Contributors to the OpenDCC project
 // SPDX-License-Identifier: Apache-2.0
 
-#include <QImage>
-#include <QPainter>
+#include <QtGui/QImage>
+#include <QtGui/QPainter>
 #include <GL/glew.h>
 #include "HUD.hpp"
 
