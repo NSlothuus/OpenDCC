@@ -7,6 +7,8 @@ set(BIN_NAME dcc_base)
 if(UNIX AND NOT APPLE)
     set(BIN_STARTUP_NAME "${BIN_NAME}")
     set(BIN_NAME "${BIN_NAME}.bin")
+elseif(APPLE)
+    # On macOS, keep the original binary name
 endif()
 
 add_executable(${BIN_NAME} ${PROJECT_SOURCE_DIR}/icons/opendcc_resources.rc ${resources})
@@ -45,6 +47,8 @@ elseif(UNIX AND NOT APPLE)
         PROGRAMS ${PROJECT_SOURCE_DIR}/cmake/macros/launch_script.sh
         DESTINATION bin
         RENAME ${BIN_STARTUP_NAME})
+elseif(APPLE)
+    # On macOS, install the binary directly without wrapper script
 endif()
 
 if(DCC_BUILD_TESTS)

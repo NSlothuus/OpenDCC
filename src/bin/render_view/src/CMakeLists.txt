@@ -10,6 +10,8 @@ include_directories(${PROJECT_SOURCE_DIR}/lib/src)
 set(BIN_NAME render_view)
 if(UNIX AND NOT APPLE)
     set(BIN_NAME "${BIN_NAME}.bin")
+elseif(APPLE)
+    # On macOS, keep the original binary name
 endif()
 if(WIN32 AND DCC_RENDER_VIEW_WIN_GUI_EXECUTABLE)
 
@@ -62,4 +64,6 @@ elseif(UNIX AND NOT APPLE)
         PROGRAMS ${PROJECT_SOURCE_DIR}/cmake/macros/launch_script.sh
         DESTINATION bin
         RENAME render_view)
+elseif(APPLE)
+    # On macOS, install the binary directly without wrapper script
 endif()
