@@ -3,6 +3,8 @@ set(TARGET_NAME usd_ipc_broker)
 set(BIN_NAME ${TARGET_NAME})
 if(UNIX AND NOT APPLE)
     set(BIN_NAME "${BIN_NAME}.bin")
+elseif(APPLE)
+    # On macOS, keep the original binary name
 endif()
 add_executable(${BIN_NAME} main.cpp)
 if(WIN32)
@@ -30,4 +32,6 @@ elseif(UNIX AND NOT APPLE)
         PROGRAMS ${PROJECT_SOURCE_DIR}/cmake/macros/launch_script.sh
         DESTINATION bin
         RENAME ${TARGET_NAME})
+elseif(APPLE)
+    # On macOS, install the binary directly without wrapper script
 endif()

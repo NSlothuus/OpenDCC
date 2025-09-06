@@ -21,7 +21,7 @@
 #define OPENDCC_COMPILER_MSVC_VERSION _MSC_VER
 #endif
 
-#if defined(__GNUC__)
+#if defined(__GNUC__) || defined(__clang__)
 #define OPENDCC_WEAK_LINKAGE __attribute__((weak))
 #else
 #define OPENDCC_WEAK_LINKAGE __declspec(selectany)
