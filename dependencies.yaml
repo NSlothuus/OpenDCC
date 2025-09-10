@@ -1,0 +1,242 @@
+# OpenDCC Dependency Configuration
+# This file defines the target versions for all major dependencies
+# Update versions here to upgrade dependencies across all platforms
+
+# Core Dependencies
+cmake:
+  min_version: "3.18"
+  recommended: "3.25"
+
+python:
+  min_version: "3.9"
+  recommended: "3.11"
+
+# USD (Universal Scene Description)
+usd:
+  version: "23.11"  # Upgraded from older version
+  previous: "22.05"
+  features:
+    - imaging
+    - materialx
+    - python_bindings
+  platforms:
+    linux:
+      package_managers:
+        - apt: "libusd-dev"
+        - conda: "usd-core"
+      build_from_source:
+        url: "https://github.com/PixarAnimationStudios/USD"
+        tag: "v23.11"
+        cmake_args:
+          - "-DPXR_BUILD_TESTS=OFF"
+          - "-DPXR_BUILD_EXAMPLES=OFF"
+          - "-DPXR_BUILD_TUTORIALS=OFF"
+          - "-DPXR_BUILD_USD_IMAGING=ON"
+          - "-DPXR_BUILD_MATERIALX_PLUGIN=ON"
+          - "-DPXR_ENABLE_PYTHON_SUPPORT=ON"
+    windows:
+      vcpkg: "usd"
+      build_from_source:
+        url: "https://github.com/PixarAnimationStudios/USD"
+        tag: "v23.11"
+    macos:
+      homebrew: "pixar/usd/usd"
+      build_from_source:
+        url: "https://github.com/PixarAnimationStudios/USD" 
+        tag: "v23.11"
+
+# Qt Framework
+qt:
+  version: "5.15.2"
+  components:
+    - Core
+    - Gui
+    - Widgets
+    - OpenGL
+    - Svg
+    - Multimedia
+    - Network
+    - LinguistTools
+  platforms:
+    linux:
+      apt: "qtbase5-dev qttools5-dev qtmultimedia5-dev libqt5svg5-dev libqt5opengl5-dev"
+    windows:
+      vcpkg: "qt5-base qt5-tools qt5-multimedia qt5-svg"
+    macos:
+      homebrew: "qt@5"
+
+# Rendering Dependencies
+tbb:
+  version: "2021.7"
+  platforms:
+    linux:
+      apt: "libtbb-dev"
+    windows:
+      vcpkg: "tbb"
+    macos:
+      homebrew: "tbb"
+
+glew:
+  version: "2.2.0"
+  platforms:
+    linux:
+      apt: "libglew-dev"
+    windows:
+      vcpkg: "glew"
+    macos:
+      homebrew: "glew"
+
+eigen:
+  version: "3.4.0"
+  platforms:
+    linux:
+      apt: "libeigen3-dev"
+    windows:
+      vcpkg: "eigen3"
+    macos:
+      homebrew: "eigen"
+
+embree:
+  version: "4.3.0"
+  platforms:
+    linux:
+      apt: "libembree-dev"
+    windows:
+      vcpkg: "embree3"
+    macos:
+      homebrew: "embree"
+
+# Image/Color Processing
+openimageio:
+  version: "2.4.17"
+  platforms:
+    linux:
+      apt: "libopenimageio-dev"
+    windows:
+      vcpkg: "openimageio"
+    macos:
+      homebrew: "openimageio"
+
+opencolorio:
+  version: "2.2.1"
+  platforms:
+    linux:
+      apt: "libopencolorio-dev"
+    windows:
+      vcpkg: "opencolorio"
+    macos:
+      homebrew: "opencolorio"
+
+# Optional Rendering Backends
+arnold:
+  version: "7.2.4.1"
+  optional: true
+  license_required: true
+  
+cycles:
+  version: "4.0"
+  optional: true
+  source: "https://github.com/blender/cycles"
+
+renderman:
+  version: "25.2"
+  optional: true
+  license_required: true
+
+# Build Tools
+boost:
+  version: "1.82.0"
+  components:
+    - python
+    - filesystem
+    - system
+    - regex
+    - thread
+    - wave  # Only if OSL support enabled
+  platforms:
+    linux:
+      apt: "libboost-all-dev"
+    windows:
+      vcpkg: "boost"
+    macos:
+      homebrew: "boost boost-python3"
+
+# Platform-Specific Build Requirements
+build_requirements:
+  linux:
+    system_packages:
+      - cmake
+      - build-essential
+      - pkg-config
+      - libgl1-mesa-dev
+      - libx11-dev
+      - libxext-dev
+      - libxfixes-dev
+      - libxi-dev
+      - libxrender-dev
+      - libxcb1-dev
+      - libxau-dev
+      - libxdmcp-dev
+      - python3-dev
+  
+  windows:
+    tools:
+      - "Visual Studio 2022 Build Tools"
+      - "vcpkg"
+    environment:
+      CMAKE_TOOLCHAIN_FILE: "C:/vcpkg/scripts/buildsystems/vcpkg.cmake"
+  
+  macos:
+    tools:
+      - "Xcode Command Line Tools"
+      - "Homebrew"
+    min_version: "10.15"  # Catalina
+    architectures:
+      - "x86_64"
+      - "arm64"  # Apple Silicon support
+
+# Version Compatibility Matrix
+compatibility:
+  usd_23_11:
+    cmake_min: "3.18"
+    python_min: "3.9"
+    boost_min: "1.70"
+    tbb_min: "2020"
+    qt_versions: ["5.15.x"]
+    
+  qt_5_15:
+    cmake_min: "3.16"
+    python_min: "3.6"
+    
+# Build Configuration Templates
+build_profiles:
+  minimal:
+    description: "Minimal build with core USD support only"
+    features:
+      - usd_core
+      - qt_gui
+    disabled:
+      - arnold_support
+      - renderman_support
+      - cycles_support
+      
+  full:
+    description: "Full build with all rendering backends"
+    features:
+      - usd_core
+      - usd_imaging
+      - materialx
+      - qt_gui
+      - arnold_support
+      - renderman_support
+      - cycles_support
+      
+  developer:
+    description: "Development build with tests and examples"
+    features:
+      - usd_core
+      - usd_imaging
+      - qt_gui
+      - tests
+      - examples
+      - debug_symbols

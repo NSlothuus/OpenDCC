@@ -1,3 +1,4 @@
 qt.py==1.2.3
 enum==0.4.7
 pygments==2.5.2
+PyYAML>=6.0

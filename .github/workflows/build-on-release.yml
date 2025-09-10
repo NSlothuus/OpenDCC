@@ -7,23 +7,62 @@ on:
   push:
     tags:
       - 'v*'
+  # Allow manual trigger for testing
+  workflow_dispatch:
+    inputs:
+      build_type:
+        description: 'Build type'
+        required: true
+        default: 'Release'
+        type: choice
+        options:
+        - Release
+        - Debug
+        - RelWithDebInfo
 
 jobs:
   build:
     name: Build OpenDCC
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.os }}
     
     strategy:
+      fail-fast: false
       matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
         build_type: [Release]
+        include:
+          - os: ubuntu-latest
+            platform: linux
+            artifact_ext: ""
+            lib_ext: "so"
+          - os: windows-latest
+            platform: windows
+            artifact_ext: ".exe"
+            lib_ext: "dll"
+          - os: macos-latest
+            platform: macos
+            artifact_ext: ""
+            lib_ext: "dylib"
         
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
           submodules: recursive
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
           
-      - name: Install dependencies
+      - name: Install Python dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          
+      # Linux dependencies
+      - name: Install Linux dependencies
+        if: matrix.platform == 'linux'
         run: |
           sudo apt-get update
           sudo apt-get install -y \
@@ -40,42 +79,103 @@ jobs:
             libxau-dev \
             libxdmcp-dev \
             python3-dev \
-            python3-pip \
             qtbase5-dev \
             qttools5-dev \
             qttools5-dev-tools \
             qtmultimedia5-dev \
             libqt5svg5-dev \
-            libqt5opengl5-dev
+            libqt5opengl5-dev \
+            libtbb-dev \
+            libglew-dev \
+            libeigen3-dev \
+            libembree-dev
             
-      - name: Install Python dependencies
+      # macOS dependencies  
+      - name: Install macOS dependencies
+        if: matrix.platform == 'macos'
         run: |
-          python3 -m pip install --upgrade pip
-          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+          brew update
+          brew install cmake qt@5 tbb glew eigen embree
+          # Link Qt5 for cmake discovery
+          brew link qt@5 --force
           
-      - name: Configure CMake
+      # Windows setup (using vcpkg for dependencies)
+      - name: Setup vcpkg (Windows)
+        if: matrix.platform == 'windows'
+        uses: microsoft/setup-msbuild@v1.3
+        
+      - name: Install Windows dependencies
+        if: matrix.platform == 'windows'
         run: |
-          cmake -B build \
-            -DCMAKE_BUILD_TYPE=${{ matrix.build_type }} \
-            -DCMAKE_INSTALL_PREFIX=/usr/local \
-            -DDCC_BUILD_TESTS=OFF
-            
-      - name: Build
+          vcpkg install qt5-base qt5-tools qt5-multimedia qt5-svg tbb glew eigen3 embree3
+        shell: cmd
+        
+      # USD Installation (simplified - in production you'd cache this)
+      - name: Setup USD (Linux/macOS)
+        if: matrix.platform != 'windows'
         run: |
-          cmake --build build --config ${{ matrix.build_type }} --parallel $(nproc)
+          # This is a placeholder - you'd typically cache USD or use a package manager
+          echo "USD installation would go here"
+          # For now, we'll disable USD-dependent features
+          
+      - name: Setup USD (Windows) 
+        if: matrix.platform == 'windows'
+        run: |
+          # This is a placeholder - you'd typically cache USD or use a package manager
+          echo "USD installation would go here"
+          # For now, we'll disable USD-dependent features
+        shell: cmd
+
+      # Build using our Python script
+      - name: Configure and Build
+        run: |
+          python build.py --config ${{ matrix.build_type }} --verbose --jobs 4
           
       - name: Package artifacts
         run: |
-          mkdir -p artifacts
-          # Copy built executables and libraries
-          find build -type f -executable -o -name "*.so" | xargs -I {} cp {} artifacts/ 2>/dev/null || true
-          # Copy any config files
-          if [ -d configs ]; then cp -r configs artifacts/; fi
+          python -c "
+import os
+import shutil
+from pathlib import Path
+
+# Create artifacts directory
+artifacts_dir = Path('artifacts')
+artifacts_dir.mkdir(exist_ok=True)
+
+# Find build outputs based on platform
+build_dir = Path('build')
+platform = '${{ matrix.platform }}'
+
+if platform == 'windows':
+    # Find executables and DLLs
+    for pattern in ['*.exe', '*.dll']:
+        for file in build_dir.rglob(pattern):
+            shutil.copy2(file, artifacts_dir)
+elif platform == 'linux':
+    # Find executables and shared libraries
+    for file in build_dir.rglob('*'):
+        if file.is_file() and (file.suffix == '.so' or (file.stat().st_mode & 0o111 and not file.suffix)):
+            shutil.copy2(file, artifacts_dir)
+else:  # macOS
+    # Find executables and dylibs
+    for pattern in ['*.dylib']:
+        for file in build_dir.rglob(pattern):
+            shutil.copy2(file, artifacts_dir)
+    # Find executables (no extension, executable bit set)
+    for file in build_dir.rglob('*'):
+        if file.is_file() and not file.suffix and (file.stat().st_mode & 0o111):
+            shutil.copy2(file, artifacts_dir)
+
+# Copy config files if they exist
+config_dir = Path('configs')
+if config_dir.exists():
+    shutil.copytree(config_dir, artifacts_dir / 'configs', dirs_exist_ok=True)
+"
           
       - name: Upload build artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: opendcc-${{ matrix.build_type }}-${{ github.sha }}
+          name: opendcc-${{ matrix.platform }}-${{ matrix.build_type }}-${{ github.sha }}
           path: artifacts/
           retention-days: 30
           
