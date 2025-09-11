@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(\".venv/Scripts/python.exe\" build.py --verbose --clean)",
+      "Bash(\".venv/Scripts/python.exe\" build.py)",
+      "Bash(\".venv/Scripts/python.exe\" setup_dependencies.py full)",
+      "Bash(powershell:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

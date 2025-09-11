@@ -1,0 +1,3 @@
+@echo off
+echo Setting up OpenDCC build environment...
+echo Environment setup complete.

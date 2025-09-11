@@ -105,6 +105,12 @@ class OpenDCCBuilder:
             help="Build tests"
         )
         
+        parser.add_argument(
+            "--skip-usd",
+            action="store_true",
+            help="Skip USD dependency (development mode)"
+        )
+        
         args = parser.parse_args()
         
         # Update instance variables
@@ -229,6 +235,11 @@ class OpenDCCBuilder:
         # Tests
         cmake_args.append(f"-DDCC_BUILD_TESTS={'ON' if args.tests else 'OFF'}")
         
+        # Skip USD for development builds
+        if args.skip_usd:
+            self.log("Skipping USD dependency (development mode)")
+            cmake_args.append("-DDCC_SKIP_USD=ON")
+        
         # Auto-detect dependencies
         deps = self.detect_dependencies()
         
@@ -268,6 +279,14 @@ class OpenDCCBuilder:
                 "-DCMAKE_CXX_STANDARD=17",
                 "-A", "x64"
             ])
+            
+            # Add vcpkg toolchain if available
+            vcpkg_root = os.environ.get("VCPKG_ROOT")
+            if vcpkg_root and Path(vcpkg_root).exists():
+                toolchain_file = Path(vcpkg_root) / "scripts/buildsystems/vcpkg.cmake"
+                if toolchain_file.exists():
+                    cmake_args.append(f"-DCMAKE_TOOLCHAIN_FILE={toolchain_file}")
+                    self.log(f"Using vcpkg toolchain: {toolchain_file}")
             
         return cmake_args
         

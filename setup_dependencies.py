@@ -129,14 +129,18 @@ class DependencyManager:
         # Check if vcpkg is available
         vcpkg_root = os.environ.get("VCPKG_ROOT")
         if not vcpkg_root or not Path(vcpkg_root).exists():
-            self.log("vcpkg not found. Please install and configure vcpkg:", "ERROR")
-            self.log("https://github.com/Microsoft/vcpkg", "INFO")
-            return False
+            self.log("vcpkg not found. Skipping vcpkg dependencies.", "WARN")
+            self.log("For full dependency support, install vcpkg:", "INFO")
+            self.log("  git clone https://github.com/Microsoft/vcpkg.git C:\\vcpkg", "INFO")
+            self.log("  cd C:\\vcpkg && .\\bootstrap-vcpkg.bat", "INFO")
+            self.log("  setx VCPKG_ROOT C:\\vcpkg", "INFO")
+            self.log("You can still build with manual dependency paths.", "INFO")
+            return True  # Don't fail, just skip vcpkg deps
             
         vcpkg_exe = Path(vcpkg_root) / "vcpkg.exe"
         if not vcpkg_exe.exists():
-            self.log(f"vcpkg.exe not found at {vcpkg_exe}", "ERROR")
-            return False
+            self.log(f"vcpkg.exe not found at {vcpkg_exe}", "WARN")
+            return True  # Don't fail, just skip
             
         # Core dependencies
         deps_to_install = []

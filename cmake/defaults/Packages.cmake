@@ -4,7 +4,16 @@ if(CMAKE_COMPILER_IS_GNUCC)
     find_package(Threads)
 endif()
 
-find_package(USD REQUIRED)
+# Try vcpkg's USD first, fallback to custom finder
+find_package(pxr CONFIG QUIET)
+if(pxr_FOUND)
+    # vcpkg USD found
+    message(STATUS "Using vcpkg USD")
+    set(USD_FOUND TRUE)
+else()
+    # Use custom USD finder
+    find_package(USD REQUIRED)
+endif()
 if(DCC_USE_PTEX)
     find_package(PTex REQUIRED)
 endif()
